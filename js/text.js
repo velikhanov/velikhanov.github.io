@@ -1,0 +1,1 @@
+var isTag,text,str=document.querySelector(".index-title-main h1").innerHTML,i=0;!function e(){if((text=str.slice(0,++i))!==str){document.querySelector(".index-title-main h1").style.display="inline",document.querySelector(".index-title-main h1").innerHTML=text;var t=text.slice(-1);if("<"===t&&(isTag=!0),">"===t&&(isTag=!1),isTag)return e();setTimeout(e,100)}}();

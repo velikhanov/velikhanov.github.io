@@ -1,0 +1,73 @@
+.section{
+  min-height: 100vh;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+.in-procces{
+  display: block;
+  margin: auto;
+  white-space: nowrap;
+  font-size: 80px;
+  color: #fff;
+  margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+/*temp*/
+.gears i {
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    background: url('../img/gears.png') no-repeat center;
+    animation: barrelRoll 2s infinite linear;
+    -webkit-animation: barrelRoll 2s infinite linear;
+    -moz-animation: barrelRoll 2s infinite linear;
+    -o-animation: barrelRoll 2s infinite linear;
+    -ms-animation: barrelRoll 2s infinite linear;
+}
+
+@keyframes barrelRoll {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@-webkit-keyframes barrelRoll {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg) };
+}
+@-moz-keyframes barrelRoll {
+    0% { -moz-transform: rotate(0deg); }
+    100% { -moz-transform: rotate(360deg); }
+}
+@-o-keyframes barrelRoll {
+    0% { -o-transform: rotate(0deg); }
+    100% { -o-transform: rotate(360deg); }
+}
+@-ms-keyframes barrelRoll {
+    0% { -ms-transform: rotate(0deg); }
+    100% { -ms-transform: rotate(360deg); }
+}
+/*temp*/
+@media only screen and (max-width: 1000px),
+only screen and (max-device-width: 1000px){
+  .in-procces{
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 700px),
+only screen and (max-device-width: 700px){
+  .in-procces{
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 400px),
+only screen and (max-device-width: 400px){
+  .in-procces{
+    font-size: 20px;
+  }
+}
