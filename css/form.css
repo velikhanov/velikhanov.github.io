@@ -17,7 +17,45 @@ body, button, input {
   margin: auto;
   padding: 10px;
 }
+/*Notifications*/
+.toast {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 
+  max-width: 400px;
+  padding: 6px;
+  background: #cccccc;
+  color: #333333;
+  font-family: sans-serif;
+  text-align: center;
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  display: none;
+  transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+}
+
+.toast--visible {
+  top: 20px;
+  display: inline;
+}
+
+.toast--success {
+  background: #00c02b;
+  border-color: #009d23;
+  color: #ffffff;
+}
+
+.toast--error {
+  background: #d50000;
+  border-color: #ba0000;
+  color: #ffffff;
+}
+/**/
 .screen {
   position: relative;
   background: #3e3e3e;
@@ -159,6 +197,15 @@ input:-webkit-autofill{
   text-transform: uppercase;
   outline: none;
   transition: border-color .2s;
+}
+
+button:disabled.app-form-button,
+button[disabled].app-form-button {
+  border: 1px solid #35E6BA;
+  background-color: #35E6BA;
+  color: #000;
+  opacity: .3;
+  cursor: default;
 }
 
 .app-form-control::placeholder {
