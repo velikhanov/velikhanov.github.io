@@ -21,7 +21,7 @@ body, button, input {
 .toast {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 145px;
   right: 0;
   margin: auto;
 
