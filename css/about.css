@@ -1,73 +1,61 @@
 .section{
   min-height: 100vh;
-  padding: 10px;
-  text-align: center;
+  padding: 0 50px 50px 50px;
+  text-align: justify;
   position: relative;
+  overflow: hidden;
 }
-.in-procces{
-  display: block;
-  margin: auto;
-  white-space: nowrap;
-  font-size: 80px;
+.aboutme{
+  text-align: center;
+  padding: 20px;
+  font-size: 50px;
   color: #fff;
-  margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  text-decoration: underline;
+  text-decoration-color: #35E6BA;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            cursor: text;
+}
+.about-p{
+  width: 100%;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            cursor: text;
+}
+.about-p h3{
+  font-size: 25px;
+  color: #35E6BA;
+  padding: 10px 0;
+}
+.about-p p{
+  color: white;
+  font-size: 20px;
+  line-height: 1.7;
   font-weight: bold;
 }
-/*temp*/
-.gears i {
-    display: block;
-    margin: auto;
-    width: 150px;
-    height: 150px;
-    background: url('../img/gears.png') no-repeat center;
-    animation: barrelRoll 2s infinite linear;
-    -webkit-animation: barrelRoll 2s infinite linear;
-    -moz-animation: barrelRoll 2s infinite linear;
-    -o-animation: barrelRoll 2s infinite linear;
-    -ms-animation: barrelRoll 2s infinite linear;
+.about-p p a{
+  text-decoration: none;
 }
-
-@keyframes barrelRoll {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.about-p p a, .about-p p span{
+  color: red;
 }
-@-webkit-keyframes barrelRoll {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg) };
+.about-p p a:hover{
+  text-decoration: underline;
+  text-decoration-color: red;
 }
-@-moz-keyframes barrelRoll {
-    0% { -moz-transform: rotate(0deg); }
-    100% { -moz-transform: rotate(360deg); }
-}
-@-o-keyframes barrelRoll {
-    0% { -o-transform: rotate(0deg); }
-    100% { -o-transform: rotate(360deg); }
-}
-@-ms-keyframes barrelRoll {
-    0% { -ms-transform: rotate(0deg); }
-    100% { -ms-transform: rotate(360deg); }
-}
-/*temp*/
-@media only screen and (max-width: 1000px),
-only screen and (max-device-width: 1000px){
-  .in-procces{
-    font-size: 50px;
+@media only screen and (max-width: 400px){
+  .section{
+    padding: 0 10px 10px 10px;
   }
-}
-@media only screen and (max-width: 700px),
-only screen and (max-device-width: 700px){
-  .in-procces{
-    font-size: 30px;
-  }
-}
-@media only screen and (max-width: 400px),
-only screen and (max-device-width: 400px){
-  .in-procces{
-    font-size: 20px;
+  .aboutme{
+    font-size: 35px;
   }
 }

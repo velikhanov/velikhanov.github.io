@@ -18,6 +18,9 @@ body{
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%);
   padding: 90px 30px 30px 105px;
   z-index: 4;
@@ -139,6 +142,22 @@ body{
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none;
             cursor: text;
+}
+@media only screen and (min-width: 1700px){
+  .text-area{
+    padding-left: 200px;
+  }
+ .index-title-main{
+   font-size: 75px;
+   height: 380px;
+ }
+ .index-backdev{
+   font-size: 30px;
+ }
+ .index-form-link{
+   font-size: 30px;
+   width: 300px;
+ }
 }
 @media only screen and (min-width: 2500px){
   .index-img-content-link{
