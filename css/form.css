@@ -393,6 +393,9 @@ button[disabled].app-form-button {
     .container{
       width: 400px;
     }
+    .screen-body-item{
+      padding: 15px;
+    }
   }
   @media screen and (max-width: 420px) {
     .container{
@@ -412,6 +415,9 @@ button[disabled].app-form-button {
   @media screen and (max-height: 425px) {
     .screen-body-item{
       padding: 15px;
+    }
+    .app-form-button{
+      padding: 7.5px;
     }
   }
   @media screen and (max-height: 350px) {
@@ -451,7 +457,6 @@ button[disabled].app-form-button {
     }
     .app-form-button{
       font-size: 10px;
-      padding: 7.5px;
     }
   }
   @media screen and (max-height: 290px){
