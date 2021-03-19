@@ -1,3 +1,15 @@
+document.getElementById('contact_form').onsubmit = function() {
+  if(document.querySelector("input[name=email]").value.length < 1){
+    if(!document.querySelector("input[name=email]").classList.contains("error")){
+        document.querySelector("input[name=email]").classList.add("error");
+    };
+  };
+  if(document.querySelector("input[name=message]").value.length < 1){
+    if(!document.querySelector("input[name=message]").classList.contains("error")){
+        document.querySelector("input[name=message]").classList.add("error");
+    };
+  };
+};
 // Begin name validation
 document.querySelector("input[name=name]").onchange = function() {
   if((document.querySelector("input[name=name]").value.length > 50)){
