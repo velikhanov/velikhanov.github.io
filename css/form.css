@@ -1,5 +1,5 @@
 .section{
-  padding: 0 50px 50px 50px;
+  /* padding: 0 50px 50px 50px; */
 }
 body, button, input {
   font-family: 'Montserrat', sans-serif;
@@ -9,23 +9,26 @@ body, button, input {
 
 .background {
   display: flex;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
-
 .container {
-  flex: 0 1 700px;
-  margin: auto;
-  padding: 10px;
-}
+    flex: 0 1 auto;
+    position: fixed;
+    width: 700px;
+    top: 50%;
+    left: calc(50% + 72.5px);
+    transform: translate(-50%, -50%);
+  }
 /*Notifications*/
 .toast {
   position: fixed;
-  top: 0;
+  top: 50px;
   left: 145px;
   right: 0;
   margin: auto;
+  z-index: 1000;
 
-  max-width: 400px;
+  max-width: 700px;
   padding: 6px;
   background: #cccccc;
   color: #333333;
@@ -169,8 +172,17 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
- -webkit-box-shadow: 0 0 0 30px #3E3E3E inset !important;
+ /* -webkit-box-shadow: 0 0 0 30px #3E3E3E inset !important; */
+ -webkit-background-clip: text;
+ /* -webkit-box-shadow-border: none!important; */
 }
+input{
+  caret-color: #fff;
+}
+/* input:-internal-autofill-selected{
+ background-color: #3e3e3e!important;
+ color: #3e3e3e!important;
+} */
 
 /*Change text in autofill textbox*/
 input:-webkit-autofill{
@@ -216,6 +228,10 @@ button[disabled].app-form-button {
   border-bottom-color: #ddd;
 }
 
+.app-form-control.error{
+  border-bottom-color: red;
+}
+
 .app-form-button {
   background: none;
   border: 1px solid #35E6BA;
@@ -230,63 +246,244 @@ button[disabled].app-form-button {
   background-color: #35E6BA;
   color: #000;
 }
+    @media screen and (max-width: 1000px) {
+      .toast{
+        left: 0;
+      }
+      .container{
+        left: 50%;
+      }
+    }
+@media (orientation: portrait){
+    @media screen and (max-height: 550px) {
+      .screen{
+        height: 370px;
+      }
+      .app-form-control{
+        font-size: 10px;
+      }
+      .app-form-group.message{
+        margin-top: 20px;
+      }
+      .app-form-group{
+        margin-bottom: 0;
+      }
+      .app-form-group.buttons{
+        font-size: 10px;
+        margin-top: 15px;
+      }
+      .app-form-button{
+        padding: 7.5px;
+      }
+    }
+    @media screen and (max-height: 380px) {
+      .screen{
+        height: 300px;
+      }
+      .app-form-group.message{
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .app-form-control{
+        font-size: 7.5px;
+      }
+      .app-form-group.buttons{
+        margin-top: 5px  ;
+        font-size: 7.5px;
+      }
+      .app-form-button{
+        padding: 5px;
+      }
+    }
+    @media screen and (max-width: 750px) {
+      /* .section{
+        padding: 0 15px 15px 15px;
+      } */
+      .container{
+        width: 600px;
+      }
+      .screen-body {
+        padding: 15px 40px 15px 40px;
+      }
+      .screen-body-item {
+        padding: 0;
+      }
+      input.app-form-control{
+        padding-left: 5px;
+      }
+    }
 
-@media screen and (max-width: 600px) {
-  .section{
-    padding: 0 15px 15px 15px;
-  }
-  .screen-body {
-    padding: 40px;
-  }
+    @media screen and (max-width: 650px) {
+      .container{
+        width: 500px;
+      }
+    }
 
-  .screen-body-item {
+    @media screen and (max-width: 520px) {
+      /* .section{
+        padding: 15px 5px 15px 5px;
+      } */
+      .container{
+        width: 400px;
+      }
+      .screen-body {
+        flex-direction: column;
+      }
+
+      .screen-body-item.left {
+        margin-bottom: 10px;
+      }
+
+      .app-title {
+        flex-direction: row;
+        text-align: center;
+        padding-bottom: 10px;
+      }
+
+      .app-title span {
+        font-size: 20px;
+        width: 100%;
+      }
+
+      .app-title:after {
+        display: none;
+      }
+      .app-contact{
+        text-align: center;
+      }
+    }
+    @media screen and (max-width: 450px) {
+      .toast{
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+    }
+    @media screen and (max-width: 420px) {
+      .container{
+        width: 350px;
+      }
+    }
+    @media screen and (max-width: 375px) {
+      .container{
+        width: 300px;
+      }
+    }
+    @media screen and (max-width: 350px) {
+      /* .section{
+        padding-top: 20px;
+      } */
+      .container{
+        padding: 5px;
+        width: 250px;
+      }
+    }
+  }
+@media (orientation: landscape){
+  @media screen and (max-width: 750px) {
+    .container{
+      width: 600px;
+    }
+  }
+  @media screen and (max-width: 620px) {
+    .container{
+      width: 500px;
+    }
+  }
+  @media screen and (max-width: 520px) {
+    .container{
+      width: 400px;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    .container{
+      width: 350px;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .container{
+      width: 300px;
+    }
+  }
+  @media screen and (max-width: 310px) {
+    .container{
+      width: 275px;
+    }
+  }
+  @media screen and (max-height: 425px) {
+    .screen-body-item{
+      padding: 15px;
+    }
+  }
+  @media screen and (max-height: 350px) {
+    .screen{
+      height: 300px;
+    }
+    .screen-body{
+      height: 250px;
+    }
+    /* .app-form-group{
+      margin-bottom: 0;
+    } */
+    .app-form-group.message{
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .app-form-group.buttons{
+      /* margin-top: 10px; */
+    }
+    .app-form-control,.app-form-button{
+      font-size: 12.5px;
+    }
+  }
+  @media screen and (max-height: 310px) {
+    .screen{
+      height: 275px;
+    }
+    .screen-body{
+      height: 225px;
+    }
+    .app-form-control{
+      font-size: 10px;
+      padding: 7.5px 0;
+    }
+    .app-form-group.buttons{
+      margin-top: 17.5px;
+    }
+    .app-form-button{
+      font-size: 10px;
+      padding: 7.5px;
+    }
+  }
+  @media screen and (max-height: 290px){
+    .screen{
+      height: 270px;
+    }
+    .screen-body{
+      height: 220px;
+    }
+  }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* .section{
     padding: 0;
-  }
-  input.app-form-control{
-    padding-left: 5px;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  .section{
-    padding: 15px 5px 15px 5px;
-  }
-  .screen-body {
-    flex-direction: column;
-  }
-
-  .screen-body-item.left {
-    margin-bottom: 30px;
-  }
-
-  .app-title {
-    flex-direction: row;
-    text-align: center;
-    padding-bottom: 10px;
-  }
-
-  .app-title span {
-    font-size: 20px;
+  } */
+  .toast{
     width: 100%;
+    margin: 0;
+    left: calc(50% + 72.5px);
+    -ms-transform: translateX(-50%);
+  }
+  .app-form-control:-ms-input-placeholder{
+    opacity: .3;
   }
 
-  .app-title:after {
-    display: none;
-  }
-  .app-contact{
-    text-align: center;
-  }
 }
-@media screen and (max-width: 350px) {
-  .section{
-    padding-top: 20px;
+@media screen and (max-width: 1000px)
+and (-ms-high-contrast: none), (-ms-high-contrast: active){
+  .toast{
+    left: 50%;
   }
   .container{
-    padding: 5px;
+    left: 50%;
   }
 }
-/* @media screen and (max-width: 300px) {
-  .screen{
-    width: 260px;
-  }
-} */

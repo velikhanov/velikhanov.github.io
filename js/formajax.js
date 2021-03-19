@@ -1,6 +1,8 @@
 const form = document.getElementById('contact_form');
+var myTimer;
 form.addEventListener('submit', function(e) {
   e.preventDefault();
+  clearTimeout(myTimer);
   const send = {
     name: document.querySelector('input[name=name]').value,
     email: document.querySelector('input[name=email]').value,
@@ -16,7 +18,7 @@ form.addEventListener('submit', function(e) {
   xhr.setRequestHeader('Content-type', 'text/plain');
   xhr.onload = function() {
         if (this.readyState == 4 && this.status == 200) {
-          if((send['name'].length >= 2) && (send['name'].length <= 50) && (send['email'].length >= 5) && (send['email'].length <= 50) && (!send['subject'] || send['subject'].length >= 2) && (send['message'].length >= 5)){
+          if((send['name'].length <= 50) && (send['email'].length >= 5) && (send['email'].length <= 50) && (/\S+@\S+\.\S+/.test(send['email'])) && (send['subject'].length <= 50) && (send['message'].length >= 5)){
              if(document.querySelector(".toast").classList.contains('toast--error')){
                 document.querySelector(".toast").classList.remove('toast--error');
                 document.querySelector(".toast").classList.add('toast--success');
@@ -53,9 +55,22 @@ form.addEventListener('submit', function(e) {
              document.querySelector(".toast").innerHTML = this.responseText;
          };
          document.querySelector('.toast').classList.add('toast--visible');
-         setTimeout(function(){
+         myTimer = setTimeout(function(){
            document.querySelector('.toast').classList.remove('toast--visible');
-         }, 3000);
+         }, 7500);
+    };
+    xhr.onerror = function() {
+        if(document.querySelector(".toast").classList.contains('toast--success')){
+           document.querySelector(".toast").classList.remove('toast--success');
+           document.querySelector(".toast").classList.add('toast--error');
+        }else{
+          document.querySelector(".toast").classList.add('toast--error');
+        };
+        document.querySelector(".toast").innerHTML = "An error has occurred. The server is probably temporarily unavailable, please try again later!";
+        document.querySelector('.toast').classList.add('toast--visible');
+        myTimer = setTimeout(function(){
+          document.querySelector('.toast').classList.remove('toast--visible');
+        }, 7500);
     };
   xhr.send(jsonString);
 });

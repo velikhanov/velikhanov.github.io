@@ -125,11 +125,12 @@ outline: 0;
   padding-top: 20px;
 }
 .logo-name{
+  font-size: 18px;
   padding: 10px 0 10px 0;
 }
 .logo-desc{
   color: #bcbaba;
-  font-size: 15px;
+  font-size: 12.5px;
   padding-bottom: 10px;
   cursor: text;
 }
@@ -141,7 +142,7 @@ outline: 0;
   border-top: 1px solid #000;
   text-decoration: none;
   justify-content: center;
-  height: 90px;
+  height: 75px;
   color: #fff
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -166,7 +167,7 @@ outline: 0;
 .sidebar a:first-child{
   border-top: 1px solid #000;
 }
-.sidebar a:nth-child(3){
+.sidebar a:nth-child(5){
   border-bottom: 1px solid #000;
 }
 .sidebar a.active i{
@@ -178,7 +179,7 @@ outline: 0;
 }
 .sidebar a b{
   color: #35E6BA;
-  font-size: 18px;
+  font-size: 15px;
   display: none;
 }
 .sidebar a:hover b{
@@ -227,6 +228,9 @@ only screen and (max-device-width: 1000px){
   body{
     margin-left: 0;
   }
+  .lock-scroll{
+    overflow-y: hidden;
+  }
   .mobile-menu{
     display: block;
   }
@@ -249,6 +253,7 @@ only screen and (max-device-width: 1000px){
     width: 100%;
     z-index: 5;
     animation: fade-in .5s;
+    overflow: scroll;
   }
   .sidebar-main{
     display: none;
@@ -261,8 +266,11 @@ only screen and (max-device-width: 1000px){
   }
 }
 @media (orientation: landscape){
-  @media only screen and (max-height: 550px),
-  only screen and (max-device-height: 550px){
+  @media only screen and (max-height: 585px),
+  only screen and (max-device-height: 585px){
+    .sidebar-main{
+      overflow: scroll;
+    }
     .sidebar a{
       height: 60px;
     }
@@ -270,7 +278,7 @@ only screen and (max-device-width: 1000px){
       font-size: 18px;
     }
     .sidebar a b{
-      font-size: 15px;
+      font-size: 12.5px;
     }
     .logo-img{
       padding-top: 10px;
@@ -281,18 +289,20 @@ only screen and (max-device-width: 1000px){
     .logo-desc{
       padding-bottom: 5px;
     }
-    .social{
+    /* .social{
       padding-bottom: 15px;
-    }
+    } */
     .social li{
       height: auto;
     }
   }
-  @media only screen and (max-height: 370px),
-  only screen and (max-device-height: 370px){
-    .sidebar-main{
-      overflow: scroll;
-    }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) only screen and (max-height: 1000px){
+  .animated-icon2{
+    height: 25px;
+  }
+  .mobile-menu{
+    right: 25px;
   }
 }
 @keyframes fade-in {
