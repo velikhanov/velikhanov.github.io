@@ -268,9 +268,6 @@ only screen and (max-device-width: 1000px){
 @media (orientation: landscape){
   @media only screen and (max-height: 585px),
   only screen and (max-device-height: 585px){
-    .sidebar-main{
-      overflow: scroll;
-    }
     .sidebar a{
       height: 60px;
     }
@@ -294,6 +291,12 @@ only screen and (max-device-width: 1000px){
     } */
     .social li{
       height: auto;
+    }
+  }
+  @media only screen and (max-height: 515px),
+  only screen and (max-device-height: 515px){
+    .sidebar-main{
+      overflow: scroll;
     }
   }
 }
