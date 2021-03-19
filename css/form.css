@@ -419,6 +419,10 @@ button[disabled].app-form-button {
     .app-form-button{
       padding: 7.5px;
     }
+    .app-form-group.message{
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
   }
   @media screen and (max-height: 350px) {
     .screen{
@@ -430,10 +434,6 @@ button[disabled].app-form-button {
     /* .app-form-group{
       margin-bottom: 0;
     } */
-    .app-form-group.message{
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
     .app-form-group.buttons{
       /* margin-top: 10px; */
     }
