@@ -253,7 +253,7 @@ only screen and (max-device-width: 1000px){
     width: 100%;
     z-index: 5;
     animation: fade-in .5s;
-    overflow: scroll;
+    /* overflow: scroll; */
   }
   .sidebar-main{
     display: none;
@@ -263,6 +263,18 @@ only screen and (max-device-width: 1000px){
   }
   .fab.fa-github,.fab.fa-instagram,.fab.fa-vk{
     margin-right: 20px;
+  }
+}
+@media only screen and (max-height: 515px),
+only screen and (max-device-height: 515px){
+  .sidebar-main.show{
+    overflow-y: scroll;
+  }
+  .social{
+    margin-bottom: 20px;
+  }
+  .social li{
+    height: auto;
   }
 }
 @media (orientation: landscape){
@@ -291,12 +303,6 @@ only screen and (max-device-width: 1000px){
     } */
     .social li{
       height: auto;
-    }
-  }
-  @media only screen and (max-height: 515px),
-  only screen and (max-device-height: 515px){
-    .sidebar-main{
-      overflow: scroll;
     }
   }
 }
