@@ -188,3 +188,8 @@ li{
     font-size: 20px;
   }
 }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+  .gallery a{
+    overflow: hidden;
+  }
+}

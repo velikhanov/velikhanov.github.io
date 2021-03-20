@@ -12,23 +12,9 @@
   color: #fff;
   text-decoration: underline;
   text-decoration-color: #35E6BA;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-            cursor: text;
 }
 .about-p{
   width: 100%;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-            cursor: text;
 }
 .about-p h3{
   font-size: 25px;

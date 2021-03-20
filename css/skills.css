@@ -5,13 +5,6 @@
   padding: 20px;
   text-decoration: underline;
   text-decoration-color: #35E6BA;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-            cursor: text;
 }
 .skills{
    display: flex;
@@ -66,13 +59,6 @@
   font-size: 24px;
   font-weight: 500;
   line-height: 48px;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-            cursor: text;
 }
 .card-title a{
   text-decoration: none;

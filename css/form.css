@@ -89,6 +89,13 @@ body, button, input {
 
 .screen-header-left {
   margin-right: auto;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            cursor: default;
 }
 
 .screen-header-button {
@@ -144,23 +151,28 @@ body, button, input {
   position: relative;
   color: #35E6BA;
   font-size: 24px;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            cursor: text;
 }
-
-/* .app-title:after {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 25px;
-  height: 4px;
-  background: #ea1d6f;
-} */
 
 .app-contact {
   margin-top: auto;
   font-size: 10px;
   color: #888;
+}
+.app-contact span, .app-contact br{
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            cursor: text;
 }
 
 .app-form-group {
@@ -196,6 +208,13 @@ input:-webkit-autofill{
 .app-form-group.buttons {
   margin-bottom: 0;
   text-align: right;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            cursor: pointer;
 }
 
 .app-form-control {
@@ -222,6 +241,13 @@ button[disabled].app-form-button {
 
 .app-form-control::placeholder {
   color: #666;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            /* cursor: text; */
 }
 
 .app-form-control:focus {
