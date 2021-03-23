@@ -1,0 +1,1 @@
+languative.modifyDictionary("az",{aboutme:"Haqqımda",myskills:"Bacarıqlarım",myworks:"Işlərim",contactme:"Mənimlə əlaqə"}),languative.modifyDictionary("ru",{aboutme:"Обо мне",myskills:"Мои навыки",myworks:"Мои работы",contactme:"Свяжитесь со мной"});

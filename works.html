@@ -24,10 +24,15 @@
 				<span class="logo-desc">Web developer</span>
 		</div>
 		<div class="sidebar">
-			<a href="/about.html"><i class="fas fa-address-card"></i><b>About me</b></a>
-			<a href="/skills.html"><i class="fas fa-code"></i><b>My skills</b></a>
-			<a href="/works.html"><i class="fas fa-briefcase"></i><b>My works</b></a>
-			<a href="/form.html"><i class="fas fa-envelope"></i><b>Contact me</b></a>
+			<a href="/about.html"><i class="fas fa-address-card"></i><b data-phrase-id="aboutme">About me</b></a>
+			<a href="/skills.html"><i class="fas fa-code"></i><b data-phrase-id="myskills">My skills</b></a>
+			<a href="/works.html"><i class="fas fa-briefcase"></i><b data-phrase-id="myworks">My works</b></a>
+			<a href="/form.html"><i class="fas fa-envelope"></i><b data-phrase-id="contactme">Contact me</b></a>
+		</div>
+		<div class="lang">
+			<a onclick="languative.changeLanguage('en');"><img src="img/lang/en.png" alt="English flag"></a>
+			<a onclick="languative.changeLanguage('az');"><img src="img/lang/az.png" alt="Azerbaijani flag"></a>
+			<a onclick="languative.changeLanguage('ru');"><img src="img/lang/ru.png" alt="Russian flag"></a>
 		</div>
 		<div class="social-main">
 				<ul class="social">
@@ -40,13 +45,13 @@
 	</div>
 </header>
 <section>
-  <h1 class="myWorks">My Works</h1>
+  <h1 class="myWorks" data-phrase-id="Title">My Works</h1>
   <ul class="row gallery">
     <!-- Begining -->
       <li class="atyrauG">
         <a href="img/works/full/atyrau_1.jpg" data-caption="<a class='galleryLink' href='https://velikhanovportfolio.000webhostapp.com/atyraustartstroy/' target='_blank'>https://atyraustartstroy.kz</a>">
             <img src="img/works/thmb/atyrau_1.jpg" alt="First image">
-            <span>Repair company website<br>Written in:<br><i class="fab fa-php"></i><i class="fab fa-js-square"></i><i class="fab fa-bootstrap atyrau"></i></span>
+            <span><div data-phrase-id="w1text">Repair company website</div><div data-phrase-id="writtenin">Written in:</div><i class="fab fa-php"></i><i class="fab fa-js-square"></i><i class="fab fa-bootstrap atyrau"></i></span>
         </a>
       </li>
     <!-- End -->
@@ -54,7 +59,7 @@
       <li class="nurayG">
         <a href="img/works/full/nuray_1.jpg" data-caption="<a class='galleryLink' href='https://velikhanovportfolio.000webhostapp.com/nurayhouse/' target='_blank'>https://nurayhouse.az</a>">
             <img src="img/works/thmb/nuray_1.jpg" alt="Second image">
-            <span>Construction company website<br>Written in:<br><i class="fab fa-php"></i><i class="fab fa-js-square"></i><i class="fab fa-bootstrap nuray"></i></span>
+            <span><div data-phrase-id="w2text">Construction company website</div><div data-phrase-id="writtenin">Written in:</div><i class="fab fa-php"></i><i class="fab fa-js-square"></i><i class="fab fa-bootstrap nuray"></i></span>
         </a>
       </li>
     <!-- End -->
@@ -62,28 +67,32 @@
       <li class="taskG">
         <a href="" data-caption="<a class='galleryLink disabled' href='#' target='_blank'>Пока пусто</a>">
             <img class="example" src="img/works/example.gif" alt="Second image">
-            <!-- <span>Задачник<br>Написан на:<br><i class="fab fa-php"></i><i class="fab fa-js-square"></i><i class="fab fa-bootstrap nuray"></i></span> -->
-            <span>The project will be added later</span>
+            <!-- <span>ЗадачникНаписан на:<i class="fab fa-php"></i><i class="fab fa-js-square"></i><i class="fab fa-bootstrap nuray"></i></span> -->
+            <span data-phrase-id="w3text">The project will be added later</span>
         </a>
       </li>
     <!-- End -->
     <!-- Begining -->
       <li class="comfortG">
-        <a href="img/works/full/comfort_1.jpg" data-caption="<a class='galleryLink' href='https://github.com/velikhanov/Laravel_store' target='_blank'>https://comfort.com (Link to GitHub)</a>">
+        <a href="img/works/full/comfort_1.jpg" data-caption="<a class='galleryLink' href='https://github.com/velikhanov/Laravel_store' target='_blank' data-phrase-id='githublinkComfort'>https://comfort.com (Link to GitHub)</a>">
             <img src="img/works/thmb/comfort_1.jpg" alt="Third image">
-            <span>Internet shop<br>Written in:<br><i class="fab fa-laravel"></i><i class="fab fa-php comfort"></i><i class="fab fa-js-square nuray"></i><i class="fab fa-bootstrap nuray"></i></span>
+            <span><div data-phrase-id="w4text">Internet shop</div><div data-phrase-id="writtenin">Written in:</div><i class="fab fa-laravel"></i><i class="fab fa-php comfort"></i><i class="fab fa-js-square nuray"></i><i class="fab fa-bootstrap nuray"></i></span>
         </a>
       </li>
     <!-- End -->
       <li class="blogG">
-        <a href="img/works/full/blog_1.jpg" data-caption="<a class='galleryLink' href='https://github.com/velikhanov/TestWorkUnitedSkills' target='_blank'>https://blog.com (Link to GitHub)</a>">
+        <a href="img/works/full/blog_1.jpg" data-caption="<a class='galleryLink' href='https://github.com/velikhanov/TestWorkUnitedSkills' target='_blank' data-phrase-id='githublinkBlog'>https://blog.com (Link to GitHub)</a>">
             <img src="img/works/thmb/blog_1.jpg" alt="Fourth image">
-            <span>Blog<br>Written in:<br><i class="fab fa-laravel"></i><i class="fab fa-php comfort"></i><i class="fab fa-js-square nuray"></i><i class="fab fa-bootstrap nuray"></i></span>
+            <span><div data-phrase-id="w5text">Blog</div><div data-phrase-id="writtenin">Written in:</div><i class="fab fa-laravel"></i><i class="fab fa-php comfort"></i><i class="fab fa-js-square nuray"></i><i class="fab fa-bootstrap nuray"></i></span>
         </a>
       </li>
     <!-- End -->
   </ul>
 </section>
+
+<script src="js/languative.js" defer></script>
+<script src="lang/main.js" defer></script>
+<script src="lang/works.js" defer></script>
 <script src="js/baguetteBox.min.js" async></script>
 <script src="js/scripts.js" async></script>
 </body>

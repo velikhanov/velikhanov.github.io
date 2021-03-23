@@ -23,10 +23,15 @@
 				<span class="logo-desc">Web developer</span>
 		</div>
 		<div class="sidebar">
-			<a href="/about.html"><i class="fas fa-address-card"></i><b>About me</b></a>
-			<a href="/skills.html"><i class="fas fa-code"></i><b>My skills</b></a>
-			<a href="/works.html"><i class="fas fa-briefcase"></i><b>My works</b></a>
-			<a href="/form.html"><i class="fas fa-envelope"></i><b>Contact me</b></a>
+			<a href="/about.html"><i class="fas fa-address-card"></i><b data-phrase-id="aboutme">About me</b></a>
+			<a href="/skills.html"><i class="fas fa-code"></i><b data-phrase-id="myskills">My skills</b></a>
+			<a href="/works.html"><i class="fas fa-briefcase"></i><b data-phrase-id="myworks">My works</b></a>
+			<a href="/form.html"><i class="fas fa-envelope"></i><b data-phrase-id="contactme">Contact me</b></a>
+		</div>
+		<div class="lang">
+			<a onclick="languative.changeLanguage('en');"><img src="img/lang/en.png" alt="English flag"></a>
+			<a onclick="languative.changeLanguage('az');"><img src="img/lang/az.png" alt="Azerbaijani flag"></a>
+			<a onclick="languative.changeLanguage('ru');"><img src="img/lang/ru.png" alt="Russian flag"></a>
 		</div>
 		<div class="social-main">
 				<ul class="social">
@@ -40,8 +45,7 @@
 </header>
 
 <section>
-
-  <h1 class="maintech">Technologies</h1>
+  <h1 class="maintech" data-phrase-id="tech">Technologies</h1>
   <div class="skills">
     <!-- Card start -->
       <div class="card">
@@ -108,7 +112,7 @@
     </div>
     <!-- Card End -->
   </div>
-  <h1 class="maintech">Frameworks and libraries</h1>
+  <h1 class="maintech" data-phrase-id="fal">Frameworks and libraries</h1>
   <div class="skills">
     <!-- Card start -->
     <div class="card">
@@ -159,7 +163,7 @@
     </div>
     <!-- Card End -->
   </div>
-  <h1 class="maintech">Version control systems</h1>
+  <h1 class="maintech" data-phrase-id="vcs">Version control systems</h1>
   <div class="skills">
     <!-- Card start -->
     <div class="card">
@@ -178,7 +182,7 @@
     </div>
     <!-- Card End -->
   </div>
-  <h1 class="maintech">Database</h1>
+  <h1 class="maintech" data-phrase-id="db">Database</h1>
   <div class="skills">
     <!-- Card start -->
     <div class="card">
@@ -197,7 +201,7 @@
     </div>
     <!-- Card End -->
   </div>
-  <h1 class="maintech">Graphic editors</h1>
+  <h1 class="maintech" data-phrase-id="ge">Graphic editors</h1>
   <div class="skills">
     <!-- Card start -->
     <div class="card">
@@ -266,6 +270,9 @@
   </div>
 </section>
 
+<script src="js/languative.js" defer></script>
+<script src="lang/main.js" defer></script>
+<script src="lang/skills.js" defer></script>
 <script src="js/scripts.js" async></script>
 </body>
 </html>

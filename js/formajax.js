@@ -7,7 +7,8 @@ form.addEventListener('submit', function(e) {
     name: document.querySelector('input[name=name]').value,
     email: document.querySelector('input[name=email]').value,
     subject: document.querySelector('input[name=subject]').value,
-    message: document.querySelector('input[name=message]').value
+    message: document.querySelector('input[name=message]').value,
+    lang: (localStorage.getItem("lang")) || (window.navigator.userLanguage) || (window.navigator.language)
     // token: document.querySelector('input[name=token]').value
   };
   const jsonString = JSON.stringify(send);
@@ -66,7 +67,13 @@ form.addEventListener('submit', function(e) {
         }else{
           document.querySelector(".toast").classList.add('toast--error');
         };
-        document.querySelector(".toast").innerHTML = "An error has occurred. The server is probably temporarily unavailable, please try again later!";
+        if((localStorage.getItem("lang") == "az") || (window.navigator.userLanguage == "az") || (window.navigator.language) == "az"){
+            document.querySelector(".toast").innerHTML = "Bir səhv baş verdi. Server, yəqin ki, müvəqqəti olaraq əlçatan deyil, xahiş edirəm daha sonra yenidən cəhd edin!";
+        }else if((localStorage.getItem("lang") == "ru") || (window.navigator.userLanguage == "ru") || (window.navigator.language) == "ru"){
+            document.querySelector(".toast").innerHTML = "Произошла ошибка. Вероятно, сервер временно недоступен, повторите попытку позже!";
+        }else{
+            document.querySelector(".toast").innerHTML = "An error has occurred. The server is probably temporarily unavailable, please try again later!";
+        };
         document.querySelector('.toast').classList.add('toast--visible');
         myTimer = setTimeout(function(){
           document.querySelector('.toast').classList.remove('toast--visible');

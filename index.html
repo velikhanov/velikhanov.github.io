@@ -23,10 +23,15 @@
 				<span class="logo-desc">Web developer</span>
 		</div>
 		<div class="sidebar">
-			<a href="/about.html"><i class="fas fa-address-card"></i><b>About me</b></a>
-			<a href="/skills.html"><i class="fas fa-code"></i><b>My skills</b></a>
-			<a href="/works.html"><i class="fas fa-briefcase"></i><b>My works</b></a>
-			<a href="/form.html"><i class="fas fa-envelope"></i><b>Contact me</b></a>
+			<a href="/about.html"><i class="fas fa-address-card"></i><b data-phrase-id="aboutme">About me</b></a>
+			<a href="/skills.html"><i class="fas fa-code"></i><b data-phrase-id="myskills">My skills</b></a>
+			<a href="/works.html"><i class="fas fa-briefcase"></i><b data-phrase-id="myworks">My works</b></a>
+			<a href="/form.html"><i class="fas fa-envelope"></i><b data-phrase-id="contactme">Contact me</b></a>
+		</div>
+		<div class="lang">
+			<a onclick="languative.changeLanguage('en');"><img src="img/lang/en.png" alt="English flag"></a>
+			<a onclick="languative.changeLanguage('az');"><img src="img/lang/az.png" alt="Azerbaijani flag"></a>
+			<a onclick="languative.changeLanguage('ru');"><img src="img/lang/ru.png" alt="Russian flag"></a>
 		</div>
 		<div class="social-main">
 				<ul class="social">
@@ -41,15 +46,19 @@
 <section>
   <canvas id="canvas"></canvas>
   <div class="text-area">
-    <div class="index-title-main"><h1>Hi!<br>I'm Teymur,<br>web developer </h1></div>
-    <h5 class="index-backdev">Back End Developer</h5>
-    <a class="index-form-link" href="/form.html">Contact me</a>
+    <div class="index-title-main">
+      <h1>Hi!<br>I'm Teymur,<br>web developer </h1>
+    </div>
+    <h5 class="index-backdev">Back End <span data-phrase-id="dev">Developer</span></h5>
+    <a class="index-form-link" href="/form.html" data-phrase-id="contactme">Contact me</a>
   </div>
   <a class="index-img-content-link" href="/works.html"><img class="index-img-content" src="img/t-index.png" alt="Rotating logo"></a>
 </section>
 
-
-<script src="js/text.js" async></script>
+<script src="js/languative.js" defer></script>
+<script src="lang/index.js" defer></script>
+<script src="lang/main.js" defer></script>
+<script src="js/text.js" defer></script>
 <script src="js/lightning.js" async></script>
 <script src="js/scripts.js" async></script>
 </body>

@@ -23,10 +23,15 @@
 				<span class="logo-desc">Web developer</span>
 		</div>
 		<div class="sidebar">
-			<a href="/about.html"><i class="fas fa-address-card"></i><b>About me</b></a>
-			<a href="/skills.html"><i class="fas fa-code"></i><b>My skills</b></a>
-			<a href="/works.html"><i class="fas fa-briefcase"></i><b>My works</b></a>
-			<a href="/form.html"><i class="fas fa-envelope"></i><b>Contact me</b></a>
+			<a href="/about.html"><i class="fas fa-address-card"></i><b data-phrase-id="aboutme">About me</b></a>
+			<a href="/skills.html"><i class="fas fa-code"></i><b data-phrase-id="myskills">My skills</b></a>
+			<a href="/works.html"><i class="fas fa-briefcase"></i><b data-phrase-id="myworks">My works</b></a>
+			<a href="/form.html"><i class="fas fa-envelope"></i><b data-phrase-id="contactme">Contact me</b></a>
+		</div>
+		<div class="lang">
+			<a onclick="languative.changeLanguage('en');"><img src="img/lang/en.png" alt="English flag"></a>
+			<a onclick="languative.changeLanguage('az');"><img src="img/lang/az.png" alt="Azerbaijani flag"></a>
+			<a onclick="languative.changeLanguage('ru');"><img src="img/lang/ru.png" alt="Russian flag"></a>
 		</div>
 		<div class="social-main">
 				<ul class="social">
@@ -59,11 +64,11 @@
       <div class="screen-body">
         <div class="screen-body-item left">
           <div class="app-title">
-            <span>CONTACT ME</span>
+            <span data-phrase-id="Title">CONTACT ME</span>
             <!-- <span></span> -->
           </div>
           <div class="app-contact">
-            <span>Contact details:</span><br><br>
+            <span data-phrase-id="details">Contact details:</span><br><br>
             +(994)51 433-98-47<br>
             teymur99@gmail.com<br>
           </div>
@@ -71,19 +76,19 @@
         <div class="screen-body-item">
           <form class="wrapper" id="contact_form" action="https://velikhanovportfolio.000webhostapp.com/form/configs/form.php" method="POST">
             <div class="app-form-group">
-              <input class="app-form-control" type="text" name="name" placeholder="Name"  maxlength="50" autocomplete="off">
+              <input class="app-form-control" type="text" name="name" data-phrase-id="name" placeholder="Name"  maxlength="50" autocomplete="off">
             </div>
             <div class="app-form-group">
               <input class="app-form-control" type="email" name="email" placeholder="test@gmail.com"  maxlength="50">
             </div>
             <div class="app-form-group">
-              <input class="app-form-control" type="text" name="subject" placeholder="Subject" maxlength="50" autocomplete="off">
+              <input class="app-form-control" type="text" name="subject" data-phrase-id="subject" placeholder="Subject" maxlength="50" autocomplete="off">
             </div>
             <div class="app-form-group message">
-              <input class="app-form-control" type="text" name="message" placeholder="Message" autocomplete="off">
+              <input class="app-form-control" type="text" name="message" data-phrase-id="message" placeholder="Message" autocomplete="off">
             </div>
             <div class="app-form-group buttons">
-              <button type="submit" class="app-form-button">Send</button>
+              <button type="submit" class="app-form-button" data-phrase-id="send">Send</button>
             </div>
           </form>
         </div>
@@ -93,6 +98,9 @@
 </div>
 
 </section>
+<script src="js/languative.js" defer></script>
+<script src="lang/main.js" defer></script>
+<script src="lang/form.js" defer></script>
 <script src="js/scripts.js" async></script>
 <script src="js/formvalidation.js" async></script>
 <script src="js/formajax.js" async></script>
