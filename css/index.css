@@ -39,8 +39,8 @@ body{
 }
 /* Animation */
 .index-title-main h1{
-    display: none;
-    border-right: 5px solid red;
+    display: inline;
+    /* border-right: 5px solid red; */
     animation: blink 1s infinite;
     -moz-animation: blink 1s infinite;
     -o-animation: blink 1s infinite;

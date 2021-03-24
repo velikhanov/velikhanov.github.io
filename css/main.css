@@ -193,12 +193,13 @@ outline: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 17px;
+  margin: 20px 0;
 }
 .lang img{
-
-  margin: 20px 0;
-  width: 30px;
-  height: 20px;
+  width: 25px;
+  height: 17px;
+  transition: .5s;
   -webkit-touch-callout: none;
     -webkit-user-select: none;
      -khtml-user-select: none;
@@ -206,6 +207,10 @@ outline: 0;
         -ms-user-select: none;
             user-select: none;
             cursor: pointer;
+}
+.lang img:hover{
+  transform: scale(1.1);
+  transition: .5s;
 }
 /*Social*/
 .social{
