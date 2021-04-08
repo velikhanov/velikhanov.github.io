@@ -1,12 +1,8 @@
-.section{
-  /* padding: 0 50px 50px 50px; */
-}
-body, button, input {
+section{
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   letter-spacing: 1.4px;
 }
-
 .background {
   display: flex;
   /* min-height: 100vh; */
@@ -151,6 +147,7 @@ body, button, input {
   position: relative;
   color: #35E6BA;
   font-size: 24px;
+  text-transform: uppercase;
   -webkit-touch-callout: none;
     -webkit-user-select: none;
      -khtml-user-select: none;
