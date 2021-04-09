@@ -227,23 +227,11 @@ outline: 0;
   padding-top: 10px;
   text-align: center;
 } */
-.fab.fa-facebook-f{
+.fab.fa-facebook-f,.fab.fa-linkedin-in,.fab.fa-instagram,.fab.fa-github,.fab.fa-vk{
  color: #bcbaba;
  font-size: 20px;
 }
-.fab.fa-instagram{
-  font-size: 20px;
-  color: #bcbaba;
-}
-.fab.fa-github{
-  font-size: 20px;
-  color: #bcbaba;
-}
-.fab.fa-vk{
-  font-size: 20px;
-  color: #bcbaba;
-}
-.fab.fa-facebook-f:hover,.fab.fa-instagram:hover,.fab.fa-vk:hover,.fab.fa-github:hover{
+.fab.fa-facebook-f:hover,.fab.fa-instagram:hover,.fab.fa-vk:hover,.fab.fa-linkedin-in:hover,.fab.fa-github:hover{
   transform: scale(1.1);
   color: #35E6BA;
 }
