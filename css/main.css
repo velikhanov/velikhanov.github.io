@@ -276,7 +276,7 @@ only screen and (max-device-width: 1000px){
   .lang a:not(:last-child){
     margin-right: 20px;
   }
-  .fab.fa-github,.fab.fa-instagram,.fab.fa-vk{
+  .fab.fa-github,.fab.fa-instagram,.fab.fa-vk,.fab.fa-linkedin-in{
     margin-right: 20px;
   }
 }

@@ -222,9 +222,21 @@ input:-webkit-autofill{
   border-bottom: 1px solid #666;
   color: #ddd;
   font-size: 14px;
-  text-transform: uppercase;
   outline: none;
   transition: border-color .2s;
+}
+
+.app-form-control::-webkit-input-placeholder {
+  text-transform: uppercase;
+}
+.app-form-control::-moz-placeholder {
+  text-transform: uppercase;
+}
+.app-form-control:-ms-input-placeholder {
+  text-transform: uppercase;
+}
+.app-form-control:-moz-placeholder {
+  text-transform: uppercase;
 }
 
 button:disabled.app-form-button,
