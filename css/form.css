@@ -281,6 +281,12 @@ button[disabled].app-form-button {
   background-color: #35E6BA;
   color: #000;
 }
+/*Loading btn*/
+.btn-loading-gif{
+  display: none;
+  vertical-align: middle;
+}
+/*End loading btn*/
     @media screen and (max-width: 1000px) {
       .toast{
         left: 0;
