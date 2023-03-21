@@ -84,9 +84,9 @@
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a></strong></span>
         <div class='bg'>
-           <div class='html-70'>
+           <div class='html-80'>
              <span class='left'></span>
-             <span class='right'>70%</span>
+             <span class='right'>80%</span>
            </div>
          </div>
       </div>
@@ -182,9 +182,9 @@
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Django_(web_framework)" target="_blank">Django</a></strong></span>
         <div class='bg'>
-           <div class='html-50'>
+           <div class='html-70'>
              <span class='left'></span>
-             <span class='right'>50%</span>
+             <span class='right'>70%</span>
            </div>
          </div>
       </div>
@@ -198,9 +198,9 @@
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Flask_(web_framework)" target="_blank">Flask</a></strong></span>
         <div class='bg'>
-           <div class='html-50'>
+           <div class='html-70'>
              <span class='left'></span>
-             <span class='right'>50%</span>
+             <span class='right'>70%</span>
            </div>
          </div>
       </div>
@@ -217,9 +217,9 @@
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Git" target="_blank">Git</a></strong></span>
         <div class='bg'>
-           <div class='html-70'>
+           <div class='html-80'>
              <span class='left'></span>
-             <span class='right'>70%</span>
+             <span class='right'>80%</span>
            </div>
          </div>
       </div>
@@ -236,9 +236,9 @@
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank">Docker</a></strong></span>
         <div class='bg'>
-           <div class='html-50'>
+           <div class='html-70'>
              <span class='left'></span>
-             <span class='right'>50%</span>
+             <span class='right'>70%</span>
            </div>
          </div>
       </div>
