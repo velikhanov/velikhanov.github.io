@@ -1,0 +1,294 @@
+.maintech{
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+  padding: 20px;
+  text-decoration: underline;
+  text-decoration-color: #35E6BA;
+}
+.skills{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+}
+.skills:not(:last-child){
+  border-bottom: 2px solid #35E6BA;
+}
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: auto;
+  position: relative;
+  border-radius: 2px;
+  background-color:#fff;
+  box-shadow: 0 2px 2px 0 rgba(255, 255, 255, 0.14), 0 1px 5px 0 rgba(255, 255, 255, 0.12), 0 3px 1px -2px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.card-circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+.card-circle img{
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            cursor: pointer;
+}
+
+.text-content{
+  font-family: 'Roboto', sans-serif;
+}
+.card-title{
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 48px;
+}
+.card-title a{
+  text-decoration: none;
+  color: #000;
+}
+i{
+  color: #2196F3;
+}
+.card:hover{
+  transform: scale(1.1);
+    box-shadow: 0 7px 14px rgba(255,255,255,0.25), 0 5px 5px rgba(255,255,255,0.22);
+}
+.bg {
+  background-color: #183153;
+  width: 250px;
+  height: 30px;
+  margin: 0 auto;
+}
+.right {
+  float: right;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            cursor: text;
+}
+/*50%*/
+.html-50 {
+  background: linear-gradient(
+    135deg,
+    #b3c400 25%, #8c9900 25%,
+		#8c9900 50%, #b3c400 50%,
+		#b3c400 75%, #8c9900 75%
+  );
+  background: -webkit-linear-gradient(
+    135deg,
+    #b3c400 25%, #8c9900 25%,
+		#8c9900 50%, #b3c400 50%,
+		#b3c400 75%, #8c9900 75%
+  );
+
+  background: -moz-linear-gradient(
+    135deg,
+    #b3c400 25%, #8c9900 25%,
+		#8c9900 50%, #b3c400 50%,
+		#b3c400 75%, #8c9900 75%
+  );
+
+  background: -o-linear-gradient(
+    135deg,
+    #b3c400 25%, #8c9900 25%,
+		#8c9900 50%, #b3c400 50%,
+		#b3c400 75%, #8c9900 75%
+  );
+
+  background: -ms-linear-gradient(
+    135deg,
+    #b3c400 25%, #8c9900 25%,
+		#8c9900 50%, #b3c400 50%,
+		#b3c400 75%, #8c9900 75%
+  );
+  width: 50%;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #fff;
+  background-size: 50px 50px;
+  animation: bar-animation 3s linear infinite;
+  -webkit-animation: bar-animation 3s linear infinite;
+  -moz-animation: bar-animation 3s linear infinite;
+  -o-animation: bar-animation 3s linear infinite;
+  -ms-animation: bar-animation 3s linear infinite;
+}
+.html-70 {
+  background: linear-gradient(
+    135deg,
+    #009634 25%, #02772b 25%,
+		#02772b 50%, #009634 50%,
+		#009634 75%, #02772b 75%
+  );
+  background: -webkit-linear-gradient(
+    135deg,
+    #009634 25%, #02772b 25%,
+		#02772b 50%, #009634 50%,
+		#009634 75%, #02772b 75%
+  );
+
+  background: -moz-linear-gradient(
+    135deg,
+    #009634 25%, #02772b 25%,
+		#02772b 50%, #009634 50%,
+		#009634 75%, #02772b 75%
+  );
+
+  background: -o-linear-gradient(
+    135deg,
+    #009634 25%, #02772b 25%,
+		#02772b 50%, #009634 50%,
+		#009634 75%, #02772b 75%
+  );
+
+  background: -ms-linear-gradient(
+    135deg,
+    #009634 25%, #02772b 25%,
+		#02772b 50%, #009634 50%,
+		#009634 75%, #02772b 75%
+  );
+  width: 70%;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #fff;
+  background-size: 50px 50px;
+  animation: bar-animation 3s linear infinite;
+  -webkit-animation: bar-animation 3s linear infinite;
+  -moz-animation: bar-animation 3s linear infinite;
+  -o-animation: bar-animation 3s linear infinite;
+  -ms-animation: bar-animation 3s linear infinite;
+}
+/*80%*/
+.html-80 {
+  background: linear-gradient(
+    135deg,
+    #009999 25%, #008283 25%,
+		#008283 50%, #009999 50%,
+		#009999 75%, #008283 75%
+  );
+  background: -webkit-linear-gradient(
+    135deg,
+    #009999 25%, #008283 25%,
+		#008283 50%, #009999 50%,
+		#009999 75%, #008283 75%
+  );
+
+  background: -moz-linear-gradient(
+    135deg,
+    #009999 25%, #008283 25%,
+		#008283 50%, #009999 50%,
+		#009999 75%, #008283 75%
+  );
+
+  background: -o-linear-gradient(
+    135deg,
+    #009999 25%, #008283 25%,
+		#008283 50%, #009999 50%,
+		#009999 75%, #008283 75%
+  );
+
+  background: -ms-linear-gradient(
+    135deg,
+    #009999 25%, #008283 25%,
+		#008283 50%, #009999 50%,
+		#009999 75%, #008283 75%
+  );
+/**/
+  width: 80%;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #fff;
+  background-size: 50px 50px;
+  animation: bar-animation 3s linear infinite;
+  -webkit-animation: bar-animation 3s linear infinite;
+  -moz-animation: bar-animation 3s linear infinite;
+  -o-animation: bar-animation 3s linear infinite;
+  -ms-animation: bar-animation 3s linear infinite;
+}
+@keyframes bar-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bar-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bar-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bar-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-ms-keyframes bar-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@media only screen and (max-width: 650px){
+  .maintech{
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: 450px){
+  .maintech{
+    font-size: 30px;
+  }
+  .card{
+    width: 250px;
+  }
+  .bg{
+    width: 175px;
+  }
+  .card-title{
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 400px){
+  .maintech{
+    font-size: 25px;
+  }
+}

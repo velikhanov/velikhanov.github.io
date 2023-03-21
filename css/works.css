@@ -1,0 +1,224 @@
+body{
+  min-height: 100vh;
+}
+.section{
+  padding: 25px;
+  position: relative;
+}
+button:focus{
+  outline: none;
+}
+/**/
+a.disabled{
+  pointer-events: none;
+  cursor: default;
+}
+/**/
+li{
+  list-style: none;
+}
+#baguetteBox-overlay .full-image figcaption{
+  display:block;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  text-align:center;
+  line-height:1.8;
+  white-space:normal;
+  font-family: sans-serif;
+}
+#baguetteBox-overlay .full-image img{
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+.myWorks{
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+  text-decoration: underline;
+  text-decoration-color: #35E6BA;
+  padding: 20px 0;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            cursor: text;
+}
+.galleryLink{
+  text-decoration: none;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            cursor: pointer;
+}
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  justify-content: space-around;
+}
+.gallery a:not(:first-child){
+  display: none;
+}
+.gallery a{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: .5s;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            cursor: pointer;
+}
+.gallery a img{
+  padding: 10px;
+  display: block;
+  width: 370px;
+  height: 250px;
+}
+
+.gallery a .mobile{
+  width: 370px;
+}
+
+.gallery a .mobile img{
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+}
+
+.gallery a:hover{
+  transform: scale(1.05);
+  transition: .5s;
+}
+.full-image.figcaption{
+  background-color: #35E6BA;
+}
+.galleryLink{
+  text-decoration: none;
+  color: #000;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+  font-weight: bold;
+  width: 100%;
+  background-color: #35E6BA;
+  transition: .5s;
+}
+.galleryLink:hover{
+  background-color: #fff;
+  text-decoration: underline;
+  transition: .5s;
+}
+/*text overlay*/
+.gallery a span{
+  text-align: center;
+  width: 90%;
+  display: none;
+  position: absolute;
+  color: #35E6BA;
+  font-weight: bold;
+  font-size: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.gallery a:hover span{
+  display: block;
+}
+.gallery a:hover img{
+  opacity: .1;
+  transition: .5s;
+}
+.fab.fa-php,
+.fab.fa-js-square,
+.fab.fa-bootstrap,
+.fab.fa-laravel,
+.devicon-dart-plain,
+.devicon-flutter-plain,
+.devicon-python-plain,
+.devicon-django-plain{
+  font-size: 30px;
+}
+.fab.fa-laravel,
+.fab.fa-php,
+.fab.fa-js-square,
+.devicon-dart-plain,
+.devicon-python-plain{
+  margin-right: 10px;
+}
+
+[data-phrase-id="writtenin_mob"]{
+  margin-bottom: 2.5px;
+}
+
+.gallery a span img{
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 auto;
+}
+
+/**/
+@media only screen and (max-width: 769px){
+  .gallery a img{
+    display: block;
+    margin: 10px auto;
+  }
+  .gallery li{
+    border-bottom: 1px solid #35E6BA;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 450px){
+  .myWorks{
+    font-size: 35px;
+    padding-bottom: 20px;
+  }
+  .gallery{
+    padding: 10px;
+  }
+  .gallery a img{
+    width: 350px;
+    height: 250px;
+  }
+  .example{
+    width: 250px;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 380px){
+  .gallery a img{
+    width: 250px;
+    height: 200px;
+  }
+  .example{
+    width: 220px;
+    height: auto;
+  }
+  .gallery a span{
+    font-size: 15px;
+  }
+  .fab.fa-php.atyrau,.fab.fa-js-square.atyrau,.fab.fa-bootstrap.atyrau{
+    font-size: 20px;
+  }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+  .gallery a{
+    overflow: hidden;
+  }
+}
