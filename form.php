@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="screen-body-item">
-          <form class="wrapper" id="contact_form" action="http://forsm/configs/form.php" method="POST">
+          <form class="wrapper" id="contact_form" action="https://velikhanovportfolio.000webhostapp.com/form/form.php" method="POST">
             <div class="app-form-group">
               <input class="app-form-control" type="text" name="name" data-phrase-id="name" placeholder="Name"  maxlength="50" autocomplete="off">
             </div>
