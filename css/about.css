@@ -27,12 +27,25 @@
   line-height: 1.7;
   font-weight: bold;
 }
-.about-p a{
+.about-p #skills_link{
+  color: #fff;
+  /* text-decoration: none; */
+  display: inline-block;
+  margin-right: 0;
+  padding-right: 0;
+  transition: transform 0.2s ease;
+}
+.about-p #skills_link:hover{
+  /* font-size: 25px; */
+  /* text-decoration: underline; */
+  transform: scale(1.1);
+}
+.about-p #cv_link{
   color: #3993e0;
   font-size: 25px;
   text-decoration: none;
 }
-.about-p a span{
+.about-p #cv_link span{
   margin-left: 5px;
   vertical-align: middle;
 }
