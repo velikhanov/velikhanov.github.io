@@ -21,9 +21,9 @@
 		</div>
 		<div class="social-main">
 				<ul class="social">
-					<li><a href="https://www.instagram.com/velihanov99/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="https://www.instagram.com/velihanov99" target="_blank"><i class="fab fa-instagram"></i></a></li>
 					<li><a href="https://vk.com/velikhanov99" target="_blank"><i class="fab fa-vk"></i></a></li>
-					<li><a href="https://www.linkedin.com/in/%D1%82%D0%B8%D0%BC%D1%83%D1%80-%D0%B2%D0%B5%D0%BB%D0%B8%D1%85%D0%B0%D0%BD%D0%BE%D0%B2-6715b420b/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/teymur-velikhanov-6715b420b" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
 					<li><a href="https://github.com/velikhanov" target="_blank"><i class="fab fa-github"></i></a></li>
 					<li><a href="https://www.facebook.com/velikhanov99" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 				</ul>
