@@ -34,9 +34,9 @@
                   <!-- <span></span> -->
                 </div>
                 <div class="app-contact">
-                  <span data-phrase-id="details">Contact details:</span><br><br>
-                  <span>+(994)51 433-98-47</span><br>
-                  <span>teymur99@gmail.com</span><br>
+                  <div data-phrase-id="details">Contact details:</div>
+                  <div>+(994)51 433-98-47</div>
+                  <div>teymur99@gmail.com</div>
                 </div>
               </div>
               <div class="screen-body-item">

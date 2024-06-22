@@ -287,138 +287,133 @@ button[disabled].app-form-button {
   vertical-align: middle;
 }
 /*End loading btn*/
-    @media screen and (max-width: 1000px) {
-      .toast{
-        left: 0;
-      }
-      .container{
-        left: 50%;
-      }
-    }
+@media screen and (max-width: 1000px) {
+  .toast{
+    left: 0;
+  }
+  .container{
+    left: 50%;
+  }
+}
 @media (orientation: portrait){
-    @media screen and (max-height: 550px) {
-      .screen{
-        height: 370px;
-      }
-      .app-form-control{
-        font-size: 10px;
-      }
-      .app-form-group.message{
-        margin-top: 20px;
-      }
-      .app-form-group{
-        margin-bottom: 0;
-      }
-      .app-form-group.buttons{
-        font-size: 10px;
-        margin-top: 15px;
-      }
-      .app-form-button{
-        padding: 7.5px;
-      }
+  @media screen and (max-height: 550px) {
+    .screen{
+      height: 370px;
     }
-    @media screen and (max-height: 380px) {
-      .screen{
-        height: 300px;
-      }
-      .app-form-group.message{
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-      .app-form-control{
-        font-size: 7.5px;
-      }
-      .app-form-group.buttons{
-        margin-top: 5px  ;
-        font-size: 7.5px;
-      }
-      .app-form-button{
-        padding: 5px;
-      }
+    .app-form-control{
+      font-size: 10px;
     }
-    @media screen and (max-width: 750px) {
-      /* .section{
-        padding: 0 15px 15px 15px;
-      } */
-      .container{
-        width: 600px;
-      }
-      .screen-body {
-        padding: 15px 40px 15px 40px;
-      }
-      .screen-body-item {
-        padding: 0;
-      }
-      input.app-form-control{
-        padding-left: 5px;
-      }
+    .app-form-group.message{
+      margin-top: 20px;
     }
-
-    @media screen and (max-width: 650px) {
-      .container{
-        width: 500px;
-      }
+    .app-form-group{
+      margin-bottom: 0;
     }
-
-    @media screen and (max-width: 520px) {
-      /* .section{
-        padding: 15px 5px 15px 5px;
-      } */
-      .container{
-        width: 400px;
-      }
-      .screen-body {
-        flex-direction: column;
-      }
-
-      .screen-body-item.left {
-        margin-bottom: 10px;
-      }
-
-      .app-title {
-        flex-direction: row;
-        text-align: center;
-        padding-bottom: 10px;
-      }
-
-      .app-title span {
-        font-size: 20px;
-        width: 100%;
-      }
-
-      .app-title:after {
-        display: none;
-      }
-      .app-contact{
-        text-align: center;
-      }
+    .app-form-group.buttons{
+      font-size: 10px;
+      margin-top: 15px;
     }
-    @media screen and (max-width: 450px) {
-      .toast{
-        margin-left: 5px;
-        margin-right: 5px;
-      }
-    }
-    @media screen and (max-width: 420px) {
-      .container{
-        width: 350px;
-      }
-    }
-    @media screen and (max-width: 375px) {
-      .container{
-        width: 300px;
-      }
-    }
-    @media screen and (max-width: 350px) {
-      /* .section{
-        padding-top: 20px;
-      } */
-      .container{
-        padding: 5px;
-        width: 250px;
-      }
+    .app-form-button{
+      padding: 7.5px;
     }
   }
+  @media screen and (max-height: 380px) {
+    .screen{
+      height: 300px;
+    }
+    .app-form-group.message{
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .app-form-control{
+      font-size: 7.5px;
+    }
+    .app-form-group.buttons{
+      margin-top: 5px  ;
+      font-size: 7.5px;
+    }
+    .app-form-button{
+      padding: 5px;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    /* .section{
+      padding: 0 15px 15px 15px;
+    } */
+    .container{
+      width: 600px;
+    }
+    .screen-body {
+      padding: 15px 40px 15px 40px;
+    }
+    .screen-body-item {
+      padding: 0;
+    }
+    input.app-form-control{
+      padding-left: 5px;
+    }
+  }
+  @media screen and (max-width: 650px) {
+    .container{
+      width: 500px;
+    }
+  }
+  @media screen and (max-width: 520px) {
+    .container{
+      width: 400px;
+    }
+    .screen-body {
+      flex-direction: column;
+    }
+
+    .screen-body-item.left {
+      margin-bottom: 10px;
+    }
+
+    .app-title {
+      flex-direction: row;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .app-title span {
+      font-size: 20px;
+      width: 100%;
+    }
+
+    .app-title:after {
+      display: none;
+    }
+    .app-contact{
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .toast{
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    .container{
+      width: 350px;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    .container{
+      width: 300px;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    /* .section{
+      padding-top: 20px;
+    } */
+    .container{
+      padding: 5px;
+      width: 250px;
+    }
+  }
+}
 @media (orientation: landscape){
   @media screen and (max-width: 750px) {
     .container{
@@ -475,9 +470,9 @@ button[disabled].app-form-button {
     /* .app-form-group{
       margin-bottom: 0;
     } */
-    .app-form-group.buttons{
+    /* .app-form-group.buttons{ */
       /* margin-top: 10px; */
-    }
+    /* } */
     .app-form-control,.app-form-button{
       font-size: 12.5px;
     }
@@ -524,8 +519,7 @@ button[disabled].app-form-button {
   }
 
 }
-@media screen and (max-width: 1000px)
-and (-ms-high-contrast: none), (-ms-high-contrast: active){
+@media screen and (max-width: 1000px) and (-ms-high-contrast: none), (-ms-high-contrast: active){
   .toast{
     left: 50%;
   }

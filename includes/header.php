@@ -6,7 +6,7 @@
 				<img class="logo-img" src="img/t.png" alt="Logo">
 				<h3 class="logo-name" data-phrase-id="headername">Teymur</h3>
 			</a>
-				<span class="logo-desc">Web <span data-phrase-id="webdev">developer</span></span>
+			<span class="logo-desc">Web <span data-phrase-id="webdev">developer</span></span>
 		</div>
 		<div class="sidebar">
 			<a href="/dynamicportfolio.com/about.php"><i class="fas fa-address-card"></i><b data-phrase-id="aboutme">About me</b></a>
@@ -20,13 +20,13 @@
 			<a class="twlang"><img onclick="languative.changeLanguage('ru');" src="img/lang/ru.png" alt="Russian flag"></a>
 		</div>
 		<div class="social-main">
-				<ul class="social">
-					<li><a href="https://www.instagram.com/velihanov99" target="_blank"><i class="fab fa-instagram"></i></a></li>
-					<li><a href="https://vk.com/velikhanov99" target="_blank"><i class="fab fa-vk"></i></a></li>
-					<li><a href="https://www.linkedin.com/in/teymur-velikhanov-6715b420b" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-					<li><a href="https://github.com/velikhanov" target="_blank"><i class="fab fa-github"></i></a></li>
-					<li><a href="https://www.facebook.com/velikhanov99" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-				</ul>
+			<ul class="social">
+				<li><a href="https://www.instagram.com/velihanov99" target="_blank"><i class="fab fa-instagram"></i></a></li>
+				<li><a href="https://vk.com/velikhanov99" target="_blank"><i class="fab fa-vk"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/teymur-velikhanov-6715b420b" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+				<li><a href="https://github.com/velikhanov" target="_blank"><i class="fab fa-github"></i></a></li>
+				<li><a href="https://www.facebook.com/velikhanov99" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+			</ul>
 		</div>
 	</div>
 </header>
