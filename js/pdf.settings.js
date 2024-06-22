@@ -3,6 +3,7 @@ const pdfUrl = 'img/about/CV_Velikhanov_Teymur.pdf';
 
 const pdfjsLib = window['pdfjs-dist/build/pdf'];
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/pdf.worker.min.js';
+const canvas = document.getElementById('pdf-viewer');
 (async function renderPDF(url) {
     const loadingTask = pdfjsLib.getDocument(url);
     const pdf = await loadingTask.promise;
@@ -10,8 +11,6 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/pdf.worker.min.js';
 
     // Calculate scale based on device pixel ratio and viewport size
     const viewport = page.getViewport({scale: 3});
-
-    const canvas = document.getElementById('pdf-viewer');
     const context = canvas.getContext('2d');
     canvas.height = viewport.height;
     canvas.width = viewport.width;
@@ -27,6 +26,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/pdf.worker.min.js';
         // removePageTrim: true
     };
     await page.render(renderContext).promise;
+})(pdfUrl).then(() => {
     // Show the canvas after PDF is loaded and rendered
     canvas.style.display = 'block';
-})(pdfUrl);
+});
