@@ -143,7 +143,7 @@ outline: 0;
   text-decoration: none;
   justify-content: center;
   height: 75px;
-  color: #fff
+  color: #fff;
   -webkit-touch-callout: none;
     -webkit-user-select: none;
      -khtml-user-select: none;
@@ -227,11 +227,11 @@ outline: 0;
   padding-top: 10px;
   text-align: center;
 } */
-.fab.fa-facebook-f,.fab.fa-linkedin-in,.fab.fa-instagram,.fab.fa-github,.fab.fa-vk{
+.social-main .fab.fa-facebook-f, .social-main .fab.fa-linkedin-in, .social-main .fab.fa-instagram, .social-main .fab.fa-github, .social-main .fab.fa-vk{
  color: #bcbaba;
  font-size: 20px;
 }
-.fab.fa-facebook-f:hover,.fab.fa-instagram:hover,.fab.fa-vk:hover,.fab.fa-linkedin-in:hover,.fab.fa-github:hover{
+.social-main .fab.fa-facebook-f:hover, .social-main .fab.fa-instagram:hover, .social-main .fab.fa-vk:hover, .social-main .fab.fa-linkedin-in:hover, .social-main .fab.fa-github:hover{
   transform: scale(1.1);
   color: #35E6BA;
 }
@@ -276,7 +276,7 @@ only screen and (max-device-width: 1000px){
   .lang a:not(:last-child){
     margin-right: 20px;
   }
-  .fab.fa-github,.fab.fa-instagram,.fab.fa-vk,.fab.fa-linkedin-in{
+  .social-main .fab.fa-github, .social-main .fab.fa-instagram, .social-main .fab.fa-vk, .social-main .fab.fa-linkedin-in{
     margin-right: 20px;
   }
 }
@@ -321,11 +321,11 @@ only screen and (max-device-height: 515px){
     }
   }
 }
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) only screen and (max-height: 1000px){
-  .animated-icon2{
+@media all and (-ms-high-contrast: none), all and (-ms-high-contrast: active), only screen and (max-height: 1000px) {
+  .animated-icon2 {
     height: 25px;
   }
-  .mobile-menu{
+  .mobile-menu {
     right: 25px;
   }
 }

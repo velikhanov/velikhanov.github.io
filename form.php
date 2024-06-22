@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="screen-body-item">
-          <form class="wrapper" id="contact_form" action="https://velikhanovportfolio.000webhostapp.com/form/configs/form.php" method="POST">
+          <form class="wrapper" id="contact_form" action="/" method="POST">
             <div class="app-form-group">
               <input class="app-form-control" type="text" name="name" data-phrase-id="name" placeholder="Name"  maxlength="50" autocomplete="off">
             </div>
@@ -53,7 +53,7 @@
               <input class="app-form-control" type="text" name="message" data-phrase-id="message" placeholder="Message" autocomplete="off">
             </div>
             <div class="app-form-group buttons">
-              <button type="submit" class="app-form-button"><span class="btn-send-text" data-phrase-id="send">Send</span><img class="btn-loading-gif" src="img/loading.gif"></button>
+              <button type="submit" class="app-form-button" disabled><span class="btn-send-text" data-phrase-id="send">Send</span><img class="btn-loading-gif" src="img/loading.gif"></button>
             </div>
           </form>
         </div>
