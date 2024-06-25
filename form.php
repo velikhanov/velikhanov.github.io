@@ -67,7 +67,7 @@
     <script src="lang/main.js" defer></script>
     <script src="lang/form.js" defer></script>
     <script src="js/formvalidation.js" defer></script>
-    <script src="js/email.min.js"> defer></script>
+    <script src="js/email.min.js" defer></script>
     <script src="js/formajax.js" defer></script>
     <script src="js/scripts.js" async></script>
   </body>
