@@ -67,14 +67,13 @@ form.addEventListener("submit", function (e) {
                     toast.innerHTML = "The request has been successfully sent!";
                 }
 
-                document.querySelector(".toast").classList.add("toast--visible");
+                toast.classList.add("toast--visible");
 
                 myTimer = setTimeout(function () {
-                    document.querySelector(".toast").classList.remove("toast--visible");
+                    toast.classList.remove("toast--visible");
                 }, 7500);
             },
             function(_) {
-                const toast = document.querySelector(".toast");
                 if (toast.classList.contains("toast--success")) {
                     toast.classList.remove("toast--success");
                     toast.classList.add("toast--error");
@@ -93,7 +92,7 @@ form.addEventListener("submit", function (e) {
                 toast.classList.add("toast--visible");
 
                 myTimer = setTimeout(function () {
-                    document.querySelector(".toast").classList.remove("toast--visible");
+                    toast.classList.remove("toast--visible");
                 }, 7500);
             }
         ).then(function() {
@@ -101,7 +100,6 @@ form.addEventListener("submit", function (e) {
             resetLoadingEffect();
         });
     } else {
-        const toast = document.querySelector(".toast");
         if (toast.classList.contains("toast--success")) {
             toast.classList.remove("toast--success");
             toast.classList.add("toast--error");
@@ -119,8 +117,11 @@ form.addEventListener("submit", function (e) {
 
         toast.classList.add("toast--visible");
 
+        // Reset loading effect
+        resetLoadingEffect();
+
         myTimer = setTimeout(function () {
-            document.querySelector(".toast").classList.remove("toast--visible");
+            toast.classList.remove("toast--visible");
         }, 7500);
     }
 });
