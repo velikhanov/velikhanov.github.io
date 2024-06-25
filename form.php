@@ -40,7 +40,7 @@
                 </div>
               </div>
               <div class="screen-body-item">
-                <form class="wrapper" id="contact_form" action="/" method="POST">
+                <form class="wrapper" id="contact_form">
                   <div class="app-form-group">
                     <input class="app-form-control" type="text" name="name" data-phrase-id="name" placeholder="Name"  maxlength="50" autocomplete="off">
                   </div>
@@ -54,7 +54,7 @@
                     <input class="app-form-control" type="text" name="message" data-phrase-id="message" placeholder="Message" autocomplete="off">
                   </div>
                   <div class="app-form-group buttons">
-                    <button type="submit" class="app-form-button" disabled><span class="btn-send-text" data-phrase-id="send">Send</span><img class="btn-loading-gif" src="img/loading.gif"></button>
+                    <button type="submit" class="app-form-button"><span class="btn-send-text" data-phrase-id="send">Send</span><img class="btn-loading-gif" src="img/loading.gif"></button>
                   </div>
                 </form>
               </div>
@@ -66,8 +66,9 @@
     <script src="js/languative.js" defer></script>
     <script src="lang/main.js" defer></script>
     <script src="lang/form.js" defer></script>
+    <script src="js/formvalidation.js" defer></script>
+    <script src="js/email.min.js"> defer></script>
+    <script src="js/formajax.js" defer></script>
     <script src="js/scripts.js" async></script>
-    <script src="js/formvalidation.js" async></script>
-    <script src="js/formajax.js" async></script>
   </body>
 </html>
