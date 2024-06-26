@@ -23,15 +23,15 @@
   width: 300px;
   height: auto;
   position: relative;
-  border-radius: 2px;
-  background-color:#fff;
+  border-radius: 30px;
+  background-color:#c1ddd6;
   box-shadow: 0 2px 2px 0 rgba(255, 255, 255, 0.14), 0 1px 5px 0 rgba(255, 255, 255, 0.12), 0 3px 1px -2px rgba(255, 255, 255, 0.2);
   text-align: center;
   margin: 20px;
   padding: 20px;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
-.card-circle{
+.card-circle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@
   margin-bottom: 10px;
   padding: 20px;
 }
-.card-circle img{
+.card-circle img {
   -webkit-touch-callout: none;
     -webkit-user-select: none;
      -khtml-user-select: none;
@@ -51,7 +51,9 @@
             user-select: none;
             cursor: pointer;
 }
-
+.card-circle a {
+  text-decoration: none;
+}
 .text-content{
   font-family: 'Roboto', sans-serif;
 }
@@ -60,16 +62,98 @@
   font-weight: 500;
   line-height: 48px;
 }
-.card-title a{
+.card-title a {
   text-decoration: none;
   color: #000;
 }
-i{
+i {
   color: #2196F3;
 }
+
+.normalize-fs {
+  font-size: 56px;
+}
+/*Start languages*/
+.fab.fa-html5.fa-4x {
+  color: #E34F26;
+}
+.fab.fa-css3.fa-4x {
+  color: #1572B6;
+}
+.js-icon-background {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #000; /* Black background */
+}
+.fab.fa-js-square.fa-4x {
+  -webkit-text-fill-color: #F0DB4F; /* Ensuring text color is black for browsers that support this */
+  -webkit-background-clip: text;
+  position: relative;
+  background-clip: text;
+  z-index: 1;
+}
+.fab.fa-php.fa-4x {
+  color: #000; /* Black letters */
+  -webkit-text-fill-color: #000; /* Ensuring text color is black for browsers that support this */
+  -webkit-background-clip: text;
+  background: #8A2BE2; /* Violet background */
+  background-clip: text;
+  text-shadow: 
+    -1px -1px 0 #fff,  
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
+}
+.fab.fa-python.fa-4x {
+  color: #FFD43B;
+  background: linear-gradient(145deg, #306998 0%, #306998 40%, #FFD43B 60%, #FFD43B 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.devicon-dart-plain {
+  background: linear-gradient(145deg, #0175C2 0%, #00D2FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/*End languages*/
+/*Frameworks*/
+.fab.fa-laravel.fa-4x {
+  color: #FF2D20;
+}
+.fab.fa-bootstrap.fa-4x {
+  color: #7952B3;
+  background: linear-gradient(145deg, #7952B3 0%, #6C49B8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.devicon-flutter-plain {
+  background: linear-gradient(145deg, #5AC8FA 0%, #1C9CEA 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+/*End frameworks*/
+/*Start Version Control Systems*/
+.fab.fa-git-alt.fa-4x {
+  color: #F05032;
+}
+/*End Version Control Systems*/
+
+/*Start Container Management Systems*/
+
+          
+/*End Container Management Systems*/
 .card:hover{
   transform: scale(1.1);
-    box-shadow: 0 7px 14px rgba(255,255,255,0.25), 0 5px 5px rgba(255,255,255,0.22);
+  box-shadow: 0 7px 14px rgba(255,255,255,0.25), 0 5px 5px rgba(255,255,255,0.22);
 }
 .bg {
   background-color: #183153;
@@ -79,6 +163,7 @@ i{
 }
 .right {
   float: right;
+  padding-right: 2.5px;
   -webkit-touch-callout: none;
     -webkit-user-select: none;
      -khtml-user-select: none;

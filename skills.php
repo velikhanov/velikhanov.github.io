@@ -3,6 +3,8 @@
 <head>
 <?php include 'includes/head.php'; ?>
 <link rel="stylesheet" href="css/skills.css">
+<link rel="stylesheet" href="css/devicons.min.css">
+          
 <title>My skills</title>
 </head>
 <body>
@@ -13,25 +15,25 @@
   <h1 class="maintech" data-phrase-id="tech">Technologies</h1>
   <div class="skills">
     <!-- Card start -->
-      <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><i class="fab fa-html5 fa-4x"></i></a>
+    <div class="card">
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><i class="fab fa-html5 fa-4x"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/HTML5" target="_blank">HTML5</a></strong></span>
           <div class='bg'>
-           <div class='html-80'>
-             <span class='left'></span>
-             <span class='right'>80%</span>
-           </div>
-         </div>
+          <div class='html-80'>
+            <span class='left'></span>
+            <span class='right'>80%</span>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Card End -->
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/CSS" target="_blank"><i class="fab fa-css3 fa-4x"></i></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/CSS" target="_blank"><i class="fab fa-css3 fa-4x"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/CSS" target="_blank">CSS3</a></strong></span>
@@ -46,15 +48,15 @@
     <!-- Card End -->
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank"><i class="fab fa-js-square fa-4x"></i></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank"><div class="js-icon-background"><i class="fab fa-js-square fa-4x"></i></div></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JS</a></strong></span>
         <div class='bg'>
-           <div class='html-50'>
+           <div class='html-80'>
              <span class='left'></span>
-             <span class='right'>50%</span>
+             <span class='right'>80%</span>
            </div>
          </div>
       </div>
@@ -62,8 +64,8 @@
     <!-- Card End -->
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/PHP" target="_blank"><i class="fab fa-php fa-4x"></i></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/PHP" target="_blank"><i class="fab fa-php fa-4x"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/PHP" target="_blank">PHP</a></strong></span>
@@ -78,8 +80,8 @@
     <!-- Card End -->
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank"><i class="fab fa-python fa-4x"></i></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank"><i class="fab fa-python fa-4x"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a></strong></span>
@@ -93,8 +95,8 @@
     </div>
     <!-- Card End -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Dart_(programming_language)" target="_blank"><img src="img/skills/dart.png" alt="Dart icon"></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/Dart_(programming_language)" target="_blank"><i class="devicon-dart-plain normalize-fs"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Dart_(programming_language)" target="_blank">Dart</a></strong></span>
@@ -112,8 +114,8 @@
   <div class="skills">
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Laravel" target="_blank"><i class="fab fa-laravel fa-4x"></i></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/Laravel" target="_blank"><i class="fab fa-laravel fa-4x"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Laravel" target="_blank">Laravel</a></strong></span>
@@ -128,8 +130,8 @@
     <!-- Card End -->
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/JQuery" target="_blank"><img src="img/skills/jquery.png" alt="jQuery icon"></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/JQuery" target="_blank"><i class="devicon-jquery-plain colored normalize-fs"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/JQuery" target="_blank">jQuery</a></strong></span>
@@ -144,8 +146,8 @@
     <!-- Card End -->
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" target="_blank"><i class="fab fa-bootstrap fa-4x"></i></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" target="_blank"><i class="fab fa-bootstrap fa-4x"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" target="_blank">Bootstrap 4-5</a></strong></span>
@@ -160,8 +162,8 @@
     <!-- Card End -->
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Flutter_(software)" target="_blank"><img src="img/skills/flutter.png" alt="Flutter icon"></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/Flutter_(software)" target="_blank"><i class="devicon-flutter-plain normalize-fs"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Flutter_(software)" target="_blank">Flutter</a></strong></span>
@@ -176,8 +178,8 @@
     <!-- Card End -->
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Django_(web_framework)" target="_blank"><img src="img/skills/django.png" alt="Django icon"></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/Django_(web_framework)" target="_blank"><i class="devicon-django-plain colored normalize-fs"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Django_(web_framework)" target="_blank">Django</a></strong></span>
@@ -192,8 +194,8 @@
     <!-- Card End -->
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Flask_(web_framework)" target="_blank"><img src="img/skills/flask.png" alt="Flask icon"></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/Flask_(web_framework)" target="_blank"><i class="devicon-flask-original colored normalize-fs"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Flask_(web_framework)" target="_blank">Flask</a></strong></span>
@@ -211,8 +213,8 @@
   <div class="skills">
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Git" target="_blank"><i class="fab fa-git-alt fa-4x"></i></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/Git" target="_blank"><i class="fab fa-git-alt fa-4x"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Git" target="_blank">Git</a></strong></span>
@@ -230,8 +232,8 @@
   <div class="skills">
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank"><img src="img/skills/docker.png" alt="Docker icon"></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank"><i class="devicon-docker-plain colored normalize-fs"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank">Docker</a></strong></span>
@@ -249,8 +251,8 @@
   <div class="skills">
   <!-- Card start -->
   <div class="card">
-      <div class="card-circle">
-        <a href="https://en.wikipedia.org/wiki/MySQL" target="_blank"><img src="img/skills/mysql.png" alt="MySQL icon"></a>
+    <div class="card-circle">
+      <a href="https://en.wikipedia.org/wiki/MySQL" target="_blank"><i class="devicon-mysql-plain colored normalize-fs"></i></a>
     </div>
     <div class="text-content">
       <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/MySQL" target="_blank">MySQL</a></strong></span>
@@ -265,8 +267,8 @@
   <!-- Card End -->
   <!-- Card start -->
   <div class="card">
-      <div class="card-circle">
-        <a href="https://en.wikipedia.org/wiki/PostgreSQL" target="_blank"><img src="img/skills/postgresql.png" alt="PostgreSQL icon"></a>
+    <div class="card-circle">
+      <a href="https://en.wikipedia.org/wiki/PostgreSQL" target="_blank"><i class="devicon-postgresql-plain colored normalize-fs"></i></a>
     </div>
     <div class="text-content">
       <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/PostgreSQL" target="_blank">PostgreSQL</a></strong></span>
@@ -281,8 +283,8 @@
   <!-- Card End -->
   <!-- Card start -->
   <div class="card">
-      <div class="card-circle">
-        <a href="https://en.wikipedia.org/wiki/Firebase" target="_blank"><img src="img/skills/firebase.png" alt="Firebase icon"></a>
+    <div class="card-circle">
+      <a href="https://en.wikipedia.org/wiki/Firebase" target="_blank"><i class="devicon-firebase-plain colored normalize-fs"></i></a>
     </div>
     <div class="text-content">
       <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Firebase" target="_blank">Firebase</a></strong></span>
@@ -300,8 +302,8 @@
   <div class="skills">
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Adobe_Photoshop" target="_blank"><img src="img/skills/photoshop.png" alt="Photoshop icon"></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/Adobe_Photoshop" target="_blank"><i class="devicon-photoshop-line colored normalize-fs"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Adobe_Photoshop" target="_blank">Photoshop</a></strong></span>
@@ -316,8 +318,8 @@
     <!-- Card End -->
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Adobe_XD" target="_blank"><img src="img/skills/xd.png" alt="XD icon"></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/Adobe_XD" target="_blank"><i class="devicon-xd-line colored normalize-fs"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Adobe_XD" target="_blank">XD</a></strong></span>
@@ -332,8 +334,8 @@
     <!-- Card End -->
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Adobe_Illustrator" target="_blank"><img src="img/skills/illustrator.png" alt="Illustrator icon"></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/Adobe_Illustrator" target="_blank"><i class="devicon-illustrator-line colored normalize-fs"></i></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Adobe_Illustrator" target="_blank">Illustrator</a></strong></span>
@@ -348,8 +350,8 @@
     <!-- Card End -->
     <!-- Card start -->
     <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/AutoCAD" target="_blank"><img src="img/skills/autocad.png" alt="AutoCAD icon"></a>
+      <div class="card-circle">
+        <a href="https://en.wikipedia.org/wiki/AutoCAD" target="_blank"><img src="img/skills/autocad.png" alt="AutoCAD icon"></a>
       </div>
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/AutoCAD" target="_blank"></a>AutoCAD</strong></span>
