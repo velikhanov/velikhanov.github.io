@@ -308,9 +308,9 @@
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Adobe_Photoshop" target="_blank">Photoshop</a></strong></span>
         <div class='bg'>
-           <div class='html-50'>
+           <div class='html-70'>
              <span class='left'></span>
-             <span class='right'>50%</span>
+             <span class='right'>70%</span>
            </div>
          </div>
       </div>
@@ -324,9 +324,9 @@
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Adobe_XD" target="_blank">XD</a></strong></span>
         <div class='bg'>
-           <div class='html-50'>
+           <div class='html-70'>
              <span class='left'></span>
-             <span class='right'>50%</span>
+             <span class='right'>70%</span>
            </div>
          </div>
       </div>
@@ -340,9 +340,9 @@
       <div class="text-content">
         <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Adobe_Illustrator" target="_blank">Illustrator</a></strong></span>
         <div class='bg'>
-           <div class='html-50'>
+           <div class='html-70'>
              <span class='left'></span>
-             <span class='right'>50%</span>
+             <span class='right'>70%</span>
            </div>
          </div>
       </div>
