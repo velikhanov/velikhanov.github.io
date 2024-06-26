@@ -247,7 +247,7 @@
     </div>
     <!-- Card End -->
   </div>
-  <h1 class="maintech" data-phrase-id="db">Database</h1>
+  <h1 class="maintech" data-phrase-id="db">Databases</h1>
   <div class="skills">
   <!-- Card start -->
   <div class="card">
