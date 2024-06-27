@@ -182,6 +182,13 @@ li{
   .gallery a img{
     opacity: .1;
   }
+  .gallery a:hover{
+    transform: scale(1);
+    transition: none;
+  }
+  .gallery a:hover img{
+    transition: none;
+  }
 }
 @media only screen and (max-width: 769px){
   .gallery a img{
