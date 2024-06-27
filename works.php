@@ -53,9 +53,7 @@
         <!-- End -->
         <li class="mobileG">
             <a href="img/works/full/mobile_app_1.jpg" data-caption="<a class='galleryLink' href='https://github.com/velikhanov/doc_app_staging' target='_blank'><i class='fab fa-github'></i>GitHub</a>">
-                <div class="mobile">
-                  <img src="img/works/thmb/mobile_app_1.jpg" alt="Fifth image">
-                </div>
+                <div class="mobile"><img src="img/works/thmb/mobile_app_1.jpg" alt="Fifth image"></div>
                 <span><div data-phrase-id="w6text">Mobile App</div><div data-phrase-id="writtenin_mob">Written in:</div><i class="devicon-dart-plain"></i><i class="devicon-flutter-plain"></i></span>
             </a>
           </li>

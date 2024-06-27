@@ -71,14 +71,27 @@ i {
 }
 
 .normalize-fs {
-  font-size: 56px;
+  font-size: 64px;
 }
 /*Start languages*/
-.fab.fa-html5.fa-4x {
-  color: #E34F26;
+.fab.fa-python.fa-4x {
+  color: #FFD43B;
+  background: linear-gradient(145deg, #306998 0%, #306998 40%, #FFD43B 60%, #FFD43B 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.fab.fa-css3.fa-4x {
-  color: #1572B6;
+.fab.fa-php.fa-4x {
+  color: #000; /* Black letters */
+  -webkit-text-fill-color: #000; /* Ensuring text color is black for browsers that support this */
+  -webkit-background-clip: text;
+  background: #8A2BE2; /* Violet background */
+  background-clip: text;
+  text-shadow: 
+    -1px -1px 0 #fff,  
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
 }
 .js-icon-background {
   display: inline-flex;
@@ -96,30 +109,17 @@ i {
   background-clip: text;
   z-index: 1;
 }
-.fab.fa-php.fa-4x {
-  color: #000; /* Black letters */
-  -webkit-text-fill-color: #000; /* Ensuring text color is black for browsers that support this */
-  -webkit-background-clip: text;
-  background: #8A2BE2; /* Violet background */
-  background-clip: text;
-  text-shadow: 
-    -1px -1px 0 #fff,  
-     1px -1px 0 #fff,
-    -1px  1px 0 #fff,
-     1px  1px 0 #fff;
-}
-.fab.fa-python.fa-4x {
-  color: #FFD43B;
-  background: linear-gradient(145deg, #306998 0%, #306998 40%, #FFD43B 60%, #FFD43B 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .devicon-dart-plain {
   background: linear-gradient(145deg, #0175C2 0%, #00D2FF 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.fab.fa-html5.fa-4x {
+  color: #E34F26;
+}
+.fab.fa-css3.fa-4x {
+  color: #1572B6;
 }
 /*End languages*/
 /*Frameworks*/
@@ -141,16 +141,6 @@ i {
   -webkit-text-fill-color: transparent;
 }
 /*End frameworks*/
-/*Start Version Control Systems*/
-.fab.fa-git-alt.fa-4x {
-  color: #F05032;
-}
-/*End Version Control Systems*/
-
-/*Start Container Management Systems*/
-
-          
-/*End Container Management Systems*/
 .card:hover{
   transform: scale(1.1);
   box-shadow: 0 7px 14px rgba(255,255,255,0.25), 0 5px 5px rgba(255,255,255,0.22);

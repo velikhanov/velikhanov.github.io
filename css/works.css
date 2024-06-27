@@ -80,7 +80,7 @@ li{
   height: 250px;
 }
 
-.gallery a .mobile{
+.gallery a .mobile img{
   width: 370px;
 }
 
@@ -175,6 +175,14 @@ li{
 }
 
 /**/
+@media only screen and (max-width: 1000px){
+  .gallery a span{
+    display: block;
+  }
+  .gallery a img{
+    opacity: .1;
+  }
+}
 @media only screen and (max-width: 769px){
   .gallery a img{
     display: block;
