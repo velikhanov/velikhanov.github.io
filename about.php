@@ -12,7 +12,7 @@
         <section class="section">
             <div class="about">
                 <h1 data-phrase-id="title">About me</h1>
-                <a href="img/about/CV_Velikhanov_Teymur.pdf" class="fa fa-download" download></a>
+                <a href="img/about/CV_Velikhanov_Teymur_Download.pdf" class="fa fa-download" download></a>
             </div>
             <div id="loader"></div>
             <canvas id="pdf-viewer"></canvas>
