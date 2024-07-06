@@ -13,7 +13,7 @@
         <section class="section">
             <h1 class="title" data-phrase-id="title">About me</h1>
             <div class="main">
-                <img src="img/about/me.jpg" alt="Me" class="me" width="300px">
+                <img class="me" src="img/about/me.jpg" alt="Me">
                 <div class="info-block">
                     <div class="about-me-info-item">
                         <p data-phrase-id="aboutMe">

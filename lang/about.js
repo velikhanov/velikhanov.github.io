@@ -3,7 +3,7 @@ languative.modifyDictionary("en", {
 }),
 languative.modifyDictionary("az", {
     title: "Haqqımda",
-    aboutMe: "Mən 25 yaşlı veb inkişafçıyam və üç ildir proqramlaşdırma sahəsində ticari təcrübəyə malikəm. Mən Python (Django, DRF, Fast API) və Golang üzərində ixtisaslaşmışam, istehsal olunan server sistemləri və RESTful API-ların yaradılmasına xüsusi diqqət ayıraraq. MySQL, PostgreSQL, MongoDB və Redis istifadə edərək verilənlər bazalarının idarə olunmasında yaxşı anlayışa malikəm.",
+    aboutMe: "Mən 25 yaşlı veb inkişafçıyam və üç ildir proqramlaşdırma sahəsində ticari təcrübəyə malikəm. Python (Django, DRF, Fast API) və Golang üzərində ixtisaslaşmışam, istehsal olunan server sistemləri və RESTful API-ların yaradılmasına xüsusi diqqət ayıraraq. MySQL, PostgreSQL, MongoDB və Redis istifadə edərək verilənlər bazalarının idarə olunmasında yaxşı anlayışa malikəm.",
     education: "Təhsil",
     master: "Magistratura - Tətbiqi Proqram Təminatı",
     bachelor: "Bakalavr - Komputer Mühəndisliyi",
@@ -19,7 +19,7 @@ languative.modifyDictionary("az", {
 }),
 languative.modifyDictionary("ru", {
     title: "Обо мне",
-    aboutMe: "Я 25-летний веб-разработчик с трехлетним коммерческим опытом программирования. Я специализируюсь на Python (Django, DRF, Fast API) и Golang, уделяя особое внимание созданию надежных серверных систем и RESTful API. Я хорошо разбираюсь в управлении базами данных с использованием MySQL, PostgreSQL, MongoDB и Redis.",
+    aboutMe: "Я 25-летний веб-разработчик с трехлетним коммерческим опытом программирования. Специализируюсь на Python (Django, DRF, Fast API) и Golang, уделяя особое внимание созданию надежных серверных систем и RESTful API. Хорошо разбираюсь в управлении базами данных с использованием MySQL, PostgreSQL, MongoDB и Redis.",
     education: "Образование",
     master: "Магистратура - Прикладное ПO",
     bachelor: "Бакалавриат - Компьютерная Инженерия",

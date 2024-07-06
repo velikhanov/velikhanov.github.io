@@ -128,6 +128,10 @@
 }
 
 @media only screen and (max-width: 750px) {
+  .title {
+    padding-bottom: 5px;
+  }
+
   .main {
     flex-direction: column;
   }
