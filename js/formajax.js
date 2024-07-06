@@ -9,18 +9,9 @@ form.addEventListener("submit", function (e) {
     clearTimeout(myTimer);
 
     const lang = localStorage.getItem("lang") || window.navigator.userLanguage || window.navigator.language;
-    const isIE = /*@cc_on!@*/false || !!document.documentMode;
-    // Apply loading effect based on language and browser
-    if (lang === "en") {
-        document.querySelector('.app-form-button').style.width = isIE ? "60px" : "55px";
-    } else if (lang === "az") {
-        document.querySelector('.app-form-button').style.width = isIE ? "108px" : "96px";
-    } else if (lang === "ru") {
-        document.querySelector('.app-form-button').style.width = isIE ? "104px" : "92px";
-    }
-    document.querySelector(".app-form-button").style.backgroundColor = "transparent";
+    document.querySelector(".app-form-button").classList.add("loading");;
     document.querySelector('.btn-send-text').style.display = "none";
-    document.querySelector('.btn-loading-gif').style.display = "inline";
+    document.querySelector('.btn-loading').style.display = "block";
     
     (function(){
         emailjs.init({publicKey: "_GCxj9wp4lONoUvJG"});
@@ -127,10 +118,10 @@ form.addEventListener("submit", function (e) {
 });
 
 function resetLoadingEffect() {
-    document.querySelector('.btn-loading-gif').style.display = "none";
-    document.querySelector('.app-form-button').style.width = "auto";
+    document.querySelector('.btn-loading').style.display = "none";
     const appFormButton = document.querySelector(".app-form-button");
-    appFormButton.style.color = "#35E6BA";
-    appFormButton.style.backgroundColor = "transparent";
+    appFormButton.classList.remove("loading", "disabled");
+    // Ensure the hover effect is restored by removing the 'clicked' class
+    appFormButton.classList.remove("clicked");
     document.querySelector('.btn-send-text').style.display = "inline";
 }

@@ -140,6 +140,9 @@ i {
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+.fab.fa-docker {
+  font-size: 51px;
+}
 /*End frameworks*/
 .card:hover{
   transform: scale(1.1);
@@ -151,7 +154,7 @@ i {
   height: 30px;
   margin: 0 auto;
 }
-.right {
+/* .right {
   float: right;
   padding-right: 2.5px;
   -webkit-touch-callout: none;
@@ -161,7 +164,7 @@ i {
         -ms-user-select: none;
             user-select: none;
             cursor: text;
-}
+} */
 /*50%*/
 .html-50 {
   background: linear-gradient(

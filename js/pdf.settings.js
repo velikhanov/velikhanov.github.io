@@ -10,7 +10,7 @@ const canvas = document.getElementById('pdf-viewer');
     const page = await pdf.getPage(1);
 
     // Calculate scale based on device pixel ratio and viewport size
-    const viewport = page.getViewport({scale: 3});
+    const viewport = page.getViewport({scale: 5});
     const context = canvas.getContext('2d');
     canvas.height = viewport.height;
     canvas.width = viewport.width;

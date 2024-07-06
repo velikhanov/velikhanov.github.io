@@ -1,17 +1,13 @@
-.section{
+.section {
   min-height: 100vh;
   padding: 0 50px 50px 50px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  line-height: normal;
 }
-.about {
-  display: flex;
-  align-items: center;
-  vertical-align: middle;
-  justify-content: center;
-}
-.about h1 {
+
+.title {
   padding: 20px 10px 20px 20px;
   color: #fff;
   font-size: 50px;
@@ -21,37 +17,161 @@
   text-decoration: underline;
   text-decoration-color: #35E6BA;
 }
-.about a {
-  font-size: 25px;
-  cursor: pointer;
-  color: #35E6BA;
+
+.main {
+  display: flex;
+}
+
+.hr {
+  border: #fff 1px solid;
+  margin: 10px 0;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 20px;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  text-align: left;
+}
+
+.info-block ul {
+  padding-left: 30px;
+}
+
+.about-me-info-item {
+  width: 100%;
+  text-align: justify
+}
+
+.mt {
+  margin-top: 10px;
+}
+
+.education {
+  display: flex;
+  justify-content: space-around;
+}
+
+.education ul {
+  width: 100%;
+}
+
+.link {
+  color: #fff;
   text-decoration: none;
 }
-canvas {
-  display: none;
+
+.link:hover {
+  color: #35E6BA;
+}
+
+.langs-and-contacts {
+  display: flex;
+  justify-content: space-around;
+}
+
+.langs, .contacts {
   width: 100%;
-  height: 100%;
 }
-#loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50px;
-  padding: 8px;
-  transform: translate(-50%, -50%);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #25b09b;
-  --_m: 
-    conic-gradient(#0000 10%,#000),
-    linear-gradient(#000 0 0) content-box;
-  -webkit-mask: var(--_m);
-          mask: var(--_m);
-  -webkit-mask-composite: source-out;
-          mask-composite: subtract;
-  animation: l3 1s infinite linear;
+
+.download-button-block {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-@keyframes l3 {to{transform: translate(-50%, -50%) rotate(1turn);}}
+
+.download-button {
+  padding: 10px 15px;
+  font-weight: bold;
+  color: #000;
+  width: 200px;
+  font-weight: bold;
+  /* background-color: #35E6BA; */
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.download-button:hover {
+  color: #fff;
+  background-color: #000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+@media only screen and (max-width: 1350px) {
+  .about-me-info-item {
+    font-size: 17.5px;
+  }
+  
+  .subtitle {
+    font-size: 1.10em;
+  }
+
+  .education ul, .langs-and-contacts li, .contacts li {
+    font-size: 17.5px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .education {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .main img {
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  .main p {
+    border-top: #fff 2px solid;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .main hr {
+    margin: 10px 0;
+  }
+
+  .subtitle {
+    font-size: 1em;
+  }
+
+  .education {
+    flex-direction: row;
+  }
+
+  .download-button-block {
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 655px) {
+  .education {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .info-block ul {
+    padding-left: 20px;
+  }
+}
 
 @media only screen and (max-width: 500px) {
   .section {
@@ -63,33 +183,56 @@ canvas {
     top: 2.5%;
     padding-top: 10px;
   }
+
+  .about-me-info-item {
+    font-size: 15px;
+  }
+  
+  .subtitle {
+    font-size: 0.9em;
+  }
+
+  .education ul, .langs-and-contacts li, .contacts li {
+    font-size: 15px;
+  }
 }
 @media only screen and (max-width: 400px) {
-  .about h1 {
+  .title {
     font-size: 40px;
   }
-  .about a {
-    font-size: 25px;
+
+  .langs-and-contacts {
+    flex-direction: column;
   }
-  #loader {
-    width: 25px;
-    padding: 4px;
+
+  .contacts {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: #fff 2px solid;
   }
 }
 @media only screen and (max-width: 315px) {
-  .about h1 {
+  .title {
     font-size: 35px;
   }
-  .about a {
-    font-size: 22.5px;
+}
+
+@media only screen and (max-width: 305px) {
+  .about-me-info-item {
+    font-size: 13px;
+  }
+
+  .subtitle {
+    font-size: 0.8em;
+  }
+
+  .education ul, .langs-and-contacts li, .contacts li {
+    font-size: 13px;
   }
 }
 
 @media only screen and (max-width: 300px) {
-  .about h1 {
+  .title {
     font-size: 30px;
-  }
-  .about a {
-    font-size: 20px;
   }
 }

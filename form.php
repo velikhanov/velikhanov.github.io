@@ -35,8 +35,8 @@
                 </div>
                 <div class="app-contact">
                   <div data-phrase-id="details">Contact details:</div>
-                  <div>+(994)51 433-98-47</div>
-                  <div>teymur99@gmail.com</div>
+                  <div><a href="mailto: teymur99@gmail.com?subject=Contact%20from%20website">teymur99@gmail.com</a></div>
+                  <div><a href="tel: +994514339847">+(994) 51-433-98-47</a></div>
                 </div>
               </div>
               <div class="screen-body-item">
@@ -54,7 +54,7 @@
                     <input class="app-form-control" type="text" name="message" data-phrase-id="message" placeholder="Message" autocomplete="off">
                   </div>
                   <div class="app-form-group buttons">
-                    <button type="submit" class="app-form-button"><span class="btn-send-text" data-phrase-id="send">Send</span><img class="btn-loading-gif" src="img/loading.gif"></button>
+                    <button type="submit" class="app-form-button"><span class="btn-send-text" data-phrase-id="send">Send</span><div class="btn-loading"></div></button>
                   </div>
                 </form>
               </div>

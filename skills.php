@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <?php include 'includes/head.php'; ?>
-    <link rel="stylesheet" href="css/skills.css">
     <link rel="stylesheet" href="css/devicons.min.css">
-              
+    <link rel="stylesheet" href="css/skills.css">
     <title>My skills</title>
   </head>
   <body>
@@ -23,8 +22,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a></strong></span>
             <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
           </div>
@@ -39,8 +38,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Go_(programming_language)" target="_blank">Go</a></strong></span>
             <div class='bg'>
               <div class='html-50'>
-                <span class='left'></span>
-                <span class='right'>50%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>50%</span> -->
               </div>
             </div>
           </div>
@@ -55,8 +54,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/PHP" target="_blank">PHP</a></strong></span>
             <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
           </div>
@@ -71,8 +70,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JS</a></strong></span>
             <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
           </div>
@@ -87,8 +86,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Dart_(programming_language)" target="_blank">Dart</a></strong></span>
             <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
           </div>
@@ -103,8 +102,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/HTML5" target="_blank">HTML5</a></strong></span>
               <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
           </div>
@@ -119,8 +118,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/CSS" target="_blank">CSS3</a></strong></span>
               <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
           </div>
@@ -138,8 +137,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Django_(web_framework)" target="_blank">Django</a></strong></span>
             <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
           </div>
@@ -154,8 +153,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Django_(web_framework)" target="_blank">DRF</a></strong></span>
             <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
           </div>
@@ -170,8 +169,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Flask_(web_framework)" target="_blank">Flask</a></strong></span>
             <div class='bg'>
               <div class='html-70'>
-                <span class='left'></span>
-                <span class='right'>70%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>70%</span> -->
               </div>
             </div>
           </div>
@@ -186,8 +185,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/FastAPI" target="_blank">FastAPI</a></strong></span>
             <div class='bg'>
               <div class='html-70'>
-                <span class='left'></span>
-                <span class='right'>70%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>70%</span> -->
               </div>
             </div>
           </div>
@@ -202,8 +201,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Flutter_(software)" target="_blank">Flutter</a></strong></span>
             <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
           </div>
@@ -218,8 +217,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Laravel" target="_blank">Laravel</a></strong></span>
             <div class='bg'>
               <div class='html-70'>
-                <span class='left'></span>
-                <span class='right'>70%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>70%</span> -->
               </div>
             </div>
           </div>
@@ -234,8 +233,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/JQuery" target="_blank">jQuery</a></strong></span>
             <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
           </div>
@@ -250,8 +249,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" target="_blank">Bootstrap 4-5</a></strong></span>
             <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
           </div>
@@ -269,8 +268,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Git" target="_blank">Git</a></strong></span>
             <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
           </div>
@@ -282,14 +281,14 @@
         <!-- Card start -->
         <div class="card">
           <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank"><i class="devicon-docker-plain colored normalize-fs"></i></a>
+            <a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank"><i class="fab fa-docker"></i></a>
           </div>
           <div class="text-content">
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank">Docker</a></strong></span>
             <div class='bg'>
               <div class='html-70'>
-                <span class='left'></span>
-                <span class='right'>70%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>70%</span> -->
               </div>
             </div>
           </div>
@@ -307,8 +306,8 @@
           <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/MySQL" target="_blank">MySQL</a></strong></span>
           <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
         </div>
@@ -323,8 +322,8 @@
           <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/PostgreSQL" target="_blank">PostgreSQL</a></strong></span>
           <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
         </div>
@@ -339,8 +338,8 @@
           <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Firebase" target="_blank">Firebase</a></strong></span>
           <div class='bg'>
               <div class='html-80'>
-                <span class='left'></span>
-                <span class='right'>80%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>80%</span> -->
               </div>
             </div>
         </div>
@@ -355,8 +354,8 @@
           <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/MongoDB" target="_blank">MongoDB</a></strong></span>
           <div class='bg'>
               <div class='html-70'>
-                <span class='left'></span>
-                <span class='right'>70%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>70%</span> -->
               </div>
             </div>
         </div>
@@ -371,8 +370,8 @@
           <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Redis" target="_blank">Redis</a></strong></span>
           <div class='bg'>
               <div class='html-70'>
-                <span class='left'></span>
-                <span class='right'>70%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>70%</span> -->
               </div>
             </div>
         </div>
@@ -383,19 +382,38 @@
       <div class="skills">
       <!-- Card start -->
       <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/GraphQL" target="_blank"><i class="devicon-graphql-plain colored normalize-fs"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/GraphQL" target="_blank">GraphQL</a></strong></span>
-            <div class='bg'>
-              <div class='html-70'>
-                <span class='left'></span>
-                <span class='right'>70%</span>
-              </div>
+        <div class="card-circle">
+          <a href="https://en.wikipedia.org/wiki/GraphQL" target="_blank"><i class="devicon-graphql-plain colored normalize-fs"></i></a>
+        </div>
+        <div class="text-content">
+          <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/GraphQL" target="_blank">GraphQL</a></strong></span>
+          <div class='bg'>
+            <div class='html-70'>
+              <!-- <span class='left'></span>
+              <span class='right'>70%</span> -->
             </div>
           </div>
         </div>
+      </div>
+      <!-- Card End -->
+      </div>
+      <h1 class="maintech" data-phrase-id="os">Operating systems</h1>
+      <div class="skills">
+      <!-- Card start -->
+      <div class="card">
+        <div class="card-circle">
+          <a href="https://en.wikipedia.org/wiki/Ubuntu" target="_blank"><i class="devicon-ubuntu-plain colored normalize-fs"></i></a>
+        </div>
+        <div class="text-content">
+          <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/GraphQL" target="_blank">Ubuntu</a></strong></span>
+          <div class='bg'>
+            <div class='html-70'>
+              <!-- <span class='left'></span>
+              <span class='right'>70%</span> -->
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Card End -->
       </div>
       <h1 class="maintech" data-phrase-id="ge">Graphic editors</h1>
@@ -409,8 +427,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Adobe_Photoshop" target="_blank">Photoshop</a></strong></span>
             <div class='bg'>
               <div class='html-70'>
-                <span class='left'></span>
-                <span class='right'>70%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>70%</span> -->
               </div>
             </div>
           </div>
@@ -425,8 +443,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Adobe_XD" target="_blank">XD</a></strong></span>
             <div class='bg'>
               <div class='html-70'>
-                <span class='left'></span>
-                <span class='right'>70%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>70%</span> -->
               </div>
             </div>
           </div>
@@ -441,8 +459,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Adobe_Illustrator" target="_blank">Illustrator</a></strong></span>
             <div class='bg'>
               <div class='html-70'>
-                <span class='left'></span>
-                <span class='right'>70%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>70%</span> -->
               </div>
             </div>
           </div>
@@ -457,8 +475,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/AutoCAD" target="_blank"></a>AutoCAD</strong></span>
             <div class='bg'>
               <div class='html-70'>
-                <span class='left'></span>
-                <span class='right'>70%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>70%</span> -->
               </div>
             </div>
           </div>
@@ -473,8 +491,8 @@
             <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Figma" target="_blank"></a>Figma</strong></span>
             <div class='bg'>
               <div class='html-70'>
-                <span class='left'></span>
-                <span class='right'>70%</span>
+                <!-- <span class='left'></span>
+                <span class='right'>70%</span> -->
               </div>
             </div>
           </div>
