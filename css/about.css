@@ -81,8 +81,6 @@
 
 .download-button-block {
   display: flex;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .open-button, .download-button {
@@ -190,8 +188,7 @@
   }
 
   .download-button-block {
-    text-align: center;
-    margin-bottom: 0;
+    justify-content: center;
   }
 }
 
