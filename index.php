@@ -12,7 +12,7 @@
       <div class="text-area">
         <div class="index-title-main"><h1></h1></div>
         <h5 class="index-backdev">Back End <span data-phrase-id="dev">Developer</span></h5>
-        <a class="index-form-link" href="/form.html" data-phrase-id="contactme">Contact me</a>
+        <a class="index-form-link" href="/dynamicportfolio.com/form.php" data-phrase-id="contactme">Contact me</a>
       </div>
       <a class="index-img-content-link" href="/dynamicportfolio.com/works.php"><img class="index-img-content" src="img/t-index.png" alt="Rotating logo"></a>
     </section>

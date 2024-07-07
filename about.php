@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="hr"></div>
-                    <div class="download-button-block"><a class="download-button" data-phrase-id="downloadCV" href="img/about/CV_Velikhanov_Teymur.pdf" class="button" download>Download CV</a></div>
+                    <div class="download-button-block"><a class="open-button" data-phrase-id="openCV" href="img/about/CV_Velikhanov_Teymur.pdf" class="button" target="_blank">Open CV</a><a class="download-button" data-phrase-id="downloadCV" href="img/about/CV_Velikhanov_Teymur.pdf" class="button" download>Download CV</a></div>
                 </div>
             </div>
         </section>

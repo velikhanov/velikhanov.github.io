@@ -15,7 +15,8 @@ languative.modifyDictionary("az", {
     tr: "Türk",
     contacts: "Əlaqə",
     contactForm: "Əlaqə Forması",
-    downloadCV: "CV-ni yükləyin"
+    openCV: "CV-ni açmaq",
+    downloadCV: "CV-ni yükləmək"
 }),
 languative.modifyDictionary("ru", {
     title: "Обо мне",
@@ -31,5 +32,6 @@ languative.modifyDictionary("ru", {
     tr: "Турецкий",
     contacts: "Контакты",
     contactForm: "Форма обратной связи",
+    openCV: "Открыть CV",
     downloadCV: "Скачать CV"
 });
