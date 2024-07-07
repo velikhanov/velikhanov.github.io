@@ -18,10 +18,14 @@ form.addEventListener("submit", function (e) {
     })();
 
     const formData = {
-        name: document.querySelector("input[name=name]").value.replace(/[^\u0400-\u04FF\u00C7\u018F\u011E\u04D9\u0049\u0130\u00D6\u015E\u00DC\u00E7\u01DD\u0259\u04D8\u04D9\u1D4A\u2094\u011F\u0131\u0069\u00F6\u015F\u00FC\w@.?()+"\/,:;*%!№$#=-]+/gi, "").replace(/\s+/g, ""),
-        email: document.querySelector("input[name=email]").value.replace(/[^\w@._]+/g, "").replace(/\s+/g, ""),
-        subject: document.querySelector("input[name=subject]").value.replace(/[^\u0400-\u04FF\u00C7\u018F\u011E\u04D9\u0049\u0130\u00D6\u015E\u00DC\u00E7\u01DD\u0259\u04D8\u04D9\u1D4A\u2094\u011F\u0131\u0069\u00F6\u015F\u00FC\w@.?()+"\/,:;*%!№$#=-]+/gi, "").replace(/\s+/g, ""),
-        message: document.querySelector("input[name=message]").value.replace(/[^\u0400-\u04FF\u00C7\u018F\u011E\u04D9\u0049\u0130\u00D6\u015E\u00DC\u00E7\u01DD\u0259\u04D8\u04D9\u1D4A\u2094\u011F\u0131\u0069\u00F6\u015F\u00FC\w@.?()+"\/,:;*%!№$#=-]+/gi, "").replace(/\s+/g, "")
+        name: document.querySelector("input[name=name]").value,
+        // .replace(/[^\u0400-\u04FF\u00C7\u018F\u011E\u04D9\u0049\u0130\u00D6\u015E\u00DC\u00E7\u01DD\u0259\u04D8\u04D9\u1D4A\u2094\u011F\u0131\u0069\u00F6\u015F\u00FC\w@.?()+"\/,:;*%!№$#=-]+/gi, "").replace(/\s+/g, ""),
+        email: document.querySelector("input[name=email]").value,
+        // .replace(/[^\w@._]+/g, "").replace(/\s+/g, ""),
+        subject: document.querySelector("input[name=subject]").value,
+        // .replace(/[^\u0400-\u04FF\u00C7\u018F\u011E\u04D9\u0049\u0130\u00D6\u015E\u00DC\u00E7\u01DD\u0259\u04D8\u04D9\u1D4A\u2094\u011F\u0131\u0069\u00F6\u015F\u00FC\w@.?()+"\/,:;*%!№$#=-]+/gi, "").replace(/\s+/g, ""),
+        message: document.querySelector("input[name=message]").value
+        // .replace(/[^\u0400-\u04FF\u00C7\u018F\u011E\u04D9\u0049\u0130\u00D6\u015E\u00DC\u00E7\u01DD\u0259\u04D8\u04D9\u1D4A\u2094\u011F\u0131\u0069\u00F6\u015F\u00FC\w@.?()+"\/,:;*%!№$#=-]+/gi, "").replace(/\s+/g, "")
     };    
 
     const toast = document.querySelector(".toast");
