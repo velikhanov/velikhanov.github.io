@@ -23,7 +23,7 @@
                         </p>
                     </div>
                     <div class="hr"></div>
-                    <div>
+                    <div class="education-block">
                         <h3 class="subtitle"><i class="fa-solid fa-graduation-cap"></i> <strong data-phrase-id="education">Education</strong></h3>
                         <div class="mt"></div>
                         <div class="education">
@@ -54,11 +54,11 @@
                             <h3 class="subtitle"><i class="fa-solid fa-address-book"></i> <strong data-phrase-id="contacts">Contacts</strong></h3>
                             <div class="mt"></div>
                             <ul>
-                                <li><a class="link" href="mailto: teymur99@gmail.com?subject=Contact%20from%20website">teymur99@gmail.com</a></li>
-                                <li><a class="link" href="tel: +994514339847">+(994) 51-433-98-47</a></li>
-                                <li><i class="fab fa-linkedin-in"></i> <a class="link" href="https://www.linkedin.com/in/teymur-velikhanov-6715b420b" target="_blank">LinkedIn</a></li>
-                                <li><i class="fab fa-github"></i> <a class="link" href="https://github.com/velikhanov" target="_blank">Github</a></li>
-                                <li><a class="link" data-phrase-id="contactForm" href="/dynamicportfolio.com/form.php">Contact form</a></li>
+                                <li><a class="link" href="mailto: teymur99@gmail.com?subject=Contact%20from%20website"><i class="fa-regular fa-envelope"></i> <span>teymur99@gmail.com</span></a></li>
+                                <li><a class="link" href="tel: +994514339847"><i class="fa-solid fa-mobile-screen"></i> <span>+(994) 51-433-98-47</span></a></li>
+                                <li><a class="link" href="https://www.linkedin.com/in/teymur-velikhanov-6715b420b" target="_blank"><i class="fab fa-linkedin-in"></i> <span>LinkedIn</span></a></li>
+                                <li><a class="link" href="https://github.com/velikhanov" target="_blank"><i class="fab fa-github"></i> <span>Github</span></a></li>
+                                <li><a class="link" href="/dynamicportfolio.com/form.php"><i class="fa-regular fa-rectangle-list"></i> <span data-phrase-id="contactForm">Contact form</span></a></li>
                             </ul>
                         </div>
                     </div>

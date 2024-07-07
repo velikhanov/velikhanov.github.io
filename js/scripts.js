@@ -9,7 +9,14 @@ window.onload = function () {
 
 document.querySelector(".mobile-menu").onclick = function (e) {
     e.preventDefault();
+    const sidebar = document.querySelector(".sidebar-main");
+    sidebar.classList.add("sidebar-transition");
+    
     document.querySelector(".animated-icon2").classList.toggle("open");
-    document.querySelector(".sidebar-main").classList.toggle("show");
+    sidebar.classList.toggle("show");
     document.body.classList.toggle("lock-scroll");
+  
+    setTimeout(function() {
+      sidebar.classList.remove("sidebar-transition");
+    }, 500);
 };

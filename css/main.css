@@ -27,14 +27,6 @@ body{
   width: 30px;
   height: 20px;
   position: relative;
-  /* -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg); */
-  /* -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;*/
   cursor: pointer;
 }
 
@@ -47,10 +39,6 @@ body{
   background: #e3f2fd;
   opacity: 1;
   left: 0;
-  /* -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg); */
   -webkit-transition: .25s ease-in-out;
   -moz-transition: .25s ease-in-out;
   -o-transition: .25s ease-in-out;
@@ -95,7 +83,7 @@ body{
   left: 50%;
 }
 /*Navigation*/
-.sidebar-main{
+.sidebar-main {
   background-color: #3f3f3f;
   position: fixed;
   height: 100%;
@@ -105,7 +93,7 @@ body{
   z-index: 10;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between;*/
+  justify-content: space-around;
 }
 .logo-main a{
  text-decoration: none;
@@ -216,11 +204,6 @@ body{
   list-style: none;
   height: 20rem;
 }
-/* .social-main h3{
-  color: #fff;
-  padding-top: 10px;
-  text-align: center;
-} */
 .social-main .fab.fa-facebook-f, .social-main .fab.fa-linkedin-in, .social-main .fab.fa-instagram, .social-main .fab.fa-github, .social-main .fab.fa-vk{
  color: #bcbaba;
  font-size: 20px;
@@ -229,8 +212,7 @@ body{
   transform: scale(1.1);
   color: #35E6BA;
 }
-@media only screen and (max-width: 1000px),
-only screen and (max-device-width: 1000px){
+@media only screen and (max-width: 1000px), only screen and (max-device-width: 1000px){
   body{
     margin-left: 0;
   }
@@ -254,17 +236,22 @@ only screen and (max-device-width: 1000px){
   .sidebar a i{
     display: none;
   }
-  .sidebar-main.show{
-    display: block;
+  .sidebar-main.show {
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+  }
+  .sidebar-main {
+    opacity: 0;
+    visibility: hidden;
     width: 100%;
     z-index: 5;
-    animation: fade-in .5s;
-    /* overflow: scroll; */
   }
-  .sidebar-main{
-    display: none;
+  .sidebar-transition {
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
   }
-  .lang,.social{
+  .lang, .social{
     justify-content: center;
   }
   .lang a:not(:last-child){
@@ -274,8 +261,7 @@ only screen and (max-device-width: 1000px){
     margin-right: 20px;
   }
 }
-@media only screen and (max-height: 515px),
-only screen and (max-device-height: 515px){
+@media only screen and (max-height: 515px), only screen and (max-device-height: 515px){
   .sidebar-main.show{
     overflow-y: scroll;
   }
@@ -287,8 +273,7 @@ only screen and (max-device-height: 515px){
   }
 }
 @media (orientation: landscape){
-  @media only screen and (max-height: 585px),
-  only screen and (max-device-height: 585px){
+  @media only screen and (max-height: 585px), only screen and (max-device-height: 585px){
     .sidebar a{
       height: 60px;
     }
@@ -307,9 +292,6 @@ only screen and (max-device-height: 515px){
     .logo-desc{
       padding-bottom: 5px;
     }
-    /* .social{
-      padding-bottom: 15px;
-    } */
     .social li{
       height: auto;
     }
@@ -321,45 +303,5 @@ only screen and (max-device-height: 515px){
   }
   .mobile-menu {
     right: 25px;
-  }
-}
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-moz-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-o-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-ms-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
