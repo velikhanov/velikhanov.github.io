@@ -196,6 +196,7 @@
 
   .education ul {
     list-style: none;
+    padding-left: 0;
   }
 }
 
@@ -229,6 +230,7 @@
 
   .langs-and-contacts ul {
     list-style: none;
+    padding-left: 0;
   }
 
   .contacts {
