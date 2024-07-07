@@ -62,7 +62,7 @@ form.addEventListener("submit", function (e) {
 
                 myTimer = setTimeout(function () {
                     toast.classList.remove("toast--visible");
-                }, 7500);
+                }, 2000);
             },
             function(_) {
                 if (toast.classList.contains("toast--success")) {
@@ -84,7 +84,7 @@ form.addEventListener("submit", function (e) {
 
                 myTimer = setTimeout(function () {
                     toast.classList.remove("toast--visible");
-                }, 7500);
+                }, 2000);
             }
         ).then(function() {
             // Reset loading effect
@@ -113,7 +113,7 @@ form.addEventListener("submit", function (e) {
 
         myTimer = setTimeout(function () {
             toast.classList.remove("toast--visible");
-        }, 7500);
+        }, 2000);
     }
 });
 
