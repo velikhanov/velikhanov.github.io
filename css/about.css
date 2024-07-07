@@ -81,7 +81,6 @@
 
 .download-button-block {
   display: flex;
-  justify-content: space-around;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -99,6 +98,10 @@
   text-align: center;
   text-decoration: none;
   transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.download-button {
+  margin-left: 20px;
 }
 
 .open-button:hover, .download-button:hover {
