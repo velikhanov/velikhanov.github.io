@@ -1,7 +1,7 @@
 .section {
   min-height: 100vh;
   padding: 0 50px 50px 50px;
-  text-align: center;
+  /* text-align: center; */
   position: relative;
   overflow: hidden;
   line-height: normal;
@@ -34,7 +34,7 @@
   width: 100%;
   padding-left: 20px;
   font-size: 20px;
-  text-align: center;
+  /* text-align: center; */
   color: #fff;
   text-align: left;
 }
