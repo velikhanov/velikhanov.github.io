@@ -1,27 +1,30 @@
 languative.modifyDictionary("en", {
-    Title: "My works"
+    Title: "My works",
+    w1title: "Repair company website",
+    w2title: "Construction company website",
+    w3title: "Site with 3 levels of privileges",
+    w4title: "Internet shop",
+    w5title: "Blog",
+    w6title: "Mobile App",
+    w7title: "URL Simplifier"
 }),
 languative.modifyDictionary("az", {
     Title: "İşlərim",
-    w1text: "Təmir şirkətin website",
-    w2text: "Tikinti şirkətin website",
-    w3text: "3 səviyyəli imtiyazlı bir sayt nümunəsi",
-    w4text: "İnternet mağazası",
-    w5text: "Blog",
-    w6text: "Mobil tətbiq",
-    w7text: "URL sadələşdirici",
-    writtenin: "Yazılıb:",
-    writtenin_mob: "Yazılıb:"
+    w1title: "Təmir şirkətin website",
+    w2title: "Tikinti şirkətin website",
+    w3title: "3 səviyyəli imtiyazlı bir sayt nümunəsi",
+    w4title: "İnternet mağazası",
+    w5title: "Blog",
+    w6title: "Mobil tətbiq",
+    w7title: "URL sadələşdirici"
 }),
 languative.modifyDictionary("ru", {
     Title: "Мои работы",
-    w1text: "Сайт ремонтной компании",
-    w2text: "Сайт строительной компании",
-    w3text: "Пример сайта с 3 уровнями привилегий",
-    w4text: "Интернет магазин",
-    w5text: "Блог",
-    w6text: "Моб. прилож.",
-    w7text: "Упроститель URL",
-    writtenin: "Написан на:",
-    writtenin_mob: "Написано на:"
+    w1title: "Сайт ремонтной компании",
+    w2title: "Сайт строительной компании",
+    w3title: "Пример сайта с 3 уровнями привилегий",
+    w4title: "Интернет магазин",
+    w5title: "Блог",
+    w6title: "Моб. прилож.",
+    w7title: "Упроститель URL"
 });

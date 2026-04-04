@@ -7,7 +7,7 @@ function getLanguageFromLocalStorage() {
 }
 
 function getLanguageFromNavigator() {
-    return window.navigator.userLanguage ? window.navigator.userLanguage.slice(0, 2) : window.navigator.language.slice(0, 2);
+    return window.navigator.language.slice(0, 2);
 }
 
 function setLangText(language) {
@@ -27,11 +27,13 @@ function setLangText(language) {
 setLangText(getLanguageFromLocalStorage() || getLanguageFromNavigator());
 
 function animateText() {
-    let e, a;
-    if (timeout && clearTimeout(timeout), (a = langText.slice(0, ++i)) !== langText) {
+    let a;
+    if (timeout) clearTimeout(timeout);
+    if ((a = langText.slice(0, ++i)) !== langText) {
+        while (a.lastIndexOf("<") > a.lastIndexOf(">") && i < langText.length) {
+            a = langText.slice(0, ++i);
+        }
         document.querySelector(".index-title-main h1").innerHTML = a;
-        let t = a.slice(-1);
-        if (("<" === t && (e = !0), ">" === t && (e = !1), e)) return animateText();
         timeout = setTimeout(animateText, 100);
     }
 }

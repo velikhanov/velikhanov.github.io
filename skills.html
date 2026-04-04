@@ -5,470 +5,380 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="shortcut icon" href="img/t.png" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/all.min.css">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/global.css">
+<script src="js/lightning.js" defer></script>
+<script>
+    (function() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+</script>
     <link rel="stylesheet" href="css/devicons.min.css">
     <link rel="stylesheet" href="css/skills.css">
-    <title>My skills</title>
+    <title>Skills | Velikhanov Teymur</title>
   </head>
   <body>
-
-    <header>
-	<button class="mobile-menu"><div class="animated-icon2"><span></span><span></span><span></span><span></span></div></button>
-	<div class="sidebar-main">
-		<div class="logo-main">
+    <header class="main-header">
+	<nav class="nav-container container">
+		<div class="logo">
 			<a href="/">
-				<img class="logo-img" src="img/t.png" alt="Logo">
-				<h3 class="logo-name" data-phrase-id="headername">Teymur</h3>
+				<img class="logo-img" src="/img/t-index.png" alt="Logo">
 			</a>
-			<span class="logo-desc">Web <span data-phrase-id="webdev">developer</span></span>
 		</div>
-		<div class="sidebar">
-			<a href="/about"><i class="fas fa-address-card"></i><b data-phrase-id="aboutme">About me</b></a>
-			<a href="/skills"><i class="fas fa-code"></i><b data-phrase-id="myskills">My skills</b></a>
-			<a href="/works"><i class="fas fa-briefcase"></i><b data-phrase-id="myworks">My works</b></a>
-			<a href="/form"><i class="fas fa-envelope"></i><b data-phrase-id="contactme">Contact me</b></a>
+		
+		<button class="mobile-menu-btn" aria-label="Toggle menu">
+			<span></span>
+			<span></span>
+		</button>
+
+		<div class="nav-links">
+			<a href="/about.html" data-phrase-id="nav_about">About</a>
+			<a href="/skills.html" data-phrase-id="nav_skills">Skills</a>
+			<a href="/works.html" data-phrase-id="nav_works">Works</a>
+			<a href="/form.html" data-phrase-id="nav_contact">Contact</a>
+			
+			<div class="theme-lang-controls">
+				<button id="theme-toggle" class="control-btn" aria-label="Toggle Dark Mode">
+					<i class="fa-solid fa-moon"></i>
+				</button>
+				
+				<div class="lang-selector">
+					<button onclick="languative.changeLanguage('en')" class="lang-btn"><img src="/img/lang/en.png" alt="EN"></button>
+					<button onclick="languative.changeLanguage('az')" class="lang-btn"><img src="/img/lang/az.png" alt="AZ"></button>
+					<button onclick="languative.changeLanguage('ru')" class="lang-btn"><img src="/img/lang/ru.png" alt="RU"></button>
+				</div>
+			</div>
 		</div>
-		<div class="lang">
-			<a class="twlang"><img onclick="languative.changeLanguage('en');" src="img/lang/en.png" alt="English flag"></a>
-			<a class="twlang"><img onclick="languative.changeLanguage('az');" src="img/lang/az.png" alt="Azerbaijani flag"></a>
-			<a class="twlang"><img onclick="languative.changeLanguage('ru');" src="img/lang/ru.png" alt="Russian flag"></a>
-		</div>
-		<div class="social-main">
-			<ul class="social">
-				<li><a href="https://www.instagram.com/velihanov99" target="_blank"><i class="fab fa-instagram"></i></a></li>
-				<li><a href="https://vk.com/velikhanov99" target="_blank"><i class="fab fa-vk"></i></a></li>
-				<li><a href="https://www.linkedin.com/in/teymur-velikhanov-6715b420b" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-				<li><a href="https://github.com/velikhanov" target="_blank"><i class="fab fa-github"></i></a></li>
-				<li><a href="https://www.facebook.com/velikhanov99" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-			</ul>
-		</div>
-	</div>
+	</nav>
 </header>
 
-    <section>
-      <h1 class="maintech" data-phrase-id="tech">Technologies</h1>
-      <div class="skills">
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank"><i class="fab fa-python fa-4x"></i></a>
+<canvas id="canvas"></canvas>
+
+<style>
+#canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	pointer-events: none;
+	opacity: 0.3;
+}
+
+.main-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	background: var(--nav-bg);
+	backdrop-filter: blur(10px);
+	padding: 1rem 0;
+	border-bottom: 1px solid var(--border-color);
+	transition: var(--transition);
+}
+
+.nav-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo a {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.logo-img {
+	width: 40px;
+	height: auto;
+	animation: logo-rotation 5s infinite linear;
+}
+
+@keyframes logo-rotation {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+.logo-name {
+	font-weight: 900;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	letter-spacing: -0.05em;
+	color: var(--text-color);
+}
+
+.nav-links {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+.nav-links a {
+	font-weight: 500;
+	font-size: 0.85rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--secondary-text);
+	position: relative;
+	padding: 5px 0;
+	transition: var(--transition);
+}
+
+.nav-links a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background: var(--accent-color);
+	transition: var(--transition);
+	transform: translateX(-50%);
+}
+
+.nav-links a:hover, .nav-links a.active {
+	color: var(--text-color);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+	width: 100%;
+}
+
+.theme-lang-controls {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	margin-left: 1rem;
+	border-left: 1px solid var(--border-color);
+	padding-left: 1.5rem;
+}
+
+.control-btn {
+	background: none;
+	border: none;
+	color: var(--secondary-text);
+	cursor: pointer;
+	font-size: 1.1rem;
+	transition: var(--transition);
+}
+
+.control-btn:hover {
+	color: var(--accent-color);
+}
+
+.lang-selector {
+	display: flex;
+	gap: 0.75rem;
+}
+
+.lang-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
+	opacity: 0.6;
+	transition: var(--transition);
+}
+
+.lang-btn:hover {
+	opacity: 1;
+	transform: scale(1.1);
+}
+
+.lang-btn img {
+	width: 20px;
+	height: auto;
+}
+
+.mobile-menu-btn {
+	display: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.5rem;
+}
+
+.mobile-menu-btn span {
+	display: block;
+	width: 25px;
+	height: 2px;
+	background: var(--text-color);
+	margin: 5px 0;
+	transition: var(--transition);
+}
+
+@media (max-width: 992px) {
+	.nav-links {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background: var(--nav-bg);
+		backdrop-filter: blur(20px);
+		flex-direction: column;
+		padding: 2rem;
+		gap: 2rem;
+		border-bottom: 1px solid var(--border-color);
+	}
+	
+	.nav-links.show {
+		display: flex;
+	}
+	
+	.theme-lang-controls {
+		margin-left: 0;
+		padding-left: 0;
+		border-left: none;
+		border-top: 1px solid var(--border-color);
+		padding-top: 2rem;
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.mobile-menu-btn {
+		display: block;
+	}
+
+	.mobile-menu-btn.active span:nth-child(1) {
+		transform: translateY(7px) rotate(45deg);
+	}
+
+	.mobile-menu-btn.active span:nth-child(2) {
+		transform: translateY(-7px) rotate(-45deg);
+	}
+}
+</style>
+
+    <main class="container mt-4">
+      <h1 class="hero-title" data-phrase-id="tech_title">Technologies</h1>
+      
+      <div class="skills-section">
+        <h2 class="section-label" data-phrase-id="tech_langs">Languages</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class="fab fa-python colored"></i>
+            <span>Python</span>
           </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a></strong></span>
-            <div class='bg'>
-              <div class='html-80'></div>
-            </div>
+          <div class="skill-item">
+            <i class="fab fa-php colored"></i>
+            <span>PHP</span>
           </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/PHP" target="_blank"><i class="fab fa-php fa-4x"></i></a>
+          <div class="skill-item">
+            <i class="fab fa-js-square colored"></i>
+            <span>JavaScript</span>
           </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/PHP" target="_blank">PHP</a></strong></span>
-            <div class='bg'>
-              <div class='html-80'></div>
-            </div>
+          <div class="skill-item">
+            <i class="devicon-go-original-wordmark colored"></i>
+            <span>Go</span>
           </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank"><div class="js-icon-background"><i class="fab fa-js-square fa-4x"></i></div></a>
+          <div class="skill-item">
+            <i class="devicon-dart-plain colored"></i>
+            <span>Dart</span>
           </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JS</a></strong></span>
-            <div class='bg'>
-              <div class='html-80'></div>
-            </div>
+          <div class="skill-item">
+            <i class="fab fa-html5 colored"></i>
+            <span>HTML5</span>
           </div>
-        </div>
-        <!-- Card End -->
-         <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Go_(programming_language)" target="_blank"><i class="devicon-go-original-wordmark normalize-fs colored"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Go_(programming_language)" target="_blank">Go</a></strong></span>
-            <div class='bg'>
-              <div class='html-50'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Dart_(programming_language)" target="_blank"><i class="devicon-dart-plain normalize-fs"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Dart_(programming_language)" target="_blank">Dart</a></strong></span>
-            <div class='bg'>
-              <div class='html-70'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><i class="fab fa-html5 fa-4x"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/HTML5" target="_blank">HTML5</a></strong></span>
-              <div class='bg'>
-              <div class='html-80'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/CSS" target="_blank"><i class="fab fa-css3 fa-4x"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/CSS" target="_blank">CSS3</a></strong></span>
-              <div class='bg'>
-              <div class='html-80'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-      </div>
-      <h1 class="maintech" data-phrase-id="fal">Frameworks and libraries</h1>
-      <div class="skills">
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Django_(web_framework)" target="_blank"><i class="devicon-django-plain colored normalize-fs"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Django_(web_framework)" target="_blank">Django</a></strong></span>
-            <div class='bg'>
-              <div class='html-80'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Django_(web_framework)" target="_blank"><i class="devicon-djangorest-plain colored normalize-fs"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Django_(web_framework)" target="_blank">DRF</a></strong></span>
-            <div class='bg'>
-              <div class='html-80'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Flask_(web_framework)" target="_blank"><i class="devicon-flask-original colored normalize-fs"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Flask_(web_framework)" target="_blank">Flask</a></strong></span>
-            <div class='bg'>
-              <div class='html-70'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/FastAPI" target="_blank"><i class="devicon-fastapi-plain normalize-fs colored"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/FastAPI" target="_blank">FastAPI</a></strong></span>
-            <div class='bg'>
-              <div class='html-70'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Flutter_(software)" target="_blank"><i class="devicon-flutter-plain normalize-fs"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Flutter_(software)" target="_blank">Flutter</a></strong></span>
-            <div class='bg'>
-              <div class='html-80'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Laravel" target="_blank"><i class="fab fa-laravel fa-4x"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Laravel" target="_blank">Laravel</a></strong></span>
-            <div class='bg'>
-              <div class='html-70'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/JQuery" target="_blank"><i class="devicon-jquery-plain colored normalize-fs"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/JQuery" target="_blank">jQuery</a></strong></span>
-            <div class='bg'>
-              <div class='html-80'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" target="_blank"><i class="fab fa-bootstrap fa-4x"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" target="_blank">Bootstrap 4-5</a></strong></span>
-            <div class='bg'>
-              <div class='html-80'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-      </div>
-      <h1 class="maintech" data-phrase-id="db">Databases</h1>
-      <div class="skills">
-      <!-- Card start -->
-      <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/MySQL" target="_blank"><i class="devicon-mysql-plain colored normalize-fs"></i></a>
-        </div>
-        <div class="text-content">
-          <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/MySQL" target="_blank">MySQL</a></strong></span>
-          <div class='bg'>
-              <div class='html-80'></div>
-            </div>
-        </div>
-      </div>
-      <!-- Card End -->
-      <!-- Card start -->
-      <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/PostgreSQL" target="_blank"><i class="devicon-postgresql-plain colored normalize-fs"></i></a>
-        </div>
-        <div class="text-content">
-          <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/PostgreSQL" target="_blank">PostgreSQL</a></strong></span>
-          <div class='bg'>
-              <div class='html-80'></div>
-            </div>
-        </div>
-      </div>
-      <!-- Card End -->
-      <!-- Card start -->
-      <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Firebase" target="_blank"><i class="devicon-firebase-plain colored normalize-fs"></i></a>
-        </div>
-        <div class="text-content">
-          <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Firebase" target="_blank">Firebase</a></strong></span>
-          <div class='bg'>
-              <div class='html-80'></div>
-            </div>
-        </div>
-      </div>
-      <!-- Card End -->
-      <!-- Card start -->
-      <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/MongoDB" target="_blank"><i class="devicon-mongodb-plain colored normalize-fs"></i></a>
-        </div>
-        <div class="text-content">
-          <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/MongoDB" target="_blank">MongoDB</a></strong></span>
-          <div class='bg'>
-              <div class='html-70'></div>
-            </div>
-        </div>
-      </div>
-      <!-- Card End -->
-      <!-- Card start -->
-      <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Redis" target="_blank"><i class="devicon-redis-plain colored normalize-fs"></i></a>
-        </div>
-        <div class="text-content">
-          <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Redis" target="_blank">Redis</a></strong></span>
-          <div class='bg'>
-              <div class='html-70'></div>
-            </div>
-        </div>
-      </div>
-      <!-- Card End -->
-      </div>
-      <h1 class="maintech" data-phrase-id="vcs">Version control systems</h1>
-      <div class="skills">
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Git" target="_blank"><i class="devicon-git-plain colored normalize-fs"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Git" target="_blank">Git</a></strong></span>
-            <div class='bg'>
-              <div class='html-80'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-      </div>
-      <h1 class="maintech" data-phrase-id="cms">Container management systems</h1>
-      <div class="skills">
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank"><i class="fab fa-docker"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank">Docker</a></strong></span>
-            <div class='bg'>
-              <div class='html-70'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-      </div>
-      <h1 class="maintech">API</h1>
-      <div class="skills">
-      <!-- Card start -->
-      <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/GraphQL" target="_blank"><i class="devicon-graphql-plain colored normalize-fs"></i></a>
-        </div>
-        <div class="text-content">
-          <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/GraphQL" target="_blank">GraphQL</a></strong></span>
-          <div class='bg'>
-            <div class='html-70'></div>
+          <div class="skill-item">
+            <i class="fab fa-css3 colored"></i>
+            <span>CSS3</span>
           </div>
         </div>
       </div>
-      <!-- Card End -->
-      </div>
-      <h1 class="maintech" data-phrase-id="os">Operating systems</h1>
-      <div class="skills">
-      <!-- Card start -->
-      <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Ubuntu" target="_blank"><i class="devicon-ubuntu-plain colored normalize-fs"></i></a>
-        </div>
-        <div class="text-content">
-          <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/GraphQL" target="_blank">Ubuntu</a></strong></span>
-          <div class='bg'>
-            <div class='html-70'></div>
+
+      <div class="skills-section">
+        <h2 class="section-label" data-phrase-id="fal">Frameworks</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class="devicon-django-plain colored"></i>
+            <span>Django</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-flask-original colored"></i>
+            <span>Flask</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-fastapi-plain colored"></i>
+            <span>FastAPI</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-flutter-plain colored"></i>
+            <span>Flutter</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-laravel colored"></i>
+            <span>Laravel</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-bootstrap colored"></i>
+            <span>Bootstrap</span>
           </div>
         </div>
       </div>
-      <!-- Card End -->
-      </div>
-      <h1 class="maintech" data-phrase-id="cp">Cloud platforms</h1>
-      <div class="skills">
-      <!-- Card start -->
-      <div class="card">
-        <div class="card-circle">
-          <a href="https://en.wikipedia.org/wiki/Amazon_Web_Services" target="_blank"><i class="devicon-amazonwebservices-plain colored normalize-fs"></i></a>
-        </div>
-        <div class="text-content">
-          <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Amazon_Web_Services" target="_blank">Amazon Web Services</a></strong></span>
-          <div class='bg'>
-            <div class='html-50'></div>
+
+      <div class="skills-section">
+        <h2 class="section-label" data-phrase-id="db">Databases</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class="devicon-mysql-plain colored"></i>
+            <span>MySQL</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-postgresql-plain colored"></i>
+            <span>PostgreSQL</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-mongodb-plain colored"></i>
+            <span>MongoDB</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-redis-plain colored"></i>
+            <span>Redis</span>
           </div>
         </div>
       </div>
-      <!-- Card End -->
+
+      <div class="skills-section">
+        <h2 class="section-label" data-phrase-id="infrastructure">Infrastructure & Tools</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class="fab fa-docker colored"></i>
+            <span>Docker</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-git-plain colored"></i>
+            <span>Git</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-ubuntu-plain colored"></i>
+            <span>Ubuntu</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-amazonwebservices-plain colored"></i>
+            <span>AWS</span>
+          </div>
+        </div>
       </div>
-      <h1 class="maintech" data-phrase-id="ge">Graphic editors</h1>
-      <div class="skills">
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Adobe_Photoshop" target="_blank"><i class="devicon-photoshop-line colored normalize-fs"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Adobe_Photoshop" target="_blank">Photoshop</a></strong></span>
-            <div class='bg'>
-              <div class='html-70'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Adobe_XD" target="_blank"><i class="devicon-xd-line colored normalize-fs"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Adobe_XD" target="_blank">XD</a></strong></span>
-            <div class='bg'>
-              <div class='html-70'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Adobe_Illustrator" target="_blank"><i class="devicon-illustrator-line colored normalize-fs"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Adobe_Illustrator" target="_blank">Illustrator</a></strong></span>
-            <div class='bg'>
-              <div class='html-70'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/AutoCAD" target="_blank"><img src="img/skills/autocad.png" alt="AutoCAD icon"></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/AutoCAD" target="_blank"></a>AutoCAD</strong></span>
-            <div class='bg'>
-              <div class='html-70'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
-        <!-- Card start -->
-        <div class="card">
-          <div class="card-circle">
-            <a href="https://en.wikipedia.org/wiki/Figma" target="_blank"><i class="devicon-figma-plain colored normalize-fs"></i></a>
-          </div>
-          <div class="text-content">
-            <span class=card-title><strong><a href="https://en.wikipedia.org/wiki/Figma" target="_blank"></a>Figma</strong></span>
-            <div class='bg'>
-              <div class='html-70'></div>
-            </div>
-          </div>
-        </div>
-        <!-- Card End -->
+    </main>
+
+    <footer class="mt-4">
+      <p data-phrase-id="footer_text">Built by Teymur with clean code.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/velikhanov" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/teymur-velikhanov-6715b420b/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
       </div>
-    </section>
+    </footer>
 
     <script src="js/languative.js" defer></script>
     <script src="lang/main.js" defer></script>
     <script src="lang/skills.js" defer></script>
-    <script src="js/scripts.js" async></script>
+    <script src="js/scripts.js" defer></script>
   </body>
 </html>

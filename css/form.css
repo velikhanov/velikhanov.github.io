@@ -1,554 +1,147 @@
-section{
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  letter-spacing: 1.4px;
+.contact-page {
+  padding-top: 120px;
+  padding-bottom: 5rem;
 }
-.background {
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 5rem;
+  margin-top: 4rem;
+}
+
+.contact-info {
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
-.container {
-    flex: 0 1 auto;
-    position: fixed;
-    width: 700px;
-    top: 50%;
-    left: calc(50% + 72.5px);
-    transform: translate(-50%, -50%);
+
+.contact-method {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--secondary-text);
+}
+
+.contact-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.contact-value:hover {
+  color: var(--accent-color);
+}
+
+.social-links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.social-links-grid .contact-value {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-control {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  padding: 1rem 0;
+  color: var(--text-color);
+  font-family: var(--font-main);
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: var(--transition);
+  border-radius: 0;
+}
+
+.form-control:focus {
+  outline: none;
+  border-bottom-color: var(--accent-color);
+}
+
+.form-control::placeholder {
+  color: var(--secondary-text);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.form-control.error {
+  border-bottom-color: #ff4444;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-page .hero-title {
+  white-space: nowrap;
+}
+
+@media (max-width: 992px) {
+  .contact-page .hero-title {
+    white-space: normal;
   }
-/*Notifications*/
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .contact-page {
+    padding-top: 100px;
+  }
+}
+
+/* Toast/Notification Styles */
 .toast {
   position: fixed;
-  top: 50px;
-  left: 145px;
-  right: 0;
-  margin: auto;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 2rem;
+  background: var(--card-bg);
+  border-left: 4px solid var(--accent-color);
+  color: var(--text-color);
+  font-weight: 600;
   z-index: 1000;
-
-  max-width: 700px;
-  padding: 6px;
-  background: #cccccc;
-  color: #333333;
-  font-family: sans-serif;
-  text-align: center;
-  border: 1px solid #aaaaaa;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
-  display: none;
-  transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+  transform: translateX(120%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block; /* Overriding previous display:none if any */
 }
 
-.toast--visible {
-  top: 20px;
-  display: inline;
-}
-
-.toast--success {
-  background: #00c02b;
-  border-color: #009d23;
-  color: #ffffff;
+.toast.toast--visible {
+  transform: translateX(0);
 }
 
 .toast--error {
-  background: #d50000;
-  border-color: #ba0000;
-  color: #ffffff;
-}
-/**/
-.screen {
-  position: relative;
-  background: #3e3e3e;
-  border-radius: 15px;
+  border-left-color: #ff4444;
 }
 
-.screen:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 20px;
-  right: 20px;
-  bottom: 0;
-  border-radius: 15px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
-  z-index: -1;
-}
-
-.screen-header {
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  background: #4d4d4f;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-.screen-header-left {
-  margin-right: auto;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-            cursor: default;
-}
-
-.screen-header-button {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-right: 3px;
-  border-radius: 8px;
-  background: white;
-}
-
-.screen-header-button.close {
-  background: #ed1c6f;
-}
-
-.screen-header-button.maximize {
-  background: #e8e925;
-}
-
-.screen-header-button.minimize {
-  background: #74c54f;
-}
-
-.screen-header-right {
-  display: flex;
-}
-
-.screen-header-ellipsis {
-  width: 3px;
-  height: 3px;
-  margin-left: 2px;
-  border-radius: 8px;
-  background: #999;
-}
-
-.screen-body {
-  display: flex;
-}
-
-.screen-body-item {
-  flex: 1;
-  padding: 50px;
-}
-
-.screen-body-item.left {
-  display: flex;
-  flex-direction: column;
-}
-
-.app-title {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  color: #35E6BA;
-  font-size: 24px;
-  text-transform: uppercase;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-            cursor: text;
-}
-
-.app-contact {
-  margin-top: auto;
-  font-size: 10px;
-  color: #888;
-}
-
-.app-contact a {
-  color: #888;
-  text-decoration: none;
-}
-
-.app-contact a:hover {
-  color: #35E6BA;
-}
-
-.app-contact span, .app-contact br{
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-            cursor: text;
-}
-
-.app-form-group {
-  margin-bottom: 15px;
-}
-
-/* Change the white to any color */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active{
- /* -webkit-box-shadow: 0 0 0 30px #3E3E3E inset !important; */
- -webkit-background-clip: text;
- /* -webkit-box-shadow-border: none!important; */
-}
-input{
-  caret-color: #fff;
-}
-/* input:-internal-autofill-selected{
- background-color: #3e3e3e!important;
- color: #3e3e3e!important;
-} */
-
-/*Change text in autofill textbox*/
-input:-webkit-autofill{
- -webkit-text-fill-color: #fff !important;
-}
-
-.app-form-group.message {
-  margin-top: 40px;
-}
-
-.app-form-group.buttons {
-  margin-bottom: 0;
-  text-align: right;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-            /* cursor: pointer; */
-}
-
-.app-form-control {
-  width: 100%;
-  padding: 10px 0;
-  background: none;
-  border: none;
-  border-bottom: 1px solid #666;
-  color: #ddd;
-  font-size: 14px;
-  outline: none;
-  transition: border-color .2s;
-}
-
-.app-form-control::-webkit-input-placeholder {
-  text-transform: uppercase;
-}
-.app-form-control::-moz-placeholder {
-  text-transform: uppercase;
-}
-.app-form-control:-ms-input-placeholder {
-  text-transform: uppercase;
-}
-.app-form-control:-moz-placeholder {
-  text-transform: uppercase;
-}
-
-button:disabled.app-form-button,
-button[disabled].app-form-button {
-  border: 1px solid #35E6BA;
-  background-color: #35E6BA;
-  color: #000;
-  opacity: .3;
-  cursor: default;
-}
-
-.app-form-control::placeholder {
-  color: #666;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-            /* cursor: text; */
-}
-
-.app-form-control:focus {
-  border-bottom-color: #ddd;
-}
-
-.app-form-control.error{
-  border-bottom-color: red;
-}
-
-.app-form-button {
-  background: none;
-  border: 1px solid #35E6BA;
-  border-radius: 7.5px;
-  padding: 10px;
-  width: 100px;
-  color: #35E6BA;
-  font-size: 14px;
-  cursor: pointer;
-  outline: none;
-  font-weight: bold;
-}
-
-.app-form-button:hover {
-  background-color: #35E6BA;
-  color: #000;
-}
-
-.app-form-button.clicked {
-  background: transparent;
-  color: #35E6BA;
-}
-
-.app-form-button.loading {
-  background: transparent;
-  color: transparent;
-}
-/*Loading btn*/
-.btn-loading {
-  display: none;
-  margin: 0 auto;
-  width: 15px;
-  padding: 3px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #25b09b;
-  --_m: 
-    conic-gradient(#0000 10%,#000),
-    linear-gradient(#000 0 0) content-box;
-  -webkit-mask: var(--_m);
-          mask: var(--_m);
-  -webkit-mask-composite: source-out;
-          mask-composite: subtract;
-  animation: l3 1s infinite linear;
-}
-@keyframes l3 {to{transform: rotate(1turn)}}
-/*End loading btn*/
-@media screen and (max-width: 1000px) {
-  .toast{
-    left: 0;
-  }
-  .container{
-    left: 50%;
-  }
-}
-@media (orientation: portrait){
-  @media screen and (max-height: 550px) {
-    .screen{
-      height: 370px;
-    }
-    .app-form-control{
-      font-size: 10px;
-    }
-    .app-form-group.message{
-      margin-top: 20px;
-    }
-    .app-form-group{
-      margin-bottom: 0;
-    }
-    .app-form-group.buttons{
-      font-size: 10px;
-      margin-top: 15px;
-    }
-    .app-form-button{
-      padding: 7.5px;
-    }
-  }
-  @media screen and (max-height: 380px) {
-    .screen{
-      height: 300px;
-    }
-    .app-form-group.message{
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-    .app-form-control{
-      font-size: 7.5px;
-    }
-    .app-form-group.buttons{
-      margin-top: 5px  ;
-      font-size: 7.5px;
-    }
-    .app-form-button{
-      padding: 5px;
-    }
-  }
-  @media screen and (max-width: 750px) {
-    /* .section{
-      padding: 0 15px 15px 15px;
-    } */
-    .container{
-      width: 600px;
-    }
-    .screen-body {
-      padding: 15px 40px 15px 40px;
-    }
-    .screen-body-item {
-      padding: 0;
-    }
-    input.app-form-control{
-      padding-left: 5px;
-    }
-  }
-  @media screen and (max-width: 650px) {
-    .container{
-      width: 500px;
-    }
-  }
-  @media screen and (max-width: 520px) {
-    .container{
-      width: 400px;
-    }
-    .screen-body {
-      flex-direction: column;
-    }
-
-    .screen-body-item.left {
-      margin-bottom: 10px;
-    }
-
-    .app-title {
-      flex-direction: row;
-      text-align: center;
-      padding-bottom: 10px;
-    }
-
-    .app-title span {
-      font-size: 20px;
-      width: 100%;
-    }
-
-    .app-title:after {
-      display: none;
-    }
-    .app-contact{
-      text-align: center;
-    }
-  }
-  @media screen and (max-width: 450px) {
-    .toast{
-      margin-left: 5px;
-      margin-right: 5px;
-    }
-  }
-  @media screen and (max-width: 420px) {
-    .container{
-      width: 350px;
-    }
-  }
-  @media screen and (max-width: 375px) {
-    .container{
-      width: 300px;
-    }
-  }
-  @media screen and (max-width: 350px) {
-    .container{
-      padding: 5px;
-      width: 250px;
-    }
-  }
-}
-@media (orientation: landscape){
-  @media screen and (max-width: 750px) {
-    .container{
-      width: 600px;
-    }
-  }
-  @media screen and (max-width: 620px) {
-    .container{
-      width: 500px;
-    }
-  }
-  @media screen and (max-width: 520px) {
-    .container{
-      width: 400px;
-    }
-    .screen-body-item{
-      padding: 15px;
-    }
-  }
-  @media screen and (max-width: 420px) {
-    .container{
-      width: 350px;
-    }
-  }
-  @media screen and (max-width: 350px) {
-    .container{
-      width: 300px;
-    }
-  }
-  @media screen and (max-width: 310px) {
-    .container{
-      width: 275px;
-    }
-  }
-  @media screen and (max-height: 425px) {
-    .screen-body-item{
-      padding: 15px;
-    }
-    .app-form-button{
-      padding: 7.5px;
-    }
-    .app-form-group.message{
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-  }
-  @media screen and (max-height: 350px) {
-    .screen{
-      height: 300px;
-    }
-    .screen-body{
-      height: 250px;
-    }
-    .app-form-control,.app-form-button{
-      font-size: 12.5px;
-    }
-  }
-  @media screen and (max-height: 310px) {
-    .screen{
-      height: 275px;
-    }
-    .screen-body{
-      height: 225px;
-    }
-    .app-form-control{
-      font-size: 10px;
-      padding: 7.5px 0;
-    }
-    .app-form-group.buttons{
-      margin-top: 17.5px;
-    }
-    .app-form-button{
-      font-size: 10px;
-    }
-  }
-  @media screen and (max-height: 290px){
-    .screen{
-      height: 270px;
-    }
-    .screen-body{
-      height: 220px;
-    }
-  }
-}
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .toast{
-    width: 100%;
-    margin: 0;
-    left: calc(50% + 72.5px);
-    transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-  }
-  .app-form-control:-ms-input-placeholder{
-    opacity: .3;
-  }
-
-}
-@media screen and (max-width: 1000px) and (-ms-high-contrast: none), (-ms-high-contrast: active){
-  .toast{
-    left: 50%;
-  }
-  .container{
-    left: 50%;
-  }
+.toast--success {
+  border-left-color: var(--accent-color);
 }

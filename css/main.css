@@ -125,11 +125,11 @@ body{
   justify-content: center;
   height: 75px;
   color: #fff;
+  transition: all 0.3s ease;
   -webkit-touch-callout: none;
     -webkit-user-select: none;
      -khtml-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
               cursor: pointer;
 }
@@ -142,7 +142,6 @@ body{
     -webkit-user-select: none;
      -khtml-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
 }
 .sidebar a:first-child{
@@ -185,7 +184,6 @@ body{
     -webkit-user-select: none;
      -khtml-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
             cursor: pointer;
 }
@@ -206,6 +204,7 @@ body{
 .social-main .fab.fa-facebook-f, .social-main .fab.fa-linkedin-in, .social-main .fab.fa-instagram, .social-main .fab.fa-github, .social-main .fab.fa-vk{
  color: #bcbaba;
  font-size: 20px;
+ transition: all 0.3s ease;
 }
 .social-main .fab.fa-facebook-f:hover, .social-main .fab.fa-instagram:hover, .social-main .fab.fa-vk:hover, .social-main .fab.fa-linkedin-in:hover, .social-main .fab.fa-github:hover{
   transform: scale(1.1);
@@ -294,13 +293,5 @@ body{
     .social li{
       height: auto;
     }
-  }
-}
-@media all and (-ms-high-contrast: none), all and (-ms-high-contrast: active), only screen and (max-height: 1000px) {
-  .animated-icon2 {
-    height: 25px;
-  }
-  .mobile-menu {
-    right: 25px;
   }
 }

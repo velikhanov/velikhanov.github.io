@@ -1,9 +1,12 @@
 languative.modifyDictionary("en", {
-    title: "About me"
+    title: "About me",
+    aboutMe_prefix: "I am a ",
+    aboutMe_suffix: "-year-old web developer with three years of commercial experience in programming. I specialize in Python (Django, DRF, Fast API) and Golang, focusing on building robust backend systems and RESTful APIs. I am proficient in database management with MySQL, PostgreSQL, MongoDB, and Redis."
 }),
 languative.modifyDictionary("az", {
     title: "Haqqımda",
-    aboutMe: "Mən 25 yaşlı veb inkişafçıyam və üç ildir proqramlaşdırma sahəsində ticari təcrübəyə malikəm. Python (Django, DRF, Fast API) və Golang üzərində ixtisaslaşmışam, istehsal olunan server sistemləri və RESTful API-ların yaradılmasına xüsusi diqqət ayıraraq. MySQL, PostgreSQL, MongoDB və Redis istifadə edərək verilənlər bazalarının idarə olunmasında yaxşı anlayışa malikəm.",
+    aboutMe_prefix: "Mən ",
+    aboutMe_suffix: " yaşlı veb inkişafçıyam və üç ildir proqramlaşdırma sahəsində ticari təcrübəyə malikəm. Python (Django, DRF, Fast API) və Golang üzərində ixtisaslaşmışam, istehsal olunan server sistemləri və RESTful API-ların yaradılmasına xüsusi diqqət ayıraraq. MySQL, PostgreSQL, MongoDB və Redis istifadə edərək verilənlər bazalarının idarə olunmasında yaxşı anlayışa malikəm.",
     education: "Təhsil",
     master: "Magistratura - Tətbiqi Proqram Təminatı",
     bachelor: "Bakalavr - Komputer Mühəndisliyi",
@@ -14,13 +17,15 @@ languative.modifyDictionary("az", {
     az: "Azərbaycan",
     tr: "Türk",
     contacts: "Əlaqə",
+    socials: "Sosial şəbəkələr",
     contactForm: "Əlaqə Forması",
     openCV: "CV-ni açmaq",
     downloadCV: "CV-ni yükləmək"
 }),
 languative.modifyDictionary("ru", {
     title: "Обо мне",
-    aboutMe: "Я 25-летний веб-разработчик с трехлетним коммерческим опытом программирования. Специализируюсь на Python (Django, DRF, Fast API) и Golang, уделяя особое внимание созданию надежных серверных систем и RESTful API. Хорошо разбираюсь в управлении базами данных с использованием MySQL, PostgreSQL, MongoDB и Redis.",
+    aboutMe_prefix: "Я ",
+    aboutMe_suffix: "-летний веб-разработчик с трехлетним коммерческим опытом программирования. Специализируюсь на Python (Django, DRF, Fast API) и Golang, уделяя особое внимание созданию надежных серверных систем и RESTful API. Хорошо разбираюсь в управлении базами данных с использованием MySQL, PostgreSQL, MongoDB and Redis.",
     education: "Образование",
     master: "Магистратура - Прикладное ПO",
     bachelor: "Бакалавриат - Компьютерная Инженерия",
@@ -31,6 +36,7 @@ languative.modifyDictionary("ru", {
     az: "Азербайджанский",
     tr: "Турецкий",
     contacts: "Контакты",
+    socials: "Соцсети",
     contactForm: "Форма обратной связи",
     openCV: "Открыть CV",
     downloadCV: "Скачать CV"

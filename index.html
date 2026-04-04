@@ -5,59 +5,285 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="shortcut icon" href="img/t.png" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/all.min.css">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/global.css">
+<script src="js/lightning.js" defer></script>
+<script>
+    (function() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+</script>
     <link rel="stylesheet" href="css/index.css">
-    <title>Portfolio of Velikhanov Teymur</title>
+    <title>Velikhanov Teymur | Developer</title>
   </head>
-  <body>
-    <header>
-	<button class="mobile-menu"><div class="animated-icon2"><span></span><span></span><span></span><span></span></div></button>
-	<div class="sidebar-main">
-		<div class="logo-main">
+  <body class="home-page">
+    <header class="main-header">
+	<nav class="nav-container container">
+		<div class="logo">
 			<a href="/">
-				<img class="logo-img" src="img/t.png" alt="Logo">
-				<h3 class="logo-name" data-phrase-id="headername">Teymur</h3>
+				<img class="logo-img" src="/img/t-index.png" alt="Logo">
 			</a>
-			<span class="logo-desc">Web <span data-phrase-id="webdev">developer</span></span>
 		</div>
-		<div class="sidebar">
-			<a href="/about"><i class="fas fa-address-card"></i><b data-phrase-id="aboutme">About me</b></a>
-			<a href="/skills"><i class="fas fa-code"></i><b data-phrase-id="myskills">My skills</b></a>
-			<a href="/works"><i class="fas fa-briefcase"></i><b data-phrase-id="myworks">My works</b></a>
-			<a href="/form"><i class="fas fa-envelope"></i><b data-phrase-id="contactme">Contact me</b></a>
+		
+		<button class="mobile-menu-btn" aria-label="Toggle menu">
+			<span></span>
+			<span></span>
+		</button>
+
+		<div class="nav-links">
+			<a href="/about.html" data-phrase-id="nav_about">About</a>
+			<a href="/skills.html" data-phrase-id="nav_skills">Skills</a>
+			<a href="/works.html" data-phrase-id="nav_works">Works</a>
+			<a href="/form.html" data-phrase-id="nav_contact">Contact</a>
+			
+			<div class="theme-lang-controls">
+				<button id="theme-toggle" class="control-btn" aria-label="Toggle Dark Mode">
+					<i class="fa-solid fa-moon"></i>
+				</button>
+				
+				<div class="lang-selector">
+					<button onclick="languative.changeLanguage('en')" class="lang-btn"><img src="/img/lang/en.png" alt="EN"></button>
+					<button onclick="languative.changeLanguage('az')" class="lang-btn"><img src="/img/lang/az.png" alt="AZ"></button>
+					<button onclick="languative.changeLanguage('ru')" class="lang-btn"><img src="/img/lang/ru.png" alt="RU"></button>
+				</div>
+			</div>
 		</div>
-		<div class="lang">
-			<a class="twlang"><img onclick="languative.changeLanguage('en');" src="img/lang/en.png" alt="English flag"></a>
-			<a class="twlang"><img onclick="languative.changeLanguage('az');" src="img/lang/az.png" alt="Azerbaijani flag"></a>
-			<a class="twlang"><img onclick="languative.changeLanguage('ru');" src="img/lang/ru.png" alt="Russian flag"></a>
-		</div>
-		<div class="social-main">
-			<ul class="social">
-				<li><a href="https://www.instagram.com/velihanov99" target="_blank"><i class="fab fa-instagram"></i></a></li>
-				<li><a href="https://vk.com/velikhanov99" target="_blank"><i class="fab fa-vk"></i></a></li>
-				<li><a href="https://www.linkedin.com/in/teymur-velikhanov-6715b420b" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-				<li><a href="https://github.com/velikhanov" target="_blank"><i class="fab fa-github"></i></a></li>
-				<li><a href="https://www.facebook.com/velikhanov99" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-			</ul>
-		</div>
-	</div>
+	</nav>
 </header>
-    <section>
-      <canvas id="canvas"></canvas>
-      <div class="text-area">
-        <div class="index-title-main"><h1></h1></div>
-        <h5 class="index-backdev">Back End <span data-phrase-id="dev">Developer</span></h5>
-        <a class="index-form-link" href="/form" data-phrase-id="contactme">Contact me</a>
+
+<canvas id="canvas"></canvas>
+
+<style>
+#canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	pointer-events: none;
+	opacity: 0.3;
+}
+
+.main-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	background: var(--nav-bg);
+	backdrop-filter: blur(10px);
+	padding: 1rem 0;
+	border-bottom: 1px solid var(--border-color);
+	transition: var(--transition);
+}
+
+.nav-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo a {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.logo-img {
+	width: 40px;
+	height: auto;
+	animation: logo-rotation 5s infinite linear;
+}
+
+@keyframes logo-rotation {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+.logo-name {
+	font-weight: 900;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	letter-spacing: -0.05em;
+	color: var(--text-color);
+}
+
+.nav-links {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+.nav-links a {
+	font-weight: 500;
+	font-size: 0.85rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--secondary-text);
+	position: relative;
+	padding: 5px 0;
+	transition: var(--transition);
+}
+
+.nav-links a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background: var(--accent-color);
+	transition: var(--transition);
+	transform: translateX(-50%);
+}
+
+.nav-links a:hover, .nav-links a.active {
+	color: var(--text-color);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+	width: 100%;
+}
+
+.theme-lang-controls {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	margin-left: 1rem;
+	border-left: 1px solid var(--border-color);
+	padding-left: 1.5rem;
+}
+
+.control-btn {
+	background: none;
+	border: none;
+	color: var(--secondary-text);
+	cursor: pointer;
+	font-size: 1.1rem;
+	transition: var(--transition);
+}
+
+.control-btn:hover {
+	color: var(--accent-color);
+}
+
+.lang-selector {
+	display: flex;
+	gap: 0.75rem;
+}
+
+.lang-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
+	opacity: 0.6;
+	transition: var(--transition);
+}
+
+.lang-btn:hover {
+	opacity: 1;
+	transform: scale(1.1);
+}
+
+.lang-btn img {
+	width: 20px;
+	height: auto;
+}
+
+.mobile-menu-btn {
+	display: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.5rem;
+}
+
+.mobile-menu-btn span {
+	display: block;
+	width: 25px;
+	height: 2px;
+	background: var(--text-color);
+	margin: 5px 0;
+	transition: var(--transition);
+}
+
+@media (max-width: 992px) {
+	.nav-links {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background: var(--nav-bg);
+		backdrop-filter: blur(20px);
+		flex-direction: column;
+		padding: 2rem;
+		gap: 2rem;
+		border-bottom: 1px solid var(--border-color);
+	}
+	
+	.nav-links.show {
+		display: flex;
+	}
+	
+	.theme-lang-controls {
+		margin-left: 0;
+		padding-left: 0;
+		border-left: none;
+		border-top: 1px solid var(--border-color);
+		padding-top: 2rem;
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.mobile-menu-btn {
+		display: block;
+	}
+
+	.mobile-menu-btn.active span:nth-child(1) {
+		transform: translateY(7px) rotate(45deg);
+	}
+
+	.mobile-menu-btn.active span:nth-child(2) {
+		transform: translateY(-7px) rotate(-45deg);
+	}
+}
+</style>
+    
+    <main class="hero container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span id="typewriter-name"></span>
+        </h1>
+        <div class="hero-footer">
+          <p class="hero-subtitle text-secondary" data-phrase-id="hero_subtitle">
+            Web Developer based in Baku.
+            Creating modern digital experiences.
+          </p>
+          <div class="hero-actions mt-2">
+            <a href="/works.html" class="btn btn-primary" data-phrase-id="hero_works">View Works</a>
+            <a href="/form.html" class="btn btn-outline" data-phrase-id="hero_contact">Get in touch</a>
+          </div>
+        </div>
       </div>
-      <a class="index-img-content-link" href="/works"><img class="index-img-content" src="img/t-index.png" alt="Rotating logo"></a>
-    </section>
+    </main>
+
+    <footer>
+      <p data-phrase-id="footer_text">Built by Teymur with clean code.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/velikhanov" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/teymur-velikhanov-6715b420b/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </footer>
 
     <script src="js/languative.js" defer></script>
     <script src="lang/main.js" defer></script>
     <script src="lang/index.js" defer></script>
-    <script src="js/text.js" async></script>
-    <script src="js/lightning.js" async></script>
-    <script src="js/scripts.js" async></script>
+    <script src="js/scripts.js" defer></script>
   </body>
 </html>
