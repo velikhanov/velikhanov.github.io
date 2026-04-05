@@ -26,7 +26,7 @@ function calculateDynamicStats() {
         expYears--;
     }
     
-    // 3. Update dictionaries (Age no plus, Exp with plus)
+    // 3. Update dictionaries
     if (typeof languative !== 'undefined' && languative.dictionaries) {
         Object.keys(languative.dictionaries).forEach(lang => {
             const dict = languative.dictionaries[lang];
@@ -37,15 +37,17 @@ function calculateDynamicStats() {
         });
     }
 
+    const isAnimated = sessionStorage.getItem('statsAnimated');
+
     // 4. Render
     const aboutText = document.getElementById('about-main-text');
     if (aboutText && typeof languative !== 'undefined') {
         const phrase = languative.getPhrase('aboutMe_main');
         if (Array.isArray(phrase) && phrase.length >= 5) {
             aboutText.innerHTML = phrase[0] + 
-                                 `<span id="my-age">${sessionStorage.getItem('ageAnimated') ? targetAge : '0'}</span>` + 
+                                 `<span id="my-age">${isAnimated ? targetAge : '0'}</span>` + 
                                  phrase[2] + 
-                                 `<span class="text-accent">${expYears}+</span>` + 
+                                 `<span id="my-exp" class="text-accent">${isAnimated ? expYears + '+' : '0'}</span>` + 
                                  phrase[4];
             // Trigger local fade-in
             aboutText.classList.remove('fade-in-text');
@@ -55,24 +57,43 @@ function calculateDynamicStats() {
     }
 
     const ageElement = document.getElementById('my-age');
-    if (!ageElement) return;
+    const expElement = document.getElementById('my-exp');
+    if (!ageElement || !expElement) return;
 
-    if (sessionStorage.getItem('ageAnimated')) {
+    if (isAnimated) {
         ageElement.textContent = targetAge;
+        expElement.textContent = expYears + "+";
     } else {
-        let current = 0;
-        const animate = () => {
-            current++;
-            ageElement.textContent = current;
-            if (current < targetAge) {
+        // Animate Age
+        let currentAge = 0;
+        const animateAge = () => {
+            currentAge++;
+            ageElement.textContent = currentAge;
+            if (currentAge < targetAge) {
                 let delay = 30;
-                if (current >= targetAge - 2) delay = 250;
-                setTimeout(animate, delay);
-            } else {
-                sessionStorage.setItem('ageAnimated', '1');
+                if (currentAge >= targetAge - 2) delay = 250;
+                setTimeout(animateAge, delay);
             }
         };
-        animate();
+        animateAge();
+
+        // Animate Experience
+        let currentExp = 0;
+        const animateExp = () => {
+            if (expYears <= 0) {
+                expElement.textContent = "0+";
+                return;
+            }
+            currentExp++;
+            if (currentExp < expYears) {
+                expElement.textContent = currentExp;
+                setTimeout(animateExp, 150);
+            } else {
+                expElement.textContent = expYears + "+";
+                sessionStorage.setItem('statsAnimated', '1');
+            }
+        };
+        setTimeout(animateExp, 200); // Slight delay for better visual rhythm
     }
 }
 
@@ -154,16 +175,19 @@ document.addEventListener('DOMContentLoaded', () => {
             ? languative.getPhrase('hero_subtitle')
             : subtitleElement.textContent.trim();
         
-        subtitleElement.textContent = '';
         subtitleElement.style.opacity = '1';
         subtitleElement.style.visibility = 'visible';
         let subIndex = 0;
         const subTimer = setInterval(() => {
             if (subIndex <= subText.length) {
-                subtitleElement.textContent = subText.slice(0, subIndex) + (subIndex < subText.length ? '|' : '');
+                const typed = subText.slice(0, subIndex);
+                const remaining = subText.slice(subIndex);
+                // Ghost text with cursor following the typed part
+                subtitleElement.innerHTML = `${typed}${subIndex < subText.length ? '<span class="typewriter-cursor">|</span>' : ''}<span style="visibility:hidden">${remaining}</span>`;
                 subIndex++;
             } else {
                 clearInterval(subTimer);
+                subtitleElement.innerHTML = subText;
             }
         }, 20);
     }
@@ -171,37 +195,41 @@ document.addEventListener('DOMContentLoaded', () => {
     function startTypewriter() {
         if (!nameElement || !subtitleElement) return;
 
-        // Force subtitle hidden initially if it's the first boot
-        if (!sessionStorage.getItem('boot')) {
-            subtitleElement.style.opacity = '0';
-            subtitleElement.style.visibility = 'hidden';
-        }
-
         const nameText = (typeof languative !== 'undefined' && languative.getPhrase) 
             ? languative.getPhrase('myname') 
             : 'Velikhanov Teymur';
         
         const displayName = (!nameText || nameText === 'myname') ? 'Velikhanov Teymur' : nameText;
         const nameParts = displayName.split(' ');
-        const nameFullHTML = `${nameParts.slice(0, -1).join(' ')}<br><span class="text-accent">${nameParts[nameParts.length - 1]}</span>`;
+        const lastName = nameParts[nameParts.length - 1];
+        const firstName = nameParts.slice(0, -1).join(' ');
+        const nameFullHTML = `${firstName}<br><span class="text-accent">${lastName}</span>`;
 
         if (sessionStorage.getItem('boot')) {
             nameElement.innerHTML = nameFullHTML;
             typeSubtitle();
         } else {
             subtitleElement.style.opacity = '0';
+            subtitleElement.style.visibility = 'hidden';
             let charIndex = 0;
-            const flatName = displayName; 
             const nameTimer = setInterval(() => {
-                if (charIndex <= flatName.length) {
-                    let currentHTML = '';
+                if (charIndex <= displayName.length) {
+                    let typedHTML = '';
                     const spaceIndex = displayName.lastIndexOf(' ');
+                    
                     if (charIndex <= spaceIndex) {
-                        currentHTML = flatName.slice(0, charIndex);
+                        const typed = displayName.slice(0, charIndex);
+                        const remainingFirst = displayName.slice(charIndex, spaceIndex);
+                        // Cursor placed BEFORE the hidden ghost text
+                        typedHTML = `${typed}<span class="typewriter-cursor">|</span><span style="visibility:hidden">${remainingFirst}</span><br><span class="text-accent" style="visibility:hidden">${lastName}</span>`;
                     } else {
-                        currentHTML = `${displayName.slice(0, spaceIndex)}<br><span class="text-accent">${flatName.slice(spaceIndex + 1, charIndex)}</span>`;
+                        const typedLast = displayName.slice(spaceIndex + 1, charIndex);
+                        const remainingLast = displayName.slice(charIndex);
+                        // Cursor placed BEFORE the hidden ghost text
+                        typedHTML = `${firstName}<br><span class="text-accent">${typedLast}<span class="typewriter-cursor">|</span><span style="visibility:hidden">${remainingLast}</span></span>`;
                     }
-                    nameElement.innerHTML = currentHTML + '<span class="typewriter-cursor">|</span>';
+                    
+                    nameElement.innerHTML = typedHTML;
                     charIndex++;
                 } else {
                     clearInterval(nameTimer);
@@ -230,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 
                 // 2. Animate all translated blocks
-                document.querySelectorAll('[data-phrase-id], #about-main-text').forEach(el => {
+                document.querySelectorAll('[data-phrase-id], #about-main-text, #typewriter-name').forEach(el => {
                     el.classList.remove('fade-in-text');
                     void el.offsetWidth; // Trigger reflow
                     el.classList.add('fade-in-text');
