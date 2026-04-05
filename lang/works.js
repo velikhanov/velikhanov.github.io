@@ -1,30 +1,93 @@
 languative.modifyDictionary("en", {
-    Title: "My works",
-    w1title: "Repair company website",
-    w2title: "Construction company website",
-    w3title: "Site with 3 levels of privileges",
-    w4title: "Internet shop",
-    w5title: "Blog",
-    w6title: "Mobile App",
-    w7title: "URL Simplifier"
-}),
+    Title: "My Works",
+    status_op: "Live",
+    status_dev: "In Development",
+    work_source: "Source Code",
+    work_demo: "Live Demo",
+    
+    atyrau_name: "Repair Service",
+    atyrau_desc: "Modern platform for a repair company featuring dynamic service management and a streamlined client request system.",
+    
+    nuray_name: "Nuray House",
+    nuray_desc: "Professional construction company website showcasing architectural projects and a comprehensive real estate catalog.",
+    
+    comfort_name: "E-Commerce Core",
+    comfort_desc: "Full-scale online shop engine with inventory management, cart logic, and secure checkout processing.",
+    
+    blog_name: "Blog Engine",
+    blog_desc: "High-performance publishing platform with markdown support and optimized database indexing.",
+    
+    url_name: "URL Simplifier",
+    url_desc: "Lightweight microservice for link redirection with built-in analytics and custom alias support.",
+    
+    medquiz_name: "Med Quiz AI",
+    medquiz_desc: "LLM-powered engine that parses medical texts into interactive Telegram polls for student self-assessment.",
+    
+    utilities_name: "Utilities Bot",
+    utilities_desc: "Financial tracking bot for automating income/expense reports and utility service monitoring.",
+    
+    teacher_name: "Grammar Tools",
+    teacher_desc: "Linguistic analysis tool specializing in Russian morpheme parsing and grammatical text structure."
+});
 languative.modifyDictionary("az", {
     Title: "İşlərim",
-    w1title: "Təmir şirkətin website",
-    w2title: "Tikinti şirkətin website",
-    w3title: "3 səviyyəli imtiyazlı bir sayt nümunəsi",
-    w4title: "İnternet mağazası",
-    w5title: "Blog",
-    w6title: "Mobil tətbiq",
-    w7title: "URL sadələşdirici"
-}),
+    status_op: "Canlı",
+    status_dev: "İnkişafda",
+    work_source: "Mənbə kodu",
+    work_demo: "Canlı Demo",
+    
+    atyrau_name: "Təmir Xidməti",
+    atyrau_desc: "Dinamik xidmət idarəetməsi və müştəri müraciətlərinin işlənməsi sisteminə malik təmir şirkəti platforması.",
+    
+    nuray_name: "Nuray House",
+    nuray_desc: "Memarlıq layihələrini və daşınmaz əmlak kataloqunu nümayiş etdirən peşəkar tikinti şirkəti saytı.",
+    
+    comfort_name: "E-Ticarət Core",
+    comfort_desc: "İnventar idarəetməsi, səbət məntiqi və təhlükəsiz ödəniş emalı olan tam miqyaslı mağaza mühərriki.",
+    
+    blog_name: "Bloq Mühərriki",
+    blog_desc: "Markdown dəstəyi və optimallaşdırılmış verilənlər bazası indeksləşdirməsinə malik yüksək performanslı platforma.",
+    
+    url_name: "URL Sadələşdirici",
+    url_desc: "Daxili analitika və xüsusi ləqəb dəstəyi ilə link yönləndirmə üçün yüngül mikroxidmət.",
+    
+    medquiz_name: "Tibbi Quiz AI",
+    medquiz_desc: "Tibbi mətnləri tələbələrin özünüqiymətləndirməsi üçün interaktiv Telegram sorğularına çevirən AI mühərriki.",
+    
+    utilities_name: "Kommunal Bot",
+    utilities_desc: "Gəlir/xərc hesabatlarını və kommunal xidmətlərin monitorinqini avtomatlaşdıran maliyyə izləmə botu.",
+    
+    teacher_name: "Qrammatika Alətləri",
+    teacher_desc: "Rus dili morfemi və qrammatik mətn strukturunun təhlili üzrə ixtisaslaşmış linqvistik alət."
+});
 languative.modifyDictionary("ru", {
-    Title: "Мои работы",
-    w1title: "Сайт ремонтной компании",
-    w2title: "Сайт строительной компании",
-    w3title: "Пример сайта с 3 уровнями привилегий",
-    w4title: "Интернет магазин",
-    w5title: "Блог",
-    w6title: "Моб. прилож.",
-    w7title: "Упроститель URL"
+    Title: "Мои Работы",
+    status_op: "В сети",
+    status_dev: "В разработке",
+    work_source: "Исходный код",
+    work_demo: "Демо",
+    
+    atyrau_name: "Ремонтный Сервис",
+    atyrau_desc: "Платформа ремонтной компании с динамическим управлением услугами и системой обработки заявок клиентов.",
+    
+    nuray_name: "Nuray House",
+    nuray_desc: "Профессиональный сайт строительной компании с каталогом архитектурных проектов и объектов недвижимости.",
+    
+    comfort_name: "E-Commerce Core",
+    comfort_desc: "Движок интернет-магазина с управлением запасами, логикой корзины и безопасной обработкой платежей.",
+    
+    blog_name: "Движок Блога",
+    blog_desc: "Высокопроизводительная издательская платформа с поддержкой markdown и оптимизированной индексацией БД.",
+    
+    url_name: "URL Simplifier",
+    url_desc: "Легковесный микросервис для перенаправления ссылок со встроенной аналитикой и поддержкой алиасов.",
+    
+    medquiz_name: "Med Quiz AI",
+    medquiz_desc: "AI-движок на базе LLM для парсинга медицинских тестов в интерактивные опросы Telegram.",
+    
+    utilities_name: "Utilities Bot",
+    utilities_desc: "Бот для автоматизации отчетов о доходах/расходах и мониторинга коммунальных служб.",
+    
+    teacher_name: "Grammar Tools",
+    teacher_desc: "Инструмент лингвистического анализа морфемного состава и грамматической структуры русского языка."
 });

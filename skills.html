@@ -5,21 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="shortcut icon" href="img/t.png" type="image/x-icon">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/all.min.css">
+<link rel="stylesheet" href="css/devicons.min.css">
 <link rel="stylesheet" href="css/global.css">
-<script src="js/lightning.js" defer></script>
-<script>
-    (function() {
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-</script>
-    <link rel="stylesheet" href="css/devicons.min.css">
-    <link rel="stylesheet" href="css/skills.css">
-    <title>Skills | Velikhanov Teymur</title>
+<script src="js/scripts.js"></script>
+<script src="js/lightning.js" defer></script>    <title>Skills | Velikhanov Teymur</title>
   </head>
   <body>
     <header class="main-header">
@@ -47,9 +37,9 @@
 				</button>
 				
 				<div class="lang-selector">
-					<button onclick="languative.changeLanguage('en')" class="lang-btn"><img src="/img/lang/en.png" alt="EN"></button>
-					<button onclick="languative.changeLanguage('az')" class="lang-btn"><img src="/img/lang/az.png" alt="AZ"></button>
-					<button onclick="languative.changeLanguage('ru')" class="lang-btn"><img src="/img/lang/ru.png" alt="RU"></button>
+					<button data-lang="en" class="lang-btn"><img src="/img/lang/en.png" alt="EN"></button>
+					<button data-lang="az" class="lang-btn"><img src="/img/lang/az.png" alt="AZ"></button>
+					<button data-lang="ru" class="lang-btn"><img src="/img/lang/ru.png" alt="RU"></button>
 				</div>
 			</div>
 		</div>
@@ -57,209 +47,10 @@
 </header>
 
 <canvas id="canvas"></canvas>
-
-<style>
-#canvas {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-	pointer-events: none;
-	opacity: 0.3;
-}
-
-.main-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 1000;
-	background: var(--nav-bg);
-	backdrop-filter: blur(10px);
-	padding: 1rem 0;
-	border-bottom: 1px solid var(--border-color);
-	transition: var(--transition);
-}
-
-.nav-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.logo a {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-}
-
-.logo-img {
-	width: 40px;
-	height: auto;
-	animation: logo-rotation 5s infinite linear;
-}
-
-@keyframes logo-rotation {
-	from { transform: rotate(0deg); }
-	to { transform: rotate(360deg); }
-}
-
-.logo-name {
-	font-weight: 900;
-	font-size: 1.25rem;
-	text-transform: uppercase;
-	letter-spacing: -0.05em;
-	color: var(--text-color);
-}
-
-.nav-links {
-	display: flex;
-	align-items: center;
-	gap: 2rem;
-}
-
-.nav-links a {
-	font-weight: 500;
-	font-size: 0.85rem;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	color: var(--secondary-text);
-	position: relative;
-	padding: 5px 0;
-	transition: var(--transition);
-}
-
-.nav-links a::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 0;
-	height: 2px;
-	background: var(--accent-color);
-	transition: var(--transition);
-	transform: translateX(-50%);
-}
-
-.nav-links a:hover, .nav-links a.active {
-	color: var(--text-color);
-}
-
-.nav-links a:hover::after, .nav-links a.active::after {
-	width: 100%;
-}
-
-.theme-lang-controls {
-	display: flex;
-	align-items: center;
-	gap: 1.5rem;
-	margin-left: 1rem;
-	border-left: 1px solid var(--border-color);
-	padding-left: 1.5rem;
-}
-
-.control-btn {
-	background: none;
-	border: none;
-	color: var(--secondary-text);
-	cursor: pointer;
-	font-size: 1.1rem;
-	transition: var(--transition);
-}
-
-.control-btn:hover {
-	color: var(--accent-color);
-}
-
-.lang-selector {
-	display: flex;
-	gap: 0.75rem;
-}
-
-.lang-btn {
-	background: none;
-	border: none;
-	cursor: pointer;
-	opacity: 0.6;
-	transition: var(--transition);
-}
-
-.lang-btn:hover {
-	opacity: 1;
-	transform: scale(1.1);
-}
-
-.lang-btn img {
-	width: 20px;
-	height: auto;
-}
-
-.mobile-menu-btn {
-	display: none;
-	background: none;
-	border: none;
-	cursor: pointer;
-	padding: 0.5rem;
-}
-
-.mobile-menu-btn span {
-	display: block;
-	width: 25px;
-	height: 2px;
-	background: var(--text-color);
-	margin: 5px 0;
-	transition: var(--transition);
-}
-
-@media (max-width: 992px) {
-	.nav-links {
-		display: none;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		width: 100%;
-		background: var(--nav-bg);
-		backdrop-filter: blur(20px);
-		flex-direction: column;
-		padding: 2rem;
-		gap: 2rem;
-		border-bottom: 1px solid var(--border-color);
-	}
-	
-	.nav-links.show {
-		display: flex;
-	}
-	
-	.theme-lang-controls {
-		margin-left: 0;
-		padding-left: 0;
-		border-left: none;
-		border-top: 1px solid var(--border-color);
-		padding-top: 2rem;
-		width: 100%;
-		justify-content: space-between;
-	}
-
-	.mobile-menu-btn {
-		display: block;
-	}
-
-	.mobile-menu-btn.active span:nth-child(1) {
-		transform: translateY(7px) rotate(45deg);
-	}
-
-	.mobile-menu-btn.active span:nth-child(2) {
-		transform: translateY(-7px) rotate(-45deg);
-	}
-}
-</style>
-
     <main class="container mt-4">
-      <h1 class="hero-title" data-phrase-id="tech_title">Technologies</h1>
+      <h1 class="hero-title fade-in" data-phrase-id="tech_title">Technologies</h1>
       
-      <div class="skills-section">
+      <div class="skills-section fade-in">
         <h2 class="section-label" data-phrase-id="tech_langs">Languages</h2>
         <div class="skills-grid">
           <div class="skill-item">
@@ -293,7 +84,37 @@
         </div>
       </div>
 
-      <div class="skills-section">
+      <div class="skills-section fade-in">
+        <h2 class="section-label" data-phrase-id="ai_ml">AI & Machine Learning</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class="fa-solid fa-brain text-accent"></i>
+            <span data-phrase-id="nlp">NLP</span>
+          </div>
+          <div class="skill-item">
+            <i class="fa-solid fa-microchip text-accent"></i>
+            <span data-phrase-id="llm">LLM</span>
+          </div>
+          <div class="skill-item">
+            <i class="fa-solid fa-network-wired text-accent"></i>
+            <span data-phrase-id="dl">Deep Learning</span>
+          </div>
+          <div class="skill-item">
+            <i class="fa-solid fa-robot text-accent"></i>
+            <span data-phrase-id="ml">Machine Learning</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-pytorch-plain colored"></i>
+            <span>PyTorch</span>
+          </div>
+          <div class="skill-item">
+            <i class="devicon-tensorflow-original colored"></i>
+            <span>TensorFlow</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-section fade-in">
         <h2 class="section-label" data-phrase-id="fal">Frameworks</h2>
         <div class="skills-grid">
           <div class="skill-item">
@@ -323,7 +144,7 @@
         </div>
       </div>
 
-      <div class="skills-section">
+      <div class="skills-section fade-in">
         <h2 class="section-label" data-phrase-id="db">Databases</h2>
         <div class="skills-grid">
           <div class="skill-item">
@@ -345,7 +166,7 @@
         </div>
       </div>
 
-      <div class="skills-section">
+      <div class="skills-section fade-in">
         <h2 class="section-label" data-phrase-id="infrastructure">Infrastructure & Tools</h2>
         <div class="skills-grid">
           <div class="skill-item">
@@ -379,6 +200,5 @@
     <script src="js/languative.js" defer></script>
     <script src="lang/main.js" defer></script>
     <script src="lang/skills.js" defer></script>
-    <script src="js/scripts.js" defer></script>
   </body>
 </html>

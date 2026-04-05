@@ -1,14 +1,18 @@
 languative.modifyDictionary("en", {
-    Title: "Portfolio of Velikhanov Teymur",
-    hero_subtitle: "Web Developer based in Baku. Creating modern digital experiences."
-}),
+    Title: "Velikhanov Teymur | AI & Backend Developer",
+    hero_subtitle: "Backend engineer specializing in AI implementation, NLP, and high-performance systems with Python and Golang.",
+    view_works: "View Works",
+    get_in_touch: "Get in touch"
+});
 languative.modifyDictionary("az", {
-    Title: "Velikhanov Teymurun portfolio",
-    dev: "Developer",
-    hero_subtitle: "Bakıda yerləşən veb developer. Müasir rəqəmsal təcrübələr yaradırıq."
-}),
+    Title: "Velikhanov Teymur | AI & Backend Developer",
+    hero_subtitle: "Python və Golang vasitəsilə AI tətbiqi, NLP və yüksək performanslı sistemlər üzrə ixtisaslaşmış backend mühəndisi.",
+    view_works: "İşlərim",
+    get_in_touch: "Əlaqə saxla"
+});
 languative.modifyDictionary("ru", {
-    Title: "Портфолио Велиханова Теймура",
-    dev: "Разработчик",
-    hero_subtitle: "Веб-разработчик из Баку. Создаю современный цифровой опыт."
+    Title: "Велиханов Теймур | AI & Backend Developer",
+    hero_subtitle: "Backend-инженер со специализацией на внедрении AI, NLP и высокопроизводительных системах на Python и Golang.",
+    view_works: "Мои работы",
+    get_in_touch: "Связаться"
 });

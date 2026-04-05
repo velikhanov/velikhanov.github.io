@@ -8,14 +8,12 @@ languative.modifyDictionary("az", {
     contactme: "Mənimlə əlaqə",
     nav_about: "Haqqımda",
     nav_skills: "Bacarıqlarım",
-    nav_works: "Işlərim",
+    nav_works: "İşlərim",
     nav_contact: "Əlaqə",
-    hero_works: "İşlərim",
-    hero_contact: "Əlaqə saxla",
     socials: "Sosial şəbəkələr",
     find_me: "Məni tapın:",
     footer_text: "Teymur tərəfindən təmiz kodla hazırlanıb."
-}),
+});
 languative.modifyDictionary("ru", {
     headername: "Теймур",
     myname: "Велиханов Теймур",
@@ -28,20 +26,17 @@ languative.modifyDictionary("ru", {
     nav_skills: "Мои навыки",
     nav_works: "Мои работы",
     nav_contact: "Контакт",
-    hero_works: "Работы",
-    hero_contact: "Связаться",
     socials: "Соцсети",
     find_me: "Я в соцсетях:",
     footer_text: "Создано Теймуром с использованием чистого кода."
 });
 languative.modifyDictionary("en", {
+    headername: "Teymur",
     myname: "Velikhanov Teymur",
     nav_about: "About",
     nav_skills: "Skills",
     nav_works: "Works",
     nav_contact: "Contact",
-    hero_works: "View Works",
-    hero_contact: "Get in touch",
     socials: "Socials",
     find_me: "Find me on:",
     footer_text: "Built by Teymur with clean code."

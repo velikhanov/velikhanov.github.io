@@ -5,22 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="shortcut icon" href="img/t.png" type="image/x-icon">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/all.min.css">
+<link rel="stylesheet" href="css/devicons.min.css">
 <link rel="stylesheet" href="css/global.css">
-<script src="js/lightning.js" defer></script>
-<script>
-    (function() {
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-</script>
-    <link rel="stylesheet" href="css/baguetteBox.min.css">
-    <link rel="stylesheet" href="css/devicons.min.css">
-    <link rel="stylesheet" href="css/works.css">
-    <title>Works | Velikhanov Teymur</title>
+<script src="js/scripts.js"></script>
+<script src="js/lightning.js" defer></script>    <title>Works | Velikhanov Teymur</title>
   </head>
   <body>
     <header class="main-header">
@@ -48,311 +37,171 @@
 				</button>
 				
 				<div class="lang-selector">
-					<button onclick="languative.changeLanguage('en')" class="lang-btn"><img src="/img/lang/en.png" alt="EN"></button>
-					<button onclick="languative.changeLanguage('az')" class="lang-btn"><img src="/img/lang/az.png" alt="AZ"></button>
-					<button onclick="languative.changeLanguage('ru')" class="lang-btn"><img src="/img/lang/ru.png" alt="RU"></button>
+					<button data-lang="en" class="lang-btn"><img src="/img/lang/en.png" alt="EN"></button>
+					<button data-lang="az" class="lang-btn"><img src="/img/lang/az.png" alt="AZ"></button>
+					<button data-lang="ru" class="lang-btn"><img src="/img/lang/ru.png" alt="RU"></button>
 				</div>
 			</div>
 		</div>
 	</nav>
 </header>
 
-<canvas id="canvas"></canvas>
-
-<style>
-#canvas {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-	pointer-events: none;
-	opacity: 0.3;
-}
-
-.main-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 1000;
-	background: var(--nav-bg);
-	backdrop-filter: blur(10px);
-	padding: 1rem 0;
-	border-bottom: 1px solid var(--border-color);
-	transition: var(--transition);
-}
-
-.nav-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.logo a {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-}
-
-.logo-img {
-	width: 40px;
-	height: auto;
-	animation: logo-rotation 5s infinite linear;
-}
-
-@keyframes logo-rotation {
-	from { transform: rotate(0deg); }
-	to { transform: rotate(360deg); }
-}
-
-.logo-name {
-	font-weight: 900;
-	font-size: 1.25rem;
-	text-transform: uppercase;
-	letter-spacing: -0.05em;
-	color: var(--text-color);
-}
-
-.nav-links {
-	display: flex;
-	align-items: center;
-	gap: 2rem;
-}
-
-.nav-links a {
-	font-weight: 500;
-	font-size: 0.85rem;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	color: var(--secondary-text);
-	position: relative;
-	padding: 5px 0;
-	transition: var(--transition);
-}
-
-.nav-links a::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 0;
-	height: 2px;
-	background: var(--accent-color);
-	transition: var(--transition);
-	transform: translateX(-50%);
-}
-
-.nav-links a:hover, .nav-links a.active {
-	color: var(--text-color);
-}
-
-.nav-links a:hover::after, .nav-links a.active::after {
-	width: 100%;
-}
-
-.theme-lang-controls {
-	display: flex;
-	align-items: center;
-	gap: 1.5rem;
-	margin-left: 1rem;
-	border-left: 1px solid var(--border-color);
-	padding-left: 1.5rem;
-}
-
-.control-btn {
-	background: none;
-	border: none;
-	color: var(--secondary-text);
-	cursor: pointer;
-	font-size: 1.1rem;
-	transition: var(--transition);
-}
-
-.control-btn:hover {
-	color: var(--accent-color);
-}
-
-.lang-selector {
-	display: flex;
-	gap: 0.75rem;
-}
-
-.lang-btn {
-	background: none;
-	border: none;
-	cursor: pointer;
-	opacity: 0.6;
-	transition: var(--transition);
-}
-
-.lang-btn:hover {
-	opacity: 1;
-	transform: scale(1.1);
-}
-
-.lang-btn img {
-	width: 20px;
-	height: auto;
-}
-
-.mobile-menu-btn {
-	display: none;
-	background: none;
-	border: none;
-	cursor: pointer;
-	padding: 0.5rem;
-}
-
-.mobile-menu-btn span {
-	display: block;
-	width: 25px;
-	height: 2px;
-	background: var(--text-color);
-	margin: 5px 0;
-	transition: var(--transition);
-}
-
-@media (max-width: 992px) {
-	.nav-links {
-		display: none;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		width: 100%;
-		background: var(--nav-bg);
-		backdrop-filter: blur(20px);
-		flex-direction: column;
-		padding: 2rem;
-		gap: 2rem;
-		border-bottom: 1px solid var(--border-color);
-	}
-	
-	.nav-links.show {
-		display: flex;
-	}
-	
-	.theme-lang-controls {
-		margin-left: 0;
-		padding-left: 0;
-		border-left: none;
-		border-top: 1px solid var(--border-color);
-		padding-top: 2rem;
-		width: 100%;
-		justify-content: space-between;
-	}
-
-	.mobile-menu-btn {
-		display: block;
-	}
-
-	.mobile-menu-btn.active span:nth-child(1) {
-		transform: translateY(7px) rotate(45deg);
-	}
-
-	.mobile-menu-btn.active span:nth-child(2) {
-		transform: translateY(-7px) rotate(-45deg);
-	}
-}
-</style>
-    
+<canvas id="canvas"></canvas>    
     <main class="container mt-4">
-      <h1 class="hero-title" data-phrase-id="Title">My Works</h1>
+      <h1 class="hero-title fade-in" data-phrase-id="Title">My Works</h1>
       
-      <div class="works-grid gallery">
-        <div class="work-card atyrauG">
-          <a href="img/works/full/atyrau_1.jpg" data-caption="Repair company website | <a class='galleryLink' href='https://github.com/velikhanov/construct_company_website' target='_blank'>View Source</a>">
-            <div class="work-image">
-              <img src="img/works/thmb/atyrau_1.jpg" alt="Repair company website">
-              <div class="work-tech">
-                <i class="fab fa-php colored"></i>
-                <i class="fab fa-js-square colored"></i>
-                <i class="fab fa-bootstrap colored"></i>
-              </div>
-            </div>
-          </a>
+      <div class="works-grid fade-in">
+        <!-- 01 Repair Service -->
+        <div class="work-card">
+          <span class="project-index">01</span>
+          <span class="project-label">Service :: Infrastructure</span>
+          <h2 class="project-title" data-phrase-id="atyrau_name">Repair Service</h2>
+          <div class="project-status" data-phrase-id="status_op">Live</div>
+          <p class="project-description" data-phrase-id="atyrau_desc">
+            Modern platform for a repair company featuring dynamic service management and a streamlined client request system.
+          </p>
+          <div class="project-actions">
+            <a href="https://github.com/velikhanov/construct_company_website" target="_blank" class="project-link" data-phrase-id="work_source">Source Code</a>
+          </div>
+          <div class="work-tech">
+            <i class="fab fa-php colored"></i>
+            <i class="fab fa-js-square colored"></i>
+            <i class="fab fa-bootstrap colored"></i>
+          </div>
         </div>
 
-        <div class="work-card nurayG">
-          <a href="img/works/full/nuray_1.jpg" data-caption="Construction company website | <a class='galleryLink' href='https://github.com/velikhanov/NurayHouse' target='_blank'>View Source</a>">
-            <div class="work-image">
-              <img src="img/works/thmb/nuray_1.jpg" alt="Construction company website">
-              <div class="work-tech">
-                <i class="fab fa-php colored"></i>
-                <i class="fab fa-js-square colored"></i>
-                <i class="fab fa-bootstrap colored"></i>
-              </div>
-            </div>
-          </a>
+        <!-- 02 Nuray House -->
+        <div class="work-card">
+          <span class="project-index">02</span>
+          <span class="project-label">Web :: Showcase</span>
+          <h2 class="project-title" data-phrase-id="nuray_name">Nuray House</h2>
+          <div class="project-status" data-phrase-id="status_op">Live</div>
+          <p class="project-description" data-phrase-id="nuray_desc">
+            Professional construction company website showcasing architectural projects and a comprehensive real estate catalog.
+          </p>
+          <div class="project-actions">
+            <a href="https://github.com/velikhanov/NurayHouse" target="_blank" class="project-link" data-phrase-id="work_source">Source Code</a>
+          </div>
+          <div class="work-tech">
+            <i class="fab fa-php colored"></i>
+            <i class="fab fa-js-square colored"></i>
+            <i class="fab fa-bootstrap colored"></i>
+          </div>
         </div>
 
-        <div class="work-card employeesG">
-          <a href="img/works/full/employee_1.jpg" data-caption="Site with 3 levels of privileges | <a class='galleryLink' href='https://github.com/velikhanov/emloyees' target='_blank'>View Source</a>">
-            <div class="work-image">
-              <img src="img/works/thmb/employee_1.jpg" alt="Privilege system">
-              <div class="work-tech">
-                <i class="fab fa-php colored"></i>
-                <i class="fab fa-js-square colored"></i>
-                <i class="fab fa-bootstrap colored"></i>
-              </div>
-            </div>
-          </a>
+        <!-- 03 E-Commerce Core -->
+        <div class="work-card">
+          <span class="project-index">03</span>
+          <span class="project-label">Core :: Business Logic</span>
+          <h2 class="project-title" data-phrase-id="comfort_name">E-Commerce Core</h2>
+          <div class="project-status" data-phrase-id="status_op">Live</div>
+          <p class="project-description" data-phrase-id="comfort_desc">
+            Full-scale online shop engine with inventory management, cart logic, and secure checkout processing.
+          </p>
+          <div class="project-actions">
+            <a href="https://github.com/velikhanov/e-commerce" target="_blank" class="project-link" data-phrase-id="work_source">Source Code</a>
+          </div>
+          <div class="work-tech">
+            <i class="fab fa-laravel colored"></i>
+            <i class="fab fa-php colored"></i>
+            <i class="fab fa-bootstrap colored"></i>
+          </div>
         </div>
 
-        <div class="work-card comfortG">
-          <a href="img/works/full/comfort_1.jpg" data-caption="Internet shop | <a class='galleryLink' href='https://github.com/velikhanov/e-commerce' target='_blank'>View Source</a>">
-            <div class="work-image">
-              <img src="img/works/thmb/comfort_1.jpg" alt="Internet shop">
-              <div class="work-tech">
-                <i class="fab fa-laravel colored"></i>
-                <i class="fab fa-php colored"></i>
-                <i class="fab fa-bootstrap colored"></i>
-              </div>
-            </div>
-          </a>
+        <!-- 04 Blog Engine -->
+        <div class="work-card">
+          <span class="project-index">04</span>
+          <span class="project-label">System :: Publishing</span>
+          <h2 class="project-title" data-phrase-id="blog_name">Blog Engine</h2>
+          <div class="project-status" data-phrase-id="status_op">Live</div>
+          <p class="project-description" data-phrase-id="blog_desc">
+            High-performance publishing platform with markdown support and optimized database indexing.
+          </p>
+          <div class="project-actions">
+            <a href="https://github.com/velikhanov/blog" target="_blank" class="project-link" data-phrase-id="work_source">Source Code</a>
+          </div>
+          <div class="work-tech">
+            <i class="fab fa-laravel colored"></i>
+            <i class="fab fa-php colored"></i>
+          </div>
         </div>
 
-        <div class="work-card blogG">
-          <a href="img/works/full/blog_1.jpg" data-caption="Blog | <a class='galleryLink' href='https://github.com/velikhanov/blog' target='_blank'>View Source</a>">
-            <div class="work-image">
-              <img src="img/works/thmb/blog_1.jpg" alt="Blog">
-              <div class="work-tech">
-                <i class="fab fa-laravel colored"></i>
-                <i class="fab fa-php colored"></i>
-                <i class="fab fa-bootstrap colored"></i>
-              </div>
-            </div>
-          </a>
+        <!-- 05 URL Simplifier -->
+        <div class="work-card">
+          <span class="project-index">05</span>
+          <span class="project-label">Service :: Microservice</span>
+          <h2 class="project-title" data-phrase-id="url_name">URL Simplifier</h2>
+          <div class="project-status" data-phrase-id="status_op">Live</div>
+          <p class="project-description" data-phrase-id="url_desc">
+            Lightweight microservice for link redirection with built-in analytics and custom alias support.
+          </p>
+          <div class="project-actions">
+            <a href="https://github.com/velikhanov/url_simplifier" target="_blank" class="project-link" data-phrase-id="work_source">Source Code</a>
+          </div>
+          <div class="work-tech">
+            <i class="devicon-python-plain colored"></i>
+            <i class="devicon-django-plain colored"></i>
+          </div>
         </div>
 
-        <div class="work-card mobileG">
-          <a href="img/works/full/mobile_app_1.jpg" data-caption="Mobile App | <a class='galleryLink' href='https://github.com/velikhanov/doc_app_staging' target='_blank'>View Source</a>">
-            <div class="work-image">
-              <img src="img/works/thmb/mobile_app_1.jpg" alt="Mobile App">
-              <div class="work-tech">
-                <i class="devicon-dart-plain colored"></i>
-                <i class="devicon-flutter-plain colored"></i>
-              </div>
-            </div>
-          </a>
+        <!-- 06 Med Quiz AI Bot -->
+        <div class="work-card">
+          <span class="project-index">06</span>
+          <span class="project-label">AI :: LLM Implementation</span>
+          <h2 class="project-title" data-phrase-id="medquiz_name">Med Quiz AI</h2>
+          <div class="project-status" data-phrase-id="status_op">Live</div>
+          <p class="project-description" data-phrase-id="medquiz_desc">
+            LLM-powered engine that parses medical texts into interactive Telegram polls for student self-assessment.
+          </p>
+          <div class="project-actions">
+            <a href="https://github.com/velikhanov/med_quiz" target="_blank" class="project-link" data-phrase-id="work_source">Source Code</a>
+          </div>
+          <div class="work-tech">
+            <i class="devicon-python-plain colored"></i>
+            <i class="fab fa-telegram-plane colored"></i>
+            <i class="fa-solid fa-brain"></i>
+          </div>
         </div>
 
-        <div class="work-card url_simplifierG">
-          <a href="img/works/full/url_simplifier_1.jpg" data-caption="URL Simplifier | <a class='galleryLink' href='http://velikhanov.pythonanywhere.com/' target='_blank'>Live Demo</a>">
-            <div class="work-image">
-              <img src="img/works/thmb/url_simplifier_1.jpg" alt="URL Simplifier">
-              <div class="work-tech">
-                <i class="devicon-python-plain colored"></i>
-                <i class="devicon-django-plain colored"></i>
-              </div>
-            </div>
-          </a>
+        <!-- 07 Utilities Bot -->
+        <div class="work-card">
+          <span class="project-index">07</span>
+          <span class="project-label">Bot :: Automation</span>
+          <h2 class="project-title" data-phrase-id="utilities_name">Utilities Bot</h2>
+          <div class="project-status" data-phrase-id="status_op">Live</div>
+          <p class="project-description" data-phrase-id="utilities_desc">
+            Financial tracking bot for automating income/expense reports and utility service monitoring.
+          </p>
+          <div class="project-actions">
+            <a href="https://github.com/velikhanov/utilities_bot" target="_blank" class="project-link" data-phrase-id="work_source">Source Code</a>
+          </div>
+          <div class="work-tech">
+            <i class="devicon-python-plain colored"></i>
+            <i class="fab fa-telegram-plane colored"></i>
+          </div>
+        </div>
+
+        <!-- 08 Grammar Tools -->
+        <div class="work-card">
+          <span class="project-index">08</span>
+          <span class="project-label">Logic :: Linguistics</span>
+          <h2 class="project-title" data-phrase-id="teacher_name">Grammar Tools</h2>
+          <div class="project-status development" data-phrase-id="status_dev">In Development</div>
+          <p class="project-description" data-phrase-id="teacher_desc">
+            Linguistic analysis tool specializing in Russian morpheme parsing and grammatical text structure.
+          </p>
+          <div class="project-actions">
+            <a href="https://github.com/velikhanov/teacher_tools" target="_blank" class="project-link" data-phrase-id="work_source">Source Code</a>
+          </div>
+          <div class="work-tech">
+            <i class="devicon-python-plain colored"></i>
+            <i class="fa-solid fa-language"></i>
+          </div>
         </div>
       </div>
     </main>
 
-    <footer>
+    <footer class="mt-4">
       <p data-phrase-id="footer_text">Built by Teymur with clean code.</p>
       <div class="footer-socials">
         <a href="https://github.com/velikhanov" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -363,37 +212,5 @@
     <script src="js/languative.js" defer></script>
     <script src="lang/main.js" defer></script>
     <script src="lang/works.js" defer></script>
-    <script src="js/baguetteBox.min.js" async></script>
-    <script src="js/scripts.js" defer></script>
-    <script>
-      window.addEventListener('load', function() {
-        if(typeof baguetteBox !== 'undefined') {
-          // Store links for manual injection if library fails to render them
-          const projectLinks = [
-            'https://github.com/velikhanov/construct_company_website',
-            'https://github.com/velikhanov/NurayHouse',
-            'https://github.com/velikhanov/emloyees',
-            'https://github.com/velikhanov/e-commerce',
-            'https://github.com/velikhanov/blog',
-            'https://github.com/velikhanov/doc_app_staging',
-            'http://velikhanov.pythonanywhere.com/'
-          ];
-
-          baguetteBox.run('.gallery', {
-            afterShow: function() {
-              const figcaption = document.querySelector('#baguetteBox-overlay figcaption');
-              if (figcaption) {
-                // Ensure it is visible
-                figcaption.style.display = 'block';
-                // Force links to work by adding a second check
-                if (!figcaption.querySelector('a')) {
-                   // Fallback logic could go here, but with CSS fix it should work
-                }
-              }
-            }
-          });
-        }
-      });
-    </script>
   </body>
 </html>

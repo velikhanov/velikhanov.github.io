@@ -1,30 +1,85 @@
-// Theme Toggle Logic
+// Theme Logic
 function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     const icon = document.querySelector('#theme-toggle i');
     if (icon) {
-        if (theme === 'light') {
-            icon.className = 'fa-solid fa-sun';
-        } else {
-            icon.className = 'fa-solid fa-moon';
-        }
+        icon.className = theme === 'light' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
     }
 }
 
-function calculateAge() {
-    const ageElement = document.getElementById('my-age');
-    if (ageElement) {
-        const birthDate = new Date(1999, 1, 15);
-        const today = new Date();
-        let age = today.getFullYear() - birthDate.getFullYear();
-        const m = today.getMonth() - birthDate.getMonth();
-        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-            age--;
+function calculateDynamicStats() {
+    const today = new Date();
+    
+    // 1. Calculate Age (Born 1999-02-15)
+    const birthDate = new Date(1999, 1, 15);
+    let targetAge = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        targetAge--;
+    }
+
+    // 2. Calculate Experience (Started 2021)
+    const startDate = new Date(2021, 0, 1);
+    let expYears = today.getFullYear() - startDate.getFullYear();
+    if (today.getMonth() < startDate.getMonth()) {
+        expYears--;
+    }
+    
+    // 3. Update dictionaries (Age no plus, Exp with plus)
+    if (typeof languative !== 'undefined' && languative.dictionaries) {
+        Object.keys(languative.dictionaries).forEach(lang => {
+            const dict = languative.dictionaries[lang];
+            if (dict.aboutMe_main && Array.isArray(dict.aboutMe_main)) {
+                dict.aboutMe_main[1] = targetAge.toString();
+                dict.aboutMe_main[3] = expYears.toString() + "+";
+            }
+        });
+    }
+
+    // 4. Render
+    const aboutText = document.getElementById('about-main-text');
+    if (aboutText && typeof languative !== 'undefined') {
+        const phrase = languative.getPhrase('aboutMe_main');
+        if (Array.isArray(phrase) && phrase.length >= 5) {
+            aboutText.innerHTML = phrase[0] + 
+                                 `<span id="my-age">${sessionStorage.getItem('ageAnimated') ? targetAge : '0'}</span>` + 
+                                 phrase[2] + 
+                                 `<span class="text-accent">${expYears}+</span>` + 
+                                 phrase[4];
+            // Trigger local fade-in
+            aboutText.classList.remove('fade-in-text');
+            void aboutText.offsetWidth; 
+            aboutText.classList.add('fade-in-text');
         }
-        ageElement.textContent = age;
+    }
+
+    const ageElement = document.getElementById('my-age');
+    if (!ageElement) return;
+
+    if (sessionStorage.getItem('ageAnimated')) {
+        ageElement.textContent = targetAge;
+    } else {
+        let current = 0;
+        const animate = () => {
+            current++;
+            ageElement.textContent = current;
+            if (current < targetAge) {
+                let delay = 30;
+                if (current >= targetAge - 2) delay = 250;
+                setTimeout(animate, delay);
+            } else {
+                sessionStorage.setItem('ageAnimated', '1');
+            }
+        };
+        animate();
     }
 }
+
+(function() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Theme Switcher
@@ -42,9 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Navigation
     const navLinks = document.querySelectorAll('.nav-links a');
-    const currentUrl = window.location.href;
+    const path = window.location.pathname;
     navLinks.forEach(link => {
-        if (link.href && currentUrl.split('?')[0].endsWith(link.getAttribute('href'))) {
+        const href = link.getAttribute('href');
+        if (href && (path === href || path.endsWith(href))) {
             link.classList.add('active');
         }
     });
@@ -67,90 +123,100 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Background
-    const bg = document.createElement('div');
-    bg.className = 'interactive-bg';
-    document.body.appendChild(bg);
-    window.addEventListener('mousemove', (e) => {
-        const x = e.clientX;
-        const y = e.clientY;
-        const theme = document.documentElement.getAttribute('data-theme');
-        const opacity = theme === 'light' ? '0.15' : '0.1';
-        requestAnimationFrame(() => {
-            bg.style.background = `radial-gradient(600px at ${x}px ${y}px, rgba(var(--accent-rgb), ${opacity}), transparent 80%)`;
+    // 4. Interactive Background
+    if (!('ontouchstart' in window)) {
+        const bg = document.createElement('div');
+        bg.className = 'interactive-bg';
+        document.body.appendChild(bg);
+        window.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => {
+                document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+                document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+            });
         });
-    });
-
-    // 5. Age - Run immediately and after a short delay to ensure languative finished
-    calculateAge();
-    setTimeout(calculateAge, 500);
-
-    // 6. Typing Effect
-    const typewriterElement = document.getElementById('typewriter-name');
-    let isTyping = false;
-
-    function updateHeroName(forceInstant = false) {
-        if (!typewriterElement) return;
-        
-        const getWords = () => {
-            const name = (typeof languative !== 'undefined' && languative.getPhrase) 
-                ? languative.getPhrase('myname') 
-                : 'Velikhanov Teymur';
-            const split = name.split(' ');
-            if (split.length < 2) return [name, ''];
-            return [split.slice(0, split.length - 1).join(' '), split[split.length - 1]];
-        };
-
-        const words = getWords();
-        const fullContent = `${words[0]}<br><span class="text-accent">${words[1]}</span>`;
-        
-        if (forceInstant || sessionStorage.getItem('nameAnimated')) {
-            typewriterElement.innerHTML = fullContent;
-            sessionStorage.setItem('nameAnimated', 'true');
-            return;
-        }
-
-        if (isTyping) return;
-        isTyping = true;
-
-        let charIndex = 0;
-        const flatText = words.join(' ');
-        
-        function type() {
-            if (charIndex <= flatText.length) {
-                let currentHTML = '';
-                const spaceIndex = words[0].length;
-                
-                if (charIndex <= spaceIndex) {
-                    currentHTML = flatText.slice(0, charIndex);
-                } else {
-                    currentHTML = `${words[0]}<br><span class="text-accent">${flatText.slice(spaceIndex + 1, charIndex)}</span>`;
-                }
-                
-                const isLast = charIndex === flatText.length;
-                typewriterElement.innerHTML = currentHTML + (isLast ? '' : '<span class="typewriter-cursor">|</span>');
-                
-                charIndex++;
-                setTimeout(type, 70);
-            } else {
-                typewriterElement.innerHTML = fullContent;
-                sessionStorage.setItem('nameAnimated', 'true');
-                isTyping = false;
-            }
-        }
-        
-        setTimeout(type, 500);
     }
 
-    updateHeroName();
+    // 5. Stats
+    setTimeout(calculateDynamicStats, 50);
 
-    // Listen for language changes
+    // 6. Typewriter
+    const nameElement = document.getElementById('typewriter-name');
+    const subtitleElement = document.querySelector('.hero-subtitle');
+    
+    function typeSubtitle() {
+        if (!subtitleElement) return;
+        const subText = (typeof languative !== 'undefined' && languative.getPhrase)
+            ? languative.getPhrase('hero_subtitle')
+            : subtitleElement.textContent.trim();
+        
+        subtitleElement.textContent = '';
+        subtitleElement.style.opacity = '1';
+        let subIndex = 0;
+        const subTimer = setInterval(() => {
+            if (subIndex <= subText.length) {
+                subtitleElement.textContent = subText.slice(0, subIndex) + (subIndex < subText.length ? '|' : '');
+                subIndex++;
+            } else {
+                clearInterval(subTimer);
+            }
+        }, 20);
+    }
+
+    function startTypewriter() {
+        if (!nameElement || !subtitleElement) return;
+
+        const nameText = (typeof languative !== 'undefined' && languative.getPhrase) 
+            ? languative.getPhrase('myname') 
+            : 'Velikhanov Teymur';
+        
+        const displayName = (!nameText || nameText === 'myname') ? 'Velikhanov Teymur' : nameText;
+        const nameParts = displayName.split(' ');
+        const nameFullHTML = `${nameParts.slice(0, -1).join(' ')}<br><span class="text-accent">${nameParts[nameParts.length - 1]}</span>`;
+
+        if (sessionStorage.getItem('boot')) {
+            nameElement.innerHTML = nameFullHTML;
+            typeSubtitle();
+        } else {
+            subtitleElement.style.opacity = '0';
+            let charIndex = 0;
+            const flatName = displayName; 
+            const nameTimer = setInterval(() => {
+                if (charIndex <= flatName.length) {
+                    let currentHTML = '';
+                    const spaceIndex = displayName.lastIndexOf(' ');
+                    if (charIndex <= spaceIndex) {
+                        currentHTML = flatName.slice(0, charIndex);
+                    } else {
+                        currentHTML = `${displayName.slice(0, spaceIndex)}<br><span class="text-accent">${flatName.slice(spaceIndex + 1, charIndex)}</span>`;
+                    }
+                    nameElement.innerHTML = currentHTML + '<span class="typewriter-cursor">|</span>';
+                    charIndex++;
+                } else {
+                    clearInterval(nameTimer);
+                    nameElement.innerHTML = nameFullHTML;
+                    sessionStorage.setItem('boot', '1');
+                    typeSubtitle();
+                }
+            }, 70);
+        }
+    }
+
+    setTimeout(() => { if (nameElement) startTypewriter(); }, 150);
+
+    // 7. Lang change
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            setTimeout(() => {
-                updateHeroName(true);
-                calculateAge();
-            }, 150);
+            const lang = btn.getAttribute('data-lang');
+            if (lang && typeof languative !== 'undefined') {
+                languative.changeLanguage(lang);
+                if (nameElement) {
+                    const newName = languative.getPhrase('myname');
+                    const parts = newName.split(' ');
+                    nameElement.innerHTML = `${parts.slice(0, -1).join(' ')}<br><span class="text-accent">${parts[parts.length - 1]}</span>`;
+                }
+                typeSubtitle();
+                calculateDynamicStats();
+            }
         });
     });
 });

@@ -1,30 +1,36 @@
 languative.modifyDictionary("en", {
-    Title: "My skills",
     tech_title: "Technologies",
     tech_langs: "Languages",
-    infrastructure: "Infrastructure & Tools"
-}),
+    fal: "Frameworks",
+    db: "Databases",
+    ai_ml: "AI & Machine Learning",
+    infrastructure: "Infrastructure & Tools",
+    nlp: "NLP",
+    llm: "LLM",
+    dl: "Deep Learning",
+    ml: "Machine Learning"
+});
 languative.modifyDictionary("az", {
-    Title: "Mənim bacarıqlarım",
     tech_title: "Texnologiyalar",
     tech_langs: "Dillər",
-    fal: "Freymvorklar və kitabxanalar",
-    vcs: "Versiya idarəetmə sistemləri",
-    cms: "Konteyner idarəetmə sistemləri",
-    db: "Verilənlər bazalar",
-    os: "Əməliyyat sistemləri",
-    ge: "Qrafik redaktorlar",
-    infrastructure: "İnfrastruktur və Alətlər"
-}),
+    fal: "Freymvorklar",
+    db: "Verilənlər Bazaları",
+    ai_ml: "Süni İntellekt və ML",
+    infrastructure: "İnfrastruktur və Alətlər",
+    nlp: "NLP",
+    llm: "LLM",
+    dl: "Dərin Öyrənmə",
+    ml: "Maşın Öyrənməsi"
+});
 languative.modifyDictionary("ru", {
-    Title: "Мои навыки",
     tech_title: "Технологии",
     tech_langs: "Языки",
-    fal: "Фреймворки и библиотеки",
-    vcs: "Системы контроля версий",
-    cms: "Системы управления контейнерами",
-    db: "Базы данных",
-    os: "Операционные системы",
-    ge: "Графические редакторы",
-    infrastructure: "Инфраструктура и Инструменты"
+    fal: "Фреймворки",
+    db: "Базы Данных",
+    ai_ml: "AI и Машинное Обучение",
+    infrastructure: "Инфраструктура и Инструменты",
+    nlp: "NLP",
+    llm: "LLM",
+    dl: "Глубокое обучение",
+    ml: "Машинное обучение"
 });
