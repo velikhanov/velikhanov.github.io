@@ -100,8 +100,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href && (path === href || path.endsWith(href))) {
-            link.classList.add('active');
+        if (href) {
+            const cleanHref = href.replace('.php', '').replace('.html', '').replace(/\/$/, '');
+            const cleanPath = path.replace('.php', '').replace('.html', '').replace(/\/$/, '');
+            
+            if (cleanPath === cleanHref || cleanPath.endsWith(cleanHref)) {
+                link.classList.add('active');
+            }
         }
     });
 
@@ -151,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         subtitleElement.textContent = '';
         subtitleElement.style.opacity = '1';
+        subtitleElement.style.visibility = 'visible';
         let subIndex = 0;
         const subTimer = setInterval(() => {
             if (subIndex <= subText.length) {
@@ -164,6 +170,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startTypewriter() {
         if (!nameElement || !subtitleElement) return;
+
+        // Force subtitle hidden initially if it's the first boot
+        if (!sessionStorage.getItem('boot')) {
+            subtitleElement.style.opacity = '0';
+            subtitleElement.style.visibility = 'hidden';
+        }
 
         const nameText = (typeof languative !== 'undefined' && languative.getPhrase) 
             ? languative.getPhrase('myname') 
@@ -209,11 +221,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const lang = btn.getAttribute('data-lang');
             if (lang && typeof languative !== 'undefined') {
                 languative.changeLanguage(lang);
+                
+                // 1. Update Name Translation
                 if (nameElement) {
                     const newName = languative.getPhrase('myname');
                     const parts = newName.split(' ');
                     nameElement.innerHTML = `${parts.slice(0, -1).join(' ')}<br><span class="text-accent">${parts[parts.length - 1]}</span>`;
                 }
+                
+                // 2. Animate all translated blocks
+                document.querySelectorAll('[data-phrase-id], #about-main-text').forEach(el => {
+                    el.classList.remove('fade-in-text');
+                    void el.offsetWidth; // Trigger reflow
+                    el.classList.add('fade-in-text');
+                });
+
                 typeSubtitle();
                 calculateDynamicStats();
             }
