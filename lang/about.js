@@ -3,9 +3,9 @@ languative.modifyDictionary("en", {
     aboutMe_main: [
         "I am a ", 
         "", 
-        "-year-old AI & Backend Developer with ",
+        "-year-old AI & Backend Developer. My commercial experience is ",
         "",
-        " years of commercial experience. I specialize in building robust backend systems with Python and Golang, while focusing on AI implementation, NLP, and Deep Learning to create intelligent, high-performance applications. I am proficient in modern AI frameworks and database management with SQL and NoSQL solutions."
+        ". I specialize in building robust backend systems with Python and Golang, while focusing on AI implementation, NLP, and Deep Learning to create intelligent, high-performance applications. I am proficient in modern AI frameworks and database management with SQL and NoSQL solutions."
     ],
     education: "Education",
     phd: "PhD - Inf. Sys. Eng.",
@@ -28,9 +28,9 @@ languative.modifyDictionary("az", {
     aboutMe_main: [
         "Mən ", 
         "", 
-        " yaşlı AI və Backend mühəndisiyəm. ",
+        " yaşlı AI və Backend mühəndisiyəm. Kommersiya təcrübəm: ",
         "",
-        " illik ticari təcrübəyə malikəm. Python və Golang vasitəsilə mürəkkəb backend sistemləri, həmçinin NLP, Dərin Öyrənmə və LLM tətbiqləri üzrə ixtisaslaşmışam. Məqsədim intellektual və yüksək performanslı rəqəmsal həllər yaratmaqdır. SQL və NoSQL verilənlər bazaları ilə işləmək təcrübəm var."
+        ". Python və Golang vasitəsilə mürəkkəb backend sistemləri, həmçinin NLP, Dərin Öyrənmə və LLM tətbiqləri üzrə ixtisaslaşmışam. Məqsədim intellektual və yüksək performanslı rəqəmsal həllər yaratmaqdır. SQL və NoSQL verilənlər bazaları ilə işləmək təcrübəm var."
     ],
     education: "Təhsil",
     phd: "PhD - İnf. Sist. Müh.",
@@ -53,9 +53,9 @@ languative.modifyDictionary("ru", {
     aboutMe_main: [
         "Я - ", 
         "", 
-        "-летний AI & Backend разработчик с ",
+        "-летний AI & Backend разработчик. Мой коммерческий опыт: ",
         "",
-        "-летним коммерческим опытом. Специализируюсь на Python и Golang, уделяя особое внимание внедрению ИИ, NLP и Deep Learning для создания высокопроизводительных интеллектуальных систем. Имею большой опыт работы с базами данных SQL/NoSQL и современными AI-фреймворками."
+        ". Специализируюсь на Python и Golang, уделяя особое внимание внедрению ИИ, NLP и Deep Learning для создания высокопроизводительных интеллектуальных систем. Имею большой опыт работы с базами данных SQL/NoSQL и современными AI-фреймворками."
     ],
     education: "Образование",
     phd: "PhD - Инж. инф. систем",

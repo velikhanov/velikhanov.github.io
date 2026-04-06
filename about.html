@@ -9,6 +9,20 @@
 <link rel="stylesheet" href="css/devicons.min.css">
 <link rel="stylesheet" href="css/global.css">
 <script src="js/scripts.js"></script>
+<script src="js/languative.js"></script>
+<script>
+  (function() {
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang && typeof languative !== 'undefined') {
+      document.addEventListener('DOMContentLoaded', () => {
+        // Small delay to ensure deferred lang/works.js etc have run
+        setTimeout(() => {
+          languative.changeLanguage(savedLang);
+        }, 80);
+      });
+    }
+  })();
+</script>
 <script src="js/lightning.js" defer></script>        <meta name="format-detection" content="telephone=no">
         <title>About | Velikhanov Teymur</title>
     </head>

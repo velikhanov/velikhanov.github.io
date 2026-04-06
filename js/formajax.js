@@ -12,17 +12,20 @@
             en: {
                 success: "The request has been successfully sent!",
                 error: "An error occurred. Please try again later!",
-                invalid: "Check the correctness of the data you entered!"
+                invalid: "Check the correctness of the data you entered!",
+                sending: "Sending..."
             },
             az: {
                 success: "Müraciət uğurla göndərildi!",
                 error: "Xəta baş verdi. Zəhmət olmasa bir az sonra yenə cəhd edin!",
-                invalid: "Daxil etdiyiniz məlumatların düzgünlüyünü yoxlayın!"
+                invalid: "Daxil etdiyiniz məlumatların düzgünlüyünü yoxlayın!",
+                sending: "Göndərilir..."
             },
             ru: {
                 success: "Заявка успешно отправлена!",
                 error: "Произошла ошибка. Пожалуйста, повторите попытку позже!",
-                invalid: "Проверьте корректность введенных вами данных!"
+                invalid: "Проверьте корректность введенных вами данных!",
+                sending: "Отправка..."
             }
         };
         const l = lang.startsWith("az") ? "az" : lang.startsWith("ru") ? "ru" : "en";
@@ -76,6 +79,8 @@
 
         submitBtn.classList.add("loading");
         submitBtn.disabled = true;
+        const originalBtnText = submitBtn.querySelector(".btn-send-text").textContent;
+        submitBtn.querySelector(".btn-send-text").textContent = getMessage('sending');
         
         emailjs.init({publicKey: "_GCxj9wp4lONoUvJG"});
 
@@ -92,11 +97,14 @@
                 toast.className = "toast toast--success toast--visible";
                 form.reset();
                 form.querySelectorAll('input').forEach(i => i.disabled = true);
+                submitBtn.disabled = true; // Keep button disabled on success
+                submitBtn.querySelector(".btn-send-text").textContent = originalBtnText;
             })
             .catch(() => {
                 toast.textContent = getMessage('error');
                 toast.className = "toast toast--error toast--visible";
                 submitBtn.disabled = false;
+                submitBtn.querySelector(".btn-send-text").textContent = originalBtnText;
             })
             .finally(() => {
                 submitBtn.classList.remove("loading");

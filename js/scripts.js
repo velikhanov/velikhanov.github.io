@@ -32,7 +32,7 @@ function calculateDynamicStats() {
             const dict = languative.dictionaries[lang];
             if (dict.aboutMe_main && Array.isArray(dict.aboutMe_main)) {
                 dict.aboutMe_main[1] = targetAge.toString();
-                dict.aboutMe_main[3] = expYears.toString() + "+";
+                dict.aboutMe_main[3] = expYears >= 5 ? expYears.toString() + "+" : expYears.toString();
             }
         });
     }
@@ -249,14 +249,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const lang = btn.getAttribute('data-lang');
             if (lang && typeof languative !== 'undefined') {
                 languative.changeLanguage(lang);
-                
+                localStorage.setItem('lang', lang);
+                document.documentElement.setAttribute('lang', lang);
+
                 // 1. Update Name Translation
                 if (nameElement) {
                     const newName = languative.getPhrase('myname');
                     const parts = newName.split(' ');
                     nameElement.innerHTML = `${parts.slice(0, -1).join(' ')}<br><span class="text-accent">${parts[parts.length - 1]}</span>`;
                 }
-                
+
                 // 2. Animate all translated blocks
                 document.querySelectorAll('[data-phrase-id], #about-main-text, #typewriter-name').forEach(el => {
                     el.classList.remove('fade-in-text');
@@ -269,4 +271,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+
+    // 8. Apply saved language on load
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang && typeof languative !== 'undefined') {
+        languative.changeLanguage(savedLang);
+        document.documentElement.setAttribute('lang', savedLang);
+    }
+    });

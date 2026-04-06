@@ -335,7 +335,17 @@ main { padding-top: 100px; flex: 1; display: flex; flex-direction: column; width
 .about-image { display: flex; justify-content: center; }
 .about-image img { width: 100%; border-radius: 30px; filter: grayscale(1); transition: var(--transition); max-width: 100%; }
 .about-image img:hover { filter: grayscale(0); }
-.about-text .lead { font-size: 1.25rem; line-height: 1.4; font-weight: 500; margin-bottom: 1.5rem; color: var(--text-color); text-align: justify; }
+.about-text .lead { 
+  font-size: 1.25rem; 
+  line-height: 1.4; 
+  font-weight: 500; 
+  margin-bottom: 1.5rem; 
+  color: var(--text-color); 
+  text-align: justify; 
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
 .info-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
 .info-block { margin-bottom: 1.5rem; }
 .block-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--secondary-text); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
@@ -452,17 +462,127 @@ input.form-control:-moz-autofill {
 }
 .form-control::placeholder { color: var(--secondary-text); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
 .form-control.error { border-bottom-color: #ff4444; }
-.submit-btn { width: 100%; padding: 1.5rem; font-size: 1rem; margin-top: 1rem; }
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  padding: 1rem 1.5rem;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+  transform: translateY(150%);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.toast--visible {
+  transform: translateY(0);
+}
+
+.toast--success {
+  border-left: 4px solid var(--accent-color);
+}
+
+.toast--error {
+  border-left: 4px solid #ff4444;
+}
+
+/* Button Loading State */
+.submit-btn { 
+  width: 100%; 
+  padding: 1.5rem; 
+  font-size: 1rem; 
+  margin-top: 1rem; 
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.submit-btn.loading {
+  pointer-events: none;
+  opacity: 0.8;
+  transform: translateY(-3px); /* Keep lifted state during loading */
+}
+
+.submit-btn.loading::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
 @media (max-width: 992px) {
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
   .contact-form { order: -1; }
   .social-links-grid { align-items: center; }
 }
+/* Brand Colors for Tech Icons */
+.colored { filter: none !important; }
+.fa-php.colored { color: #777BB4 !important; }
+.fa-js-square.colored { color: #F7DF1E !important; }
+.fa-bootstrap.colored { color: #7952B3 !important; }
+.fa-laravel.colored { color: #FF2D20 !important; }
+.fa-telegram-plane.colored { color: #24A1DE !important; }
 
-/* Brand Colors / Icon Fixes */
-[class^="devicon-"],[class*=" devicon-"] { 
-  font-family: "devicon" !important; 
+/* Python Multi-color Trick */
+.fa-python.colored, .devicon-python-plain.colored {
+  background: linear-gradient(135deg, #3776AB 50%, #FFD43B 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.devicon-django-plain.colored { color: #092E20 !important; }
+[data-theme="dark"] .devicon-django-plain.colored { color: #44B78B !important; }
+
+.fa-brain.colored { color: #FF69B4 !important; }
+
+/* Google / Language Multi-color Trick */
+.fa-language.colored {
+  background: linear-gradient(135deg, #4285F4 25%, #EA4335 25%, #EA4335 50%, #FBBC05 50%, #FBBC05 75%, #34A853 75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.devicon-go-original-wordmark.colored { color: #00ADD8 !important; }
+.devicon-dart-plain.colored { color: #0175C2 !important; }
+.fa-html5.colored { color: #E34F26 !important; }
+.fa-css3.colored { color: #1572B6 !important; }
+.devicon-pytorch-plain.colored { color: #EE4C2C !important; }
+.devicon-tensorflow-original.colored { color: #FF6F00 !important; }
+.devicon-flask-original.colored { color: var(--text-color) !important; }
+.devicon-fastapi-plain.colored { color: #05998B !important; }
+.devicon-flutter-plain.colored { color: #02569B !important; }
+.devicon-mysql-plain.colored { color: #4479A1 !important; }
+.devicon-postgresql-plain.colored { color: #336791 !important; }
+.devicon-mongodb-plain.colored { color: #47A248 !important; }
+.devicon-redis-plain.colored { color: #DC382D !important; }
+.fa-docker.colored { color: #2496ED !important; }
+.devicon-git-plain.colored { color: #F05032 !important; }
+.devicon-ubuntu-plain.colored { color: #E95420 !important; }
+.devicon-amazonwebservices-plain.colored { color: #FF9900 !important; }
+.fa-microchip, .fa-network-wired, .fa-robot { color: var(--accent-color) !important; }
   font-style: normal !important; 
   font-weight: normal !important; 
   font-variant: normal !important; 
@@ -537,8 +657,9 @@ footer {
 .mt-4 { margin-top: 4rem; }
 
 .btn { padding: 0.8rem 1.8rem; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; border-radius: 0; transition: var(--transition); display: inline-block; cursor: pointer; border: none; font-family: var(--font-main); }
+.btn:disabled { cursor: default; opacity: 0.6; pointer-events: none; }
 .btn-primary { background: var(--text-color); color: var(--bg-color); }
-.btn-primary:hover { background: var(--accent-color); transform: translateY(-3px); }
+.btn-primary:hover:not(:disabled) { background: var(--accent-color); transform: translateY(-3px); }
 .btn-outline { border: 1px solid var(--border-color); background: transparent; color: var(--text-color); }
 .btn-outline:hover { border-color: var(--accent-color); color: var(--accent-color); transform: translateY(-3px); }
 

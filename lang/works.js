@@ -73,7 +73,7 @@ languative.modifyDictionary("ru", {
     nuray_name: "Nuray House",
     nuray_desc: "Профессиональный сайт строительной компании с каталогом архитектурных проектов и объектов недвижимости.",
     
-    comfort_name: "E-Commerce Core",
+    comfort_name: "E-Commerce Ядро",
     comfort_desc: "Движок интернет-магазина с управлением запасами, логикой корзины и безопасной обработкой платежей.",
     
     blog_name: "Движок Блога",
@@ -85,9 +85,9 @@ languative.modifyDictionary("ru", {
     medquiz_name: "Med Quiz AI",
     medquiz_desc: "AI-движок на базе LLM для парсинга медицинских тестов в интерактивные опросы Telegram.",
     
-    utilities_name: "Utilities Bot",
+    utilities_name: "Utilities Бот",
     utilities_desc: "Бот для автоматизации отчетов о доходах/расходах и мониторинга коммунальных служб.",
     
-    teacher_name: "Grammar Tools",
+    teacher_name: "Инструменты Грамматики",
     teacher_desc: "Инструмент лингвистического анализа морфемного состава и грамматической структуры русского языка."
 });
