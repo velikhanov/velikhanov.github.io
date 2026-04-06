@@ -64,36 +64,48 @@ function calculateDynamicStats() {
         ageElement.textContent = targetAge;
         expElement.textContent = expYears + "+";
     } else {
-        // Animate Age
-        let currentAge = 0;
-        const animateAge = () => {
-            currentAge++;
-            ageElement.textContent = currentAge;
-            if (currentAge < targetAge) {
-                let delay = 30;
-                if (currentAge >= targetAge - 2) delay = 250;
-                setTimeout(animateAge, delay);
-            }
-        };
-        animateAge();
+        const startAnimations = () => {
+            // Animate Age
+            let currentAge = 0;
+            const animateAge = () => {
+                currentAge++;
+                ageElement.textContent = currentAge;
+                if (currentAge < targetAge) {
+                    let delay = 30;
+                    if (currentAge >= targetAge - 2) delay = 250;
+                    setTimeout(animateAge, delay);
+                }
+            };
+            animateAge();
 
-        // Animate Experience
-        let currentExp = 0;
-        const animateExp = () => {
-            if (expYears <= 0) {
-                expElement.textContent = "0+";
-                return;
-            }
-            currentExp++;
-            if (currentExp < expYears) {
-                expElement.textContent = currentExp;
-                setTimeout(animateExp, 150);
-            } else {
-                expElement.textContent = expYears + "+";
-                sessionStorage.setItem('statsAnimated', '1');
-            }
+            // Animate Experience
+            let currentExp = 0;
+            const animateExp = () => {
+                if (expYears <= 0) {
+                    expElement.textContent = "0+";
+                    return;
+                }
+                currentExp++;
+                if (currentExp < expYears) {
+                    expElement.textContent = currentExp;
+                    setTimeout(animateExp, 150);
+                } else {
+                    expElement.textContent = expYears + "+";
+                    sessionStorage.setItem('statsAnimated', '1');
+                }
+            };
+            setTimeout(animateExp, 200);
         };
-        setTimeout(animateExp, 200); // Slight delay for better visual rhythm
+
+        // Use IntersectionObserver to trigger only when visible
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                startAnimations();
+                observer.disconnect(); // Run only once
+            }
+        }, { threshold: 0.2 });
+
+        observer.observe(aboutText);
     }
 }
 
@@ -221,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const typed = displayName.slice(0, charIndex);
                         const remainingFirst = displayName.slice(charIndex, spaceIndex);
                         // Cursor placed BEFORE the hidden ghost text
-                        typedHTML = `${typed}<span class="typewriter-cursor">|</span><span style="visibility:hidden">${remainingFirst}</span><br><span class="text-accent" style="visibility:hidden">${lastName}</span>`;
+                        typedHTML = `${typed}<span class="typewriter-cursor"></span><span style="visibility:hidden">${remainingFirst}</span><br><span class="text-accent" style="visibility:hidden">${lastName}</span>`;
                     } else {
                         const typedLast = displayName.slice(spaceIndex + 1, charIndex);
                         const remainingLast = displayName.slice(charIndex);

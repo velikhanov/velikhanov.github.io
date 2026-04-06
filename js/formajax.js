@@ -85,8 +85,9 @@
 
         submitBtn.classList.add("loading");
         submitBtn.disabled = true;
-        const originalBtnText = submitBtn.querySelector(".btn-send-text").textContent;
-        submitBtn.querySelector(".btn-send-text").textContent = getMessage('sending');
+        const btnTextSpan = submitBtn.querySelector(".btn-send-text");
+        const originalBtnText = btnTextSpan.innerText;
+        btnTextSpan.innerText = getMessage('sending');
         
         emailjs.init({publicKey: "_GCxj9wp4lONoUvJG"});
 
@@ -103,12 +104,12 @@
                 form.reset();
                 form.querySelectorAll('input').forEach(i => i.disabled = true);
                 submitBtn.disabled = true;
-                submitBtn.querySelector(".btn-send-text").textContent = originalBtnText;
+                btnTextSpan.innerText = originalBtnText;
             })
             .catch(() => {
                 showToast(getMessage('error'), 'error');
                 submitBtn.disabled = false;
-                submitBtn.querySelector(".btn-send-text").textContent = originalBtnText;
+                btnTextSpan.innerText = originalBtnText;
             })
             .finally(() => {
                 submitBtn.classList.remove("loading");
