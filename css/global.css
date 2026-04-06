@@ -566,11 +566,10 @@ input.form-control:-moz-autofill {
   width: 16px;
   height: 16px;
   border: 2px solid currentColor;
-  border-right-color: transparent; /* Changed from border-top-color to see if it helps */
+  border-right-color: transparent;
   border-radius: 50%;
   animation: spin 0.6s linear infinite;
-  display: inline-block;
-  margin-left: 10px;
+  /* Remove display: inline-block and margin-left to let flex center it perfectly */
 }
 
 @keyframes spin {
