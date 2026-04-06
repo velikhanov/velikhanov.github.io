@@ -34,6 +34,8 @@
 
     const validateInput = (input) => {
         const name = input.getAttribute('name');
+        if (name === 'website') return true; // Skip honeypot field
+
         let value = input.value;
         let isValid = true;
 
@@ -53,8 +55,8 @@
         return isValid;
     };
 
-    // Live validation
-    form.querySelectorAll('input').forEach(input => {
+    // Live validation (Skip honeypot)
+    form.querySelectorAll('input:not([name="website"])').forEach(input => {
         input.addEventListener('input', () => validateInput(input));
     });
 
@@ -82,7 +84,8 @@
         const submitBtn = form.querySelector(".submit-btn");
         
         let isFormValid = true;
-        form.querySelectorAll('input').forEach(input => {
+        // Validate actual inputs only
+        form.querySelectorAll('input:not([name="website"])').forEach(input => {
             if (!validateInput(input)) isFormValid = false;
         });
 
