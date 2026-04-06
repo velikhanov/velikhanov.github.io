@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!subtitleElement) return;
         const subText = (typeof languative !== 'undefined' && languative.getPhrase)
             ? languative.getPhrase('hero_subtitle')
-            : subtitleElement.textContent.trim();
+            : 'Backend engineer specializing in AI implementation, NLP, and high-performance systems with Python and Golang.';
         
         subtitleElement.style.opacity = '1';
         subtitleElement.style.visibility = 'visible';
