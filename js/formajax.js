@@ -74,7 +74,6 @@
         // 1. Honeypot check
         const honeypot = form.querySelector("#website_hp").value;
         if (honeypot) {
-            console.warn("Bot detected!");
             showToast(getMessage('success'), 'success'); // Fake success
             form.reset();
             return;
