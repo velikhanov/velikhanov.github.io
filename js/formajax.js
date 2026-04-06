@@ -71,6 +71,15 @@
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
+        // 1. Honeypot check
+        const honeypot = form.querySelector("#website_hp").value;
+        if (honeypot) {
+            console.warn("Bot detected!");
+            showToast(getMessage('success'), 'success'); // Fake success
+            form.reset();
+            return;
+        }
+
         const submitBtn = form.querySelector(".submit-btn");
         
         let isFormValid = true;
