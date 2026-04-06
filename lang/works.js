@@ -42,7 +42,7 @@ languative.modifyDictionary("az", {
     nuray_name: "Nuray House",
     nuray_desc: "Memarlıq layihələrini və daşınmaz əmlak kataloqunu nümayiş etdirən peşəkar tikinti şirkəti saytı.",
     
-    comfort_name: "E-Ticarət Core",
+    comfort_name: "E-Ticarət Nüvəsi",
     comfort_desc: "İnventar idarəetməsi, səbət məntiqi və təhlükəsiz ödəniş emalı olan tam miqyaslı mağaza mühərriki.",
     
     blog_name: "Bloq Mühərriki",
@@ -51,7 +51,7 @@ languative.modifyDictionary("az", {
     url_name: "URL Sadələşdirici",
     url_desc: "Daxili analitika və xüsusi ləqəb dəstəyi ilə link yönləndirmə üçün yüngül mikroxidmət.",
     
-    medquiz_name: "Tibbi Quiz AI",
+    medquiz_name: "Tibbi AI Quiz",
     medquiz_desc: "Tibbi mətnləri tələbələrin özünüqiymətləndirməsi üçün interaktiv Telegram sorğularına çevirən AI mühərriki.",
     
     utilities_name: "Kommunal Bot",
@@ -74,18 +74,18 @@ languative.modifyDictionary("ru", {
     nuray_desc: "Профессиональный сайт строительной компании с каталогом архитектурных проектов и объектов недвижимости.",
     
     comfort_name: "E-Commerce Ядро",
-    comfort_desc: "Движок интернет-магазина с управлением запасами, логикой корзины и безопасной обработкой платежей.",
+    comfort_desc: "Движок интернет-магазина с управлением запасами, логикой корзины и безопасной обработка платежей.",
     
     blog_name: "Движок Блога",
     blog_desc: "Высокопроизводительная издательская платформа с поддержкой markdown и оптимизированной индексацией БД.",
     
-    url_name: "URL Simplifier",
+    url_name: "Сокращатель ссылок",
     url_desc: "Легковесный микросервис для перенаправления ссылок со встроенной аналитикой и поддержкой алиасов.",
     
-    medquiz_name: "Med Quiz AI",
+    medquiz_name: "Медицинский ИИ-квиз",
     medquiz_desc: "AI-движок на базе LLM для парсинга медицинских тестов в интерактивные опросы Telegram.",
     
-    utilities_name: "Utilities Бот",
+    utilities_name: "Бот коммунальных услуг",
     utilities_desc: "Бот для автоматизации отчетов о доходах/расходах и мониторинга коммунальных служб.",
     
     teacher_name: "Инструменты Грамматики",

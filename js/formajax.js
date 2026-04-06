@@ -58,12 +58,20 @@
         input.addEventListener('input', () => validateInput(input));
     });
 
+    const showToast = (message, type) => {
+        const toast = document.querySelector(".toast");
+        clearTimeout(myTimer);
+        toast.textContent = message;
+        toast.className = `toast toast--${type} toast--visible`;
+        myTimer = setTimeout(() => {
+            toast.classList.remove("toast--visible");
+        }, 3000);
+    };
+
     form.addEventListener("submit", function (e) {
         e.preventDefault();
-        clearTimeout(myTimer);
 
         const submitBtn = form.querySelector(".submit-btn");
-        const toast = document.querySelector(".toast");
         
         let isFormValid = true;
         form.querySelectorAll('input').forEach(input => {
@@ -71,9 +79,7 @@
         });
 
         if (!isFormValid) {
-            toast.textContent = getMessage('invalid');
-            toast.className = "toast toast--error toast--visible";
-            myTimer = setTimeout(() => toast.classList.remove("toast--visible"), 3000);
+            showToast(getMessage('invalid'), 'error');
             return;
         }
 
@@ -93,22 +99,19 @@
 
         emailjs.send("service_mmm1wzr", "template_04r4zio", formData)
             .then(() => {
-                toast.textContent = getMessage('success');
-                toast.className = "toast toast--success toast--visible";
+                showToast(getMessage('success'), 'success');
                 form.reset();
                 form.querySelectorAll('input').forEach(i => i.disabled = true);
-                submitBtn.disabled = true; // Keep button disabled on success
+                submitBtn.disabled = true;
                 submitBtn.querySelector(".btn-send-text").textContent = originalBtnText;
             })
             .catch(() => {
-                toast.textContent = getMessage('error');
-                toast.className = "toast toast--error toast--visible";
+                showToast(getMessage('error'), 'error');
                 submitBtn.disabled = false;
                 submitBtn.querySelector(".btn-send-text").textContent = originalBtnText;
             })
             .finally(() => {
                 submitBtn.classList.remove("loading");
-                myTimer = setTimeout(() => toast.classList.remove("toast--visible"), 3000);
             });
     });
 })();

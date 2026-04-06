@@ -468,6 +468,9 @@ input.form-control:-moz-autofill {
   position: fixed;
   bottom: 2rem;
   left: 2rem;
+  right: 2rem; /* Add right for mobile centering if needed */
+  max-width: 400px;
+  width: auto;
   padding: 1rem 1.5rem;
   background: var(--card-bg);
   color: var(--text-color);
@@ -476,16 +479,31 @@ input.form-control:-moz-autofill {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   z-index: 2000;
   transform: translateY(150%);
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s, visibility 0.3s;
   font-weight: 600;
   font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  pointer-events: none;
 }
 
 .toast--visible {
   transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .toast {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1.5rem;
+    max-width: none;
+  }
 }
 
 .toast--success {
@@ -557,13 +575,8 @@ input.form-control:-moz-autofill {
 
 .fa-brain.colored { color: #FF69B4 !important; }
 
-/* Google / Language Multi-color Trick */
-.fa-language.colored {
-  background: linear-gradient(135deg, #4285F4 25%, #EA4335 25%, #EA4335 50%, #FBBC05 50%, #FBBC05 75%, #34A853 75%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
+/* Language Icon (Generic) */
+.fa-language.colored { color: #4285F4 !important; }
 
 .devicon-go-original-wordmark.colored { color: #00ADD8 !important; }
 .devicon-dart-plain.colored { color: #0175C2 !important; }
