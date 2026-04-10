@@ -143,10 +143,22 @@ main { padding-top: 100px; flex: 1; display: flex; flex-direction: column; width
 	align-items: center;
 }
 
+.logo,
+.logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
 .logo-img {
-	width: 36px; /* Slightly smaller logo */
-	height: auto;
-	animation: logo-rotation 5s infinite linear;
+  display: block;
+  width: clamp(32px, 3vw, 36px);
+  height: clamp(32px, 3vw, 36px);
+  object-fit: contain;
+  transform-origin: 50% 50%;
+  will-change: transform;
+  animation: logo-rotation 5s linear infinite;
 }
 
 @keyframes logo-rotation {
