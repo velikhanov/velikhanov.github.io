@@ -1,17 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting…</title>
-  <link rel="canonical" href="https://velikhanov.com/">
-  <meta http-equiv="refresh" content="0; url=https://velikhanov.com/">
-  <meta name="robots" content="noindex">
-  <link rel="icon" href="/favicon.ico" sizes="32x32">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>velikhanov.com</title>
+<link rel="canonical" href="https://velikhanov.com/">
+<meta http-equiv="refresh" content="0; url=https://velikhanov.com/">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0a0a0a">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --silver: #c4c4c4;
+    --dim: #6f6f6f;
+    --cyan: #1fd4d4;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: var(--ink);
+    color: var(--silver);
+    font: 400 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 34ch; }
+  img {
+    width: 92px;
+    height: auto;
+    display: block;
+    margin-bottom: 2.25rem;
+  }
+  p { margin: 0 0 1.25rem; }
+  .moved {
+    color: #f2f2f2;
+    font-size: 1.25rem;
+    line-height: 1.45;
+  }
+  .note {
+    color: var(--dim);
+    font-size: 0.875rem;
+    margin: 0;
+  }
+  a {
+    color: var(--cyan);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(31, 212, 212, 0.35);
+    padding-bottom: 1px;
+  }
+  a:hover, a:focus-visible { border-bottom-color: var(--cyan); }
+  a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+</style>
 </head>
 <body>
-  <p>This site has moved to <a href="https://velikhanov.com/">velikhanov.com</a>.</p>
-  <script>location.replace("https://velikhanov.com/" + location.pathname.replace(/^\//, "") + location.search + location.hash);</script>
+<main>
+  <img src="t.png" alt="Velikhanov">
+  <p class="moved">This site has moved to <a href="https://velikhanov.com/">velikhanov.com</a>.</p>
+  <p class="note">You should be redirected automatically. If nothing happens, use the link above.</p>
+</main>
+<script>
+  var target = "https://velikhanov.com";
+  location.replace(target + location.pathname + location.search + location.hash);
+</script>
 </body>
 </html>
